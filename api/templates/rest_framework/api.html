@@ -1,0 +1,8 @@
+{% extends "rest_framework/base.html" %}
+
+{% block userlinks %}
+    {{ block.super }}
+    <li class="nav-item" style="display: flex; align-items: center;">
+        <a href="/api/docs/" class="nav-link" style="background-color: #28a745; color: white; font-weight: bold; padding: 5px 15px; border-radius: 5px; margin-left: 15px; border: 2px solid #1e7e34;">Swagger / Documentação</a>
+    </li>
+{% endblock %}
