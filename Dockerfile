@@ -1,19 +1,25 @@
-# Usa uma imagem oficial do Python
 FROM python:3.11-slim
 
-# Define o diretório de trabalho dentro do container
-WORKDIR /app
-
-# Impede que o Python escreva os ficheiros .pyc e garante que o output aparece no terminal logo
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Instala as dependências do sistema necessárias para o Postgres
+WORKDIR /app
+
+# Instala as dependências necessárias do sistema
 RUN apt-get update && apt-get install -y libpq-dev gcc && apt-get clean
 
-# Copia o requirements.txt e instala as dependências
+# Copia e instala as dependências a partir do ficheiro correto
 COPY requirements.txt /app/
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Copia o resto do código do projeto
+# Copia a árvore inteira do projeto para dentro do container
 COPY . /app/
+
+# Como o Django está dentro da pasta software/, mudamos o WORKDIR para lá
+WORKDIR /app/software
+
+# Expõe a porta de desenvolvimento desejada
+EXPOSE 8520
+
+# Comando padrão que o Render vai executar ao iniciar o container
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8520"]
