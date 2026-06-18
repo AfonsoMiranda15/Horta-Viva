@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'configuracao.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://hortaviva_admin:senha_secreta@db:5432/hortaviva_db',
+        default=os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3'),
         conn_max_age=600,
     )
 }
