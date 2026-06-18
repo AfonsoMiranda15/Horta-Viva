@@ -21,5 +21,7 @@ WORKDIR /app/software
 # Expõe a porta de desenvolvimento desejada
 EXPOSE 8520
 
-# Comando padrão que o Render vai executar ao iniciar o container
+RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate --noinput
+
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8520"]
