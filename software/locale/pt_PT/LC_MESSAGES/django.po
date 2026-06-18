@@ -1,0 +1,2223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-17 15:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: blog/management/commands/criar_exemplo_conteudos.py:83
+#: blog/management/commands/criar_exemplo_conteudos.py:90
+msgid "Conteúdos"
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:84
+#: blog/management/commands/criar_exemplo_conteudos.py:92
+msgid ""
+"Aqui você pode publicar o conteúdo mais relevante da empresa: artigos, "
+"materiais e novidades."
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:85
+#: blog/management/commands/criar_exemplo_conteudos.py:93
+msgid "Área de conteúdos com exemplos completos para uso no CMS."
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:128
+msgid "Guia Completo de Conteúdo no CMS"
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:129
+msgid ""
+"Exemplo completo com blocos de texto, mídia, tabela e chamadas para ação."
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:130
+msgid "Artigo demonstrativo com múltiplos blocos Wagtail."
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:134
+msgid "Boas Práticas para Estratégia Digital"
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:135
+msgid "Modelo de artigo com estrutura editorial, destaques e conteúdo técnico."
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:136
+msgid "Estrutura de publicação para comunicação institucional."
+msgstr ""
+
+#: blog/management/commands/criar_exemplo_conteudos.py:156
+msgid "Imagem ilustrativa do conteúdo"
+msgstr ""
+
+#: blog/models.py:22 blog/models.py:88
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:15
+msgid "Introdução"
+msgstr ""
+
+#: blog/models.py:25 blog/models.py:91
+msgid "Conteúdo"
+msgstr ""
+
+#: blog/models.py:77
+msgid "Objeto com tag"
+msgstr ""
+
+#: blog/models.py:98
+msgid "Imagem destacada"
+msgstr ""
+
+#: blog/models.py:106
+msgid "Vídeo (YouTube/Vimeo)"
+msgstr ""
+
+#: blog/models.py:109
+msgid ""
+"Informe a URL do vídeo. A imagem destacada será usada como miniatura "
+"clicável. Obrigatório ter imagem se houver vídeo."
+msgstr ""
+
+#: blog/models.py:115
+msgid "Legenda da imagem/vídeo"
+msgstr ""
+
+#: blog/models.py:116 blog/snippets.py:17
+msgid "Tags"
+msgstr ""
+
+#: blog/models.py:118 home/templates/home/includes/bloco-blog-articles.html:56
+msgid "Visualizações"
+msgstr ""
+
+#: blog/models.py:142
+msgid ""
+"Se houver vídeo, a imagem destacada é obrigatória para exibi-lo corretamente."
+msgstr ""
+
+#: blog/models.py:174 blog/models.py:179
+msgid "Desconhecido"
+msgstr ""
+
+#: blog/snippets.py:16
+msgid "Tag"
+msgstr ""
+
+#: blog/snippets.py:21
+msgid "Título"
+msgstr ""
+
+#: blog/snippets.py:22
+msgid "Slug"
+msgstr ""
+
+#: blog/snippets.py:29
+msgid "Itens do menu"
+msgstr ""
+
+#: blog/snippets.py:33
+msgid "Menu"
+msgstr ""
+
+#: blog/snippets.py:34
+msgid "Menus"
+msgstr ""
+
+#: blog/snippets.py:50
+msgid "Item pai"
+msgstr ""
+
+#: blog/snippets.py:52
+msgid "Título do item"
+msgstr ""
+
+#: blog/snippets.py:59
+msgid "Página de destino"
+msgstr ""
+
+#: blog/snippets.py:61
+msgid "URL externa"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:36 blog/templates/blog/artigo.html:37
+msgid "Central de Conteúdos da Empresa"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:38
+msgid ""
+"Área editorial com artigos estratégicos e técnicos como exemplo completo de "
+"CMS."
+msgstr ""
+
+#: blog/templates/blog/artigo.html:74
+msgid "Início"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:97
+msgid "Visualizações:"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:151
+msgid "Link copiado!"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:152
+msgid "Não foi possível copiar"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:152
+msgid "Copiar link"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:175
+#, python-format
+msgid "%(total)s visualização no total."
+msgid_plural "%(total)s visualizações no total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: blog/templates/blog/artigo.html:191
+msgid "Voltar"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:194
+msgid "Próximo →"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:210
+msgid "Leia também"
+msgstr ""
+
+#: blog/templates/blog/artigo.html:226
+#: home/templates/home/includes/bloco-blog-articles.html:43
+msgid "Artigo"
+msgstr ""
+
+#: blog/templates/blog/blocks/embed_block.html:12
+msgid "Vídeo incorporado do conteúdo"
+msgstr ""
+
+#: blog/templates/blog/conteudo.html:50
+msgid "Pesquisar conteúdos..."
+msgstr ""
+
+#: blog/templates/blog/conteudo.html:51
+#: home/templates/home/includes/bloco-blog-pesquisa.html:28
+msgid "Buscar"
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/done.html:3
+#: blog/templates/wagtailadmin/account/password_reset/form.html:4
+msgid "Reiniciar senha"
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/done.html:15
+msgid "Verifique seu email"
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/done.html:18
+msgid ""
+"Um link para redefinir a sua senha foi enviado por e-mail, caso exista uma "
+"conta associada a este endereço."
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:15
+msgid "Reset your password"
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:16
+msgid "Recupere a sua senha"
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:27
+msgid "Enter your email address to reset your password"
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:28
+msgid "Introduza o seu email para recuperar a senha"
+msgstr ""
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:49
+msgid "Recuperar Senha"
+msgstr ""
+
+#: blog/templates/wagtailadmin/home/account_summary.html:9
+msgid "Account"
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:4
+msgid "Login"
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:17
+msgid "Bem-vindo de volta!"
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:18
+msgid "Preencha os seus dados no formulário ao lado para acessar o sistema."
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:31 comercial/forms.py:70
+msgid "Email"
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:36
+msgid "Senha"
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:49
+msgid "Lembrar Acesso"
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:62
+msgid "Entrar"
+msgstr ""
+
+#: blog/templates/wagtailadmin/login.html:66
+msgid "Esqueceu a senha?"
+msgstr ""
+
+#: comercial/forms.py:13
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:149
+#: home/templates/home/includes/bloco-conteudo-termos.html:25
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "Portugal"
+msgstr ""
+
+#: comercial/forms.py:15 comercial/views.py:67
+msgid "Cartão de crédito"
+msgstr ""
+
+#: comercial/forms.py:16 comercial/views.py:68
+msgid "MBWay"
+msgstr ""
+
+#: comercial/forms.py:17 comercial/views.py:69
+msgid "Referência Multibanco"
+msgstr ""
+
+#: comercial/forms.py:46
+msgid "Item a adquirir"
+msgstr ""
+
+#: comercial/forms.py:50
+msgid "Quantidade"
+msgstr ""
+
+#: comercial/forms.py:66
+#: home/templates/home/includes/bloco-formulario-email.html:38
+#: home/templates/home/includes/bloco-formulario-mautic.html:38
+msgid "Nome"
+msgstr ""
+
+#: comercial/forms.py:76
+msgid "NIF"
+msgstr ""
+
+#: comercial/forms.py:89
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "Telefone"
+msgstr ""
+
+#: comercial/forms.py:94
+msgid "Morada de faturação"
+msgstr ""
+
+#: comercial/forms.py:99
+msgid "Código postal"
+msgstr ""
+
+#: comercial/forms.py:104
+msgid "Cidade"
+msgstr ""
+
+#: comercial/forms.py:109
+msgid "País"
+msgstr ""
+
+#: comercial/forms.py:114
+msgid "Método de pagamento"
+msgstr ""
+
+#: comercial/forms.py:120
+msgid "Concordo com os Termos e Politica de Privacidade"
+msgstr ""
+
+#: comercial/forms.py:268
+msgid "Este checkout aceita apenas faturação em Portugal."
+msgstr ""
+
+#: comercial/forms.py:281
+msgid "Nenhum item disponivel para esta oferta."
+msgstr ""
+
+#: comercial/forms.py:304
+msgid "Informe um NIF português válido (9 dígitos)."
+msgstr ""
+
+#: comercial/forms.py:320
+msgid "Selecione uma quantidade válida."
+msgstr ""
+
+#: comercial/forms.py:322
+msgid "Quantidade indisponível para o item selecionado."
+msgstr ""
+
+#: comercial/forms.py:332
+msgid "Método de pagamento inválido para este checkout."
+msgstr ""
+
+#: comercial/servicos/estoque.py:57
+#, python-format
+msgid "Stock insuficiente para o item '%(item)s'."
+msgstr ""
+
+#: comercial/servicos/estoque.py:80
+#, python-format
+msgid ""
+"Reserva inconsistente para o item '%(item)s': tentativa de libertar acima do "
+"reservado."
+msgstr ""
+
+#: comercial/servicos/estoque.py:103
+#, python-format
+msgid ""
+"Reserva inconsistente para o item '%(item)s': não há saldo reservado "
+"suficiente para baixa."
+msgstr ""
+
+#: comercial/servicos/estoque.py:108
+#, python-format
+msgid ""
+"Stock inconsistente para o item '%(item)s': total menor que a baixa "
+"solicitada."
+msgstr ""
+
+#: comercial/servicos/estoque.py:161
+msgid "Quantidade deve ser maior que zero."
+msgstr ""
+
+#: comercial/servicos/notificacoes.py:51
+msgid "Confirmação de pagamento"
+msgstr ""
+
+#: comercial/servicos/notificacoes.py:299
+msgid "Cartão"
+msgstr ""
+
+#: comercial/servicos/notificacoes.py:301
+msgid "Referência"
+msgstr ""
+
+#: comercial/servicos/notificacoes.py:302
+msgid "N/D"
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1369
+msgid "Pedido não está disponível para novo pagamento."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1372
+msgid "Pedido expirado. Inicie um novo checkout."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1421
+msgid "Webhook sem transaction_id."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1425
+msgid "Pagamento não encontrado para transaction_id informado."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1467
+msgid "Pagamento não encontrado para retorno informado."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1842 comercial/servicos/pagamentos.py:1846
+msgid "Payload vazio."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1861 comercial/servicos/pagamentos.py:1864
+msgid "Payload inválido."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1877
+msgid ""
+"COMERCIAL_SIBS_SECRET_KEY não configurada para descriptografar webhook da "
+"SIBS."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1882
+msgid "Dependência pycryptodome ausente para descriptografar webhook da SIBS."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1894
+msgid "Falha ao descriptografar payload do webhook da SIBS."
+msgstr ""
+
+#: comercial/servicos/pagamentos.py:1897
+msgid "Payload descriptografado inválido."
+msgstr ""
+
+#: comercial/servicos/pedidos.py:65
+msgid "Quantidade de compra inválida."
+msgstr ""
+
+#: comercial/servicos/pedidos.py:74
+msgid "Oferta indisponível para checkout."
+msgstr ""
+
+#: comercial/servicos/pedidos.py:82
+msgid "Oferta sem itens configurados."
+msgstr ""
+
+#: comercial/servicos/pedidos.py:118
+#, python-format
+msgid "Item '%(item)s' está inativo para venda."
+msgstr ""
+
+#: comercial/servicos/pedidos.py:122
+msgid "Este item permite apenas compra unitária."
+msgstr ""
+
+#: comercial/servicos/pedidos.py:227
+msgid "Selecione um item para continuar o checkout."
+msgstr ""
+
+#: comercial/servicos/pedidos.py:233
+msgid "Item selecionado indisponível para esta oferta."
+msgstr ""
+
+#: comercial/views.py:38
+msgid "Rascunho"
+msgstr ""
+
+#: comercial/views.py:39 comercial/views.py:79 comercial/views.py:80
+msgid "Aguardando pagamento"
+msgstr ""
+
+#: comercial/views.py:40 comercial/views.py:82
+msgid "Pago"
+msgstr ""
+
+#: comercial/views.py:41
+msgid "Cancelado"
+msgstr ""
+
+#: comercial/views.py:42 comercial/views.py:57
+msgid "Expirado"
+msgstr ""
+
+#: comercial/views.py:44 comercial/views.py:59
+msgid "Estado desconhecido"
+msgstr ""
+
+#: comercial/views.py:52
+msgid "Pendente"
+msgstr ""
+
+#: comercial/views.py:53 comercial/views.py:81
+msgid "Em processamento"
+msgstr ""
+
+#: comercial/views.py:54
+msgid "Confirmado"
+msgstr ""
+
+#: comercial/views.py:55
+msgid "Recusado"
+msgstr ""
+
+#: comercial/views.py:56
+msgid "Erro"
+msgstr ""
+
+#: comercial/views.py:71
+msgid "Não definido"
+msgstr ""
+
+#: comercial/views.py:83
+msgid "Parcialmente pago"
+msgstr ""
+
+#: comercial/views.py:84
+msgid "Expirada"
+msgstr ""
+
+#: comercial/views.py:85 comercial/views.py:86
+msgid "Cancelada"
+msgstr ""
+
+#: comercial/views.py:88
+msgid "Não disponível"
+msgstr ""
+
+#: comercial/views.py:320 comercial/views.py:409
+msgid "Oferta não encontrada."
+msgstr ""
+
+#: comercial/views.py:445 comercial/views.py:661
+msgid "Transação não encontrada."
+msgstr ""
+
+#: comercial/views.py:582
+msgid "Consulta de estado indisponivel."
+msgstr ""
+
+#: comercial/views.py:587
+msgid "Pedido não encontrado."
+msgstr ""
+
+#: home/servicos_comercial.py:317
+msgid "Reservar vaga da manhã"
+msgstr ""
+
+#: home/servicos_comercial.py:318
+msgid "Reservar vaga da noite"
+msgstr ""
+
+#: home/servicos_comercial.py:319
+msgid "Reservar vaga da turma única"
+msgstr ""
+
+#: home/servicos_comercial.py:320 home/servicos_comercial.py:322
+msgid "Reservar vaga"
+msgstr ""
+
+#: home/templates/home/agendamento.html:4
+#: home/templates/home/includes/bloco-agendamento-embed.html:7
+#: home/templates/home/includes/bloco-conteudo-termos.html:55
+#: home/templates/home/includes/bloco-hero-agendamento.html:7
+msgid "Agendamento"
+msgstr ""
+
+#: home/templates/home/agendamento.html:5
+msgid ""
+"Página de agendamento online para definir data e horário da reunião inicial."
+msgstr ""
+
+#: home/templates/home/base.html:24 home/templates/home/base.html:46
+#: home/templates/home/base.html:59 home/templates/home/home.html:10
+msgid "Título Principal da Empresa"
+msgstr ""
+
+#: home/templates/home/base.html:26
+msgid ""
+"Escreva aqui o resumo principal da sua empresa, destacando proposta de "
+"valor, público atendido e principais diferenciais competitivos."
+msgstr ""
+
+#: home/templates/home/base.html:28 home/templates/home/base.html:42
+#: home/templates/home/base.html:84 home/templates/home/base.html:122
+msgid "Nome da Empresa"
+msgstr ""
+
+#: home/templates/home/base.html:48
+msgid ""
+"Escreva aqui a mensagem mais importante do seu site e reforce o impacto da "
+"sua empresa no mercado."
+msgstr ""
+
+#: home/templates/home/base.html:52 home/templates/home/base.html:65
+msgid "Imagem de capa do site"
+msgstr ""
+
+#: home/templates/home/base.html:61
+msgid ""
+"Use este espaço para descrever o serviço principal e os resultados esperados "
+"para seus clientes."
+msgstr ""
+
+#: home/templates/home/base.html:94
+msgid "Logotipo da empresa"
+msgstr ""
+
+#: home/templates/home/base.html:98
+msgid ""
+"Edite este campo com a descrição estratégica da sua empresa, segmento de "
+"atuação e modelo de serviço."
+msgstr ""
+
+#: home/templates/home/base.html:104
+msgid "Atendimento ao cliente"
+msgstr ""
+
+#: home/templates/home/base.html:132 home/templates/home/includes/menu.html:20
+#: home/templates/home/includes/menu.html:76
+#: home/templates/home/includes/rodape.html:120
+#: home/templates/home/quem-somos.html:4
+msgid "Quem Somos"
+msgstr ""
+
+#: home/templates/home/base.html:142
+msgid "Soluções"
+msgstr ""
+
+#: home/templates/home/base.html:152
+msgid "vamos-conversar"
+msgstr ""
+
+#: home/templates/home/blog.html:4 home/templates/home/includes/menu.html:24
+#: home/templates/home/includes/menu.html:80
+#: home/templates/home/includes/rodape.html:121
+msgid "Blog"
+msgstr ""
+
+#: home/templates/home/blog.html:5 home/templates/home/quem-somos.html:5
+msgid ""
+"Apresente a história da empresa, posicionamento e capacidades para projetos "
+"futuros."
+msgstr ""
+
+#: home/templates/home/curso-deploy-web-docker.html:4
+msgid "Deploy Web com Docker"
+msgstr ""
+
+#: home/templates/home/curso-deploy-web-docker.html:6
+msgid ""
+"Curso prático de deploy web com Docker, focado em colocar aplicações em "
+"produção com segurança e previsibilidade."
+msgstr ""
+
+#: home/templates/home/curso-introducao-gestao-sites.html:4
+msgid "Introdução e Gestão de Sites"
+msgstr ""
+
+#: home/templates/home/curso-introducao-gestao-sites.html:6
+msgid ""
+"Curso introdutório para entender a criação, gestão e evolução de sites "
+"institucionais e presencia online."
+msgstr ""
+
+#: home/templates/home/curso-markint-digital-presenca-online.html:4
+msgid "Marketing Digital e Presença Online"
+msgstr ""
+
+#: home/templates/home/curso-markint-digital-presenca-online.html:6
+msgid ""
+"Curso de marketing digital e presença online para construir estratégias de "
+"visibilidade e atração de clientes na web."
+msgstr ""
+
+#: home/templates/home/curso-programacao-web.html:4
+msgid "Programação Web"
+msgstr ""
+
+#: home/templates/home/curso-programacao-web.html:6
+msgid ""
+"Curso de programação web focado em criação de sites e aplicações modernas "
+"para presença digital profissional."
+msgstr ""
+
+#: home/templates/home/home.html:11
+msgid ""
+"Escreva aqui o resumo mais importante do seu negócio, produtos e "
+"diferenciais estratégicos para o perfil ideal de cliente."
+msgstr ""
+
+#: home/templates/home/includes/bloco-blog-articles.html:10
+msgid "Notícias Wanzeller"
+msgstr ""
+
+#: home/templates/home/includes/bloco-blog-articles.html:11
+msgid ""
+"Acompanhe as atualizações da Wanzeller: comunicados, parcerias, lançamentos, "
+"iniciativas e bastidores. Conteúdo direto e relevante para você entender o "
+"que estamos fazendo e o que muda para clientes e parceiros."
+msgstr ""
+
+#: home/templates/home/includes/bloco-blog-pesquisa.html:10
+msgid "Cursos e Workshops"
+msgstr ""
+
+#: home/templates/home/includes/bloco-blog-pesquisa.html:13
+msgid ""
+"Escolha o curso ou workshop que melhor corresponde aos seus objetivos de "
+"formação neste momento."
+msgstr ""
+
+#: home/templates/home/includes/bloco-blog-pesquisa.html:24
+msgid "Pesquise por curso ou workshop"
+msgstr ""
+
+#: home/templates/home/includes/bloco-canais-contato.html:7
+msgid "Canais de Contato"
+msgstr ""
+
+#: home/templates/home/includes/bloco-canais-contato.html:9
+msgid ""
+"A Wanzeller coordena as suas marcas para entregar controlo, eficiência e "
+"crescimento: NicePayer (crédito e risco), FullTasks (tecnologia e "
+"performance) e Frugga (plataformas digitais)."
+msgstr ""
+
+#: home/templates/home/includes/bloco-canais-contato.html:23
+msgid "Agendamento online"
+msgstr ""
+
+#: home/templates/home/includes/bloco-canais-contato.html:24
+msgid ""
+"Permita que o visitante escolha a melhor data e horário para o primeiro "
+"contato."
+msgstr ""
+
+#: home/templates/home/includes/bloco-canais-contato.html:27
+msgid "Agendar"
+msgstr ""
+
+#: home/templates/home/includes/bloco-canais-contato.html:41
+msgid ""
+"Configure o número e a mensagem pré-preenchida no settings para conversas "
+"diretas e rápidas."
+msgstr ""
+
+#: home/templates/home/includes/bloco-canais-contato.html:60
+msgid "E-mail e telefone"
+msgstr ""
+
+#: home/templates/home/includes/bloco-chamada-conversao-solucao.html:9
+msgid ""
+"Defina aqui a proposta de valor central e a primeira decisão esperada do "
+"visitante."
+msgstr ""
+
+#: home/templates/home/includes/bloco-chamada-conversao-solucao.html:12
+msgid ""
+"Use este bloco para comunicar benefício prático e guiar o visitante para a "
+"próxima etapa de aquisição."
+msgstr ""
+
+#: home/templates/home/includes/bloco-chamada-conversao-solucao.html:15
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:12
+msgid "Quero iniciar agora"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:7
+#: home/templates/home/includes/bloco-como-funciona.html:7
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:8
+msgid "Por que Escolher a Wanzeller?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:20
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:15
+msgid "Check NicePayer (NicePayer) "
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:32
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:28
+msgid "Análise de Crédito e Política (NicePayer)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:33
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:34
+msgid ""
+"Estruturamos a <strong>política de crédito</strong> e a análise técnica para "
+"padronizar aprovações, reduzir risco e aumentar o controlo do departamento "
+"de crédito."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:44
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:41
+msgid "Software de Crédito e Gestão (NicePayer)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:45
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:47
+msgid ""
+"Implementamos <strong>software online</strong> para o ciclo de crédito, com "
+"gestão de propostas, pedidos de exceção, formalização de garantias e ações "
+"antifraude."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:58
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:54
+msgid "Desenvolvimento à Medida (FullTasks)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:59
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:60
+msgid ""
+"Desenvolvemos soluções <strong>à medida</strong> e integrações alinhadas ao "
+"seu processo, com foco em performance, escalabilidade e entrega rápida de "
+"valor."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:70
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:67
+msgid "Dínamo de Vendas (FullTasks)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:71
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:73
+msgid ""
+"Implementamos o <strong>Dínamo de Vendas</strong> com automações, conteúdo e "
+"marketing para gerar procura, nutrir leads e aumentar conversão com "
+"previsibilidade."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:82
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:80
+msgid "Plataforma Digital Restauração (Frugga)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:83
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:86
+msgid ""
+"Plataforma para restauração com <strong>descoberta</strong> de restaurantes, "
+"menus e pratos do dia, reforçando a presença digital e a visibilidade dos "
+"estabelecimentos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:90
+#: home/templates/home/includes/bloco-hero-home-2.html:22
+#: home/templates/home/includes/bloco-hero-home.html:13
+#: home/templates/home/includes/rodape.html:127
+msgid "Nossas Marcas"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona.html:9
+msgid ""
+"Uma mudança de carreira nunca foi tão fácil no mundo de hoje. Serás guiado e "
+"focado no mercado atual."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona.html:23
+msgid "Etapa 1: Inscrição"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona.html:24
+msgid ""
+"Na inscrição terá de fornecer os dados necessários e o pagamento da "
+"inscrição."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona.html:35
+msgid "Etapa 2 : A formação"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona.html:36
+msgid ""
+"Durante o tempo do curso será guiado e acompanhado para adquirir os "
+"conhecimentos todos necessários."
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona.html:47
+msgid "Etapa 3: Após a conclusão"
+msgstr ""
+
+#: home/templates/home/includes/bloco-como-funciona.html:48
+msgid ""
+"Após a conclusão do curso você adquirira um certificado e poderá participar "
+"noutro curso ou até integrar o mundo do trabalho."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:8
+#: home/templates/home/includes/bloco-conteudo-termos.html:73
+#: home/templates/home/includes/bloco-conteudo-termos.html:122
+msgid "Política de Privacidade"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:9
+#: home/templates/home/includes/bloco-conteudo-termos.html:10
+msgid "Última atualização em:"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:16
+msgid ""
+"Esta Política descreve como a Nome da Empresa trata dados pessoais em "
+"conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – "
+"LGPD, Brasil) e com o Regulamento (UE) 2016/679 – RGPD, aplicável em "
+"Portugal e demais países do Espaço Económico Europeu. Aplica-se aos nossos "
+"sites, páginas de agendamento online, formulários de contato, comunicação "
+"por WhatsApp, e conteúdos incorporados de terceiros (por exemplo, vídeos e "
+"Microsoft Bookings)."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:19
+msgid ""
+"Somos responsáveis pelo tratamento quando determinamos as finalidades e os "
+"meios de tratamento de dados pessoais. Em alguns casos, atuamos como "
+"operadores (subprocessadores) para clientes empresariais, conforme contrato."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:24
+msgid "Definições essenciais"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:26
+msgid "Dados Pessoais"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:26
+msgid ""
+"qualquer informação relacionada a uma pessoa natural identificada ou "
+"identificável."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:27
+msgid "Tratamento"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:27
+msgid ""
+"toda operação com dados pessoais, como coleta, armazenamento, uso, partilha "
+"e eliminação."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:28
+msgid "Controlador"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:28
+msgid "quem decide as finalidades e os meios de tratamento."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:29
+msgid "Operador"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:29
+msgid "quem trata dados em nome do controlador."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:30
+msgid "Cookies"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:30
+msgid ""
+"arquivos armazenados no navegador que permitem funcionalidades, métricas e "
+"marketing."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:34
+msgid "Quais dados coletamos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:35
+msgid ""
+"Coletamos dados estritamente necessários para prestar serviços e operar o "
+"site. As categorias incluem:"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:38
+msgid "Informações fornecidas por você"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:40
+msgid ""
+"Dados de identificação e contato enviados em formulários (nome, e-mail, "
+"telefone) e mensagens por WhatsApp."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:41
+msgid ""
+"Dados de agendamento em Microsoft Bookings (horário, nome, e-mail, empresa)."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:42
+msgid "Dados contratuais e de faturação quando há contratação de serviços."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:44
+msgid "Coleta automática"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:45
+msgid ""
+"Podemos usar cookies e tecnologias similares para medir audiência, melhorar "
+"o site e, quando consentido, para marketing. O nosso controlador RGPD.js "
+"bloqueia conteúdos e rastreadores até que haja consentimento."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:48
+msgid "Conteúdos incorporados"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:49
+msgid ""
+"Vídeos (YouTube/Vimeo) e a agenda Microsoft Bookings permanecem bloqueados "
+"até o consentimento. Ao clicar para reproduzir ou visualizar, você autoriza "
+"o carregamento do conteúdo e dos cookies associados."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:52
+msgid "Informações de outras fontes"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:53
+msgid ""
+"Podemos receber dados de provedores de pagamento, parceiros e plataformas "
+"publicitárias quando você tiver consentido nessas plataformas."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:58
+msgid "Finalidades do tratamento"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:60
+msgid ""
+"Prestar e melhorar serviços, responder contatos e realizar agendamentos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:61
+msgid "Executar obrigações pré-contratuais e contratuais com clientes."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:62
+msgid "Cumprir obrigações legais e fiscais."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:63
+msgid "Medição de audiência e marketing, somente com consentimento."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:67
+msgid "Bases legais"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:68
+msgid "LGPD (Brasil – art. 7º)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:68
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:69
+msgid "consentimento; execução de contrato; cumprimento de obrigação legal."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:69
+msgid "RGPD (UE – art. 6º)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:70
+msgid ""
+"Não utilizamos dados sensíveis em nossas operações padrão. Caso um cliente "
+"compartilhe conteúdos próprios que contenham dados sensíveis, o tratamento "
+"seguirá estritamente as instruções contratuais."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:75
+msgid "Cookies e controle de consentimento"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:76
+msgid ""
+"O banner de consentimento oferece duas opções: “Aceitar” e “Recusar”. Ao "
+"clicar em “Aceitar”, você autoriza todas as categorias de cookies listadas "
+"abaixo (funcionais, estatísticos/analytics e marketing), incluindo o "
+"carregamento de vídeos incorporados e da agenda Microsoft Bookings. Ao "
+"clicar em “Recusar”, limitamos o uso ao estritamente necessário e mantemos "
+"conteúdos bloqueados."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:79
+msgid "Categorias previstas"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:79
+msgid ""
+"Funcionais necessários; Estatística/Analytics (ex.: Google Analytics); "
+"Marketing/Ads (ex.: Meta Pixel, LinkedIn, Twitter/X, TikTok, Microsoft Ads, "
+"Google Ads), Automação/CRM."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:80
+msgid ""
+"Você pode revogar o consentimento a qualquer momento. Utilize o botão abaixo "
+"para apagar o cookie de consentimento e reexibir o banner, ou limpe os "
+"cookies do seu navegador."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:84
+msgid "Revogar consentimento"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:88
+msgid "Partilha de dados com terceiros"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:89
+msgid ""
+"Compartilhamos dados com prestadores que nos apoiam em infraestrutura, "
+"hospedagem, e funcionalidades do site e marketing, sempre sob contratos e "
+"medidas de segurança compatíveis com LGPD/RGPD. Só partilhamos quando "
+"necessário para a finalidade informada, por obrigação legal, ou com o seu "
+"consentimento."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:94
+msgid "Transferências internacionais"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:95
+msgid ""
+"Alguns fornecedores podem tratar dados fora do seu país. Para a UE/Portugal, "
+"usamos salvaguardas adequadas previstas no RGPD (ex.: Cláusulas Contratuais "
+"Padrão). Para o Brasil, observamos os requisitos da LGPD para transferências "
+"internacionais."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:100
+msgid "Medidas de segurança"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:101
+msgid ""
+"Adotamos medidas técnicas e organizacionais proporcionais ao risco, como "
+"controle de acesso, criptografia em trânsito, registros de auditoria e "
+"segregação de ambientes. Nenhuma medida é absoluta; avaliamos e aprimoramos "
+"continuamente."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:106
+msgid "Prazos de retenção"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:107
+msgid ""
+"Mantemos dados apenas pelo tempo necessário às finalidades informadas e "
+"conforme prazos legais e fiscais aplicáveis. Após o prazo, eliminamos ou "
+"anonimizamos de forma segura."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:112
+msgid "Seus direitos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:113
+msgid "LGPD (Brasil)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:113
+msgid ""
+"confirmação de tratamento, acesso, correção, anonimização, bloqueio, "
+"eliminação, portabilidade, informação sobre partilhas, revogação do "
+"consentimento e revisão de decisões automatizadas."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:114
+msgid "RGPD (UE/Portugal)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:114
+msgid ""
+"acesso, retificação, apagamento, limitação, portabilidade, oposição e "
+"retirada do consentimento; direito de reclamar à autoridade supervisora."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:117
+msgid "Privacidade de crianças e adolescentes"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:118
+msgid ""
+"Nossos serviços não se destinam a menores. Se acreditar que coletamos dados "
+"de menor sem a devida autorização, contacte-nos para remoção."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:123
+#: home/templates/home/includes/bloco-conteudo-termos.html:9
+msgid "Termos e Condições"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:126
+#, python-format
+msgid ""
+"Esta Política de Privacidade deve ser lida em conjunto com os nossos <a "
+"href=\"%(termos_url)s\" class=\"color--blue\">Termos e Condições</a>. O uso "
+"do site e dos serviços implica a aceitação de ambos os documentos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:134
+msgid "Alterações desta Política"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:135
+msgid ""
+"Podemos atualizar esta Política para refletir mudanças legais ou "
+"operacionais. A data de “Última atualização” no topo indica a versão vigente."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:140
+msgid "Como nos contactar"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:142
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:148
+#: home/templates/home/includes/bloco-conteudo-termos.html:26
+#: home/templates/home/includes/bloco-conteudo-termos.html:116
+msgid "Brasil"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:142
+#: home/templates/home/includes/bloco-conteudo-termos.html:116
+msgid "Telefone/WhatsApp"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:142
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+msgid "E-mail"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "(chamada fixa a cobrar)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:147
+msgid "Identificação empresarial"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:148
+msgid ""
+"Empresa Exemplo LTDA – CNPJ 44.728.577/0001-90 – Endereço conforme acima."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:149
+msgid "Empresa Exemplo Lda – NIPC 514873078 – Endereço conforme acima."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:17
+msgid "Introdução e Aceitação"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:18
+msgid ""
+"Estes Termos e Condições regem o uso do site da Nome da Empresa, de suas "
+"páginas de agendamento e dos canais de contato indicados. Ao aceder, "
+"navegar, enviar informações, marcar reunião ou interagir com funcionalidades "
+"do site, você concorda com estes Termos. Se não concordar, não utilize o "
+"site."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:23
+msgid "Quem somos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:25
+msgid ""
+"Empresa Exemplo Lda – NIPC 514873078 – Rua Eng. João Branco, 87, 4900-299, "
+"Viana do Castelo."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:26
+msgid ""
+"Empresa Exemplo LTDA – CNPJ 44.728.577/0001-90 – Av. Paulista, 1636 – Conj. "
+"4 Pavimento 15 – Bela Vista – São Paulo/SP – CEP 01310-200."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+#: home/templates/home/includes/bloco-conteudo-termos.html:114
+msgid "Contactos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+msgid "Brasil/WhatsApp"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:31
+msgid "Escopo de Aplicação"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:32
+msgid ""
+"Estes Termos aplicam-se ao uso informativo do site, aos formulários de "
+"contato, ao agendamento online (Microsoft Bookings) e a conteúdos "
+"incorporados de terceiros (por exemplo, vídeos). Serviços profissionais "
+"eventualmente contratados são regidos pelos respetivos contratos e propostas "
+"comerciais."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:37
+msgid "Uso Permitido e Restrições"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:39
+msgid ""
+"Use o site de forma lícita, para finalidades informativas ou para solicitar "
+"contato/agendamento."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:40
+msgid ""
+"É proibido violar a segurança, tentar acesso não autorizado, realizar "
+"scraping massivo, inserir código malicioso, ou utilizar o site para fins "
+"fraudulentos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:41
+msgid ""
+"O conteúdo não constitui aconselhamento jurídico, fiscal ou financeiro. "
+"Decisões devem considerar avaliação profissional e o contexto do utilizador."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:45
+msgid "Conteúdos e Serviços de Terceiros"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:46
+msgid ""
+"O site pode incorporar funcionalidades e conteúdos de terceiros (por "
+"exemplo, Microsoft Bookings, YouTube, Vimeo, plataformas de métricas e "
+"marketing). Tais serviços são regidos pelos termos e políticas dos "
+"respetivos fornecedores. A Nome da Empresa não controla as práticas desses "
+"terceiros."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:51
+msgid "Agendamentos Online"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:52
+msgid ""
+"O agendamento de reuniões é uma conveniência e não garante oferta, "
+"disponibilidade permanente ou início de relação contratual. Reservamo-nos o "
+"direito de reprogramar, cancelar ou recusar reuniões em casos de "
+"indisponibilidade, conflito de agenda, finalidade inadequada ou risco "
+"operacional."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:55
+msgid "Para agendar, aceda a"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:58
+msgid "Preços, Impostos e Pagamentos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:59
+msgid ""
+"Salvo indicação expressa, conteúdos do site são gratuitos. Serviços "
+"profissionais são orçamentados por proposta e, quando aplicável, acrescidos "
+"de impostos e taxas segundo a legislação local. Faturação e condições de "
+"pagamento constarão do contrato/proposta correspondente."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:64
+msgid "Propriedade Intelectual"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:65
+msgid ""
+"Marcas, logótipos, layouts, textos, imagens e código-fonte do site são "
+"protegidos por direitos de propriedade intelectual. É proibida a reprodução, "
+"modificação, distribuição ou exploração comercial sem autorização prévia por "
+"escrito."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:70
+msgid "Privacidade e Cookies"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:71
+msgid ""
+"O tratamento de dados pessoais e o uso de cookies seguem a nossa Política de "
+"Privacidade, que integra estes Termos por referência."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:76
+msgid "Limitação de Responsabilidade"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:78
+msgid ""
+"O site é fornecido tal como está, sem garantias de disponibilidade contínua, "
+"ausência de erros ou adequação a um propósito específico."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:79
+msgid ""
+"Na medida permitida por lei, a Nome da Empresa não será responsável por "
+"danos indiretos, incidentais, especiais, punitivos ou lucros cessantes "
+"decorrentes do uso ou da impossibilidade de uso do site."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:80
+msgid ""
+"Nada nestes Termos exclui responsabilidades que não possam ser excluídas nos "
+"termos da lei aplicável."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:84
+msgid "Garantias e Isenções"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:85
+msgid ""
+"A Nome da Empresa envida esforços razoáveis para manter informações "
+"atualizadas, mas não garante exatidão, integralidade ou atualização contínua "
+"dos conteúdos. Conteúdos podem ser alterados sem aviso."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:90
+msgid "Suspensão e Término"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:91
+msgid ""
+"Podemos suspender, restringir ou terminar o acesso ao site, total ou "
+"parcialmente, em caso de violação destes Termos, exigência legal, risco de "
+"segurança ou manutenção técnica."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:96
+msgid "Alterações destes Termos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:97
+msgid ""
+"Podemos atualizar estes Termos para refletir mudanças legais, técnicas ou "
+"operacionais. A data de “Última atualização” indica a versão vigente. A "
+"continuidade de uso após alterações constitui aceitação dos novos termos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:102
+msgid "Lei Aplicável e Resolução de Conflitos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:103
+msgid "Clientes/usuários em Portugal/UE"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:103
+msgid ""
+"estes Termos são regidos pela lei portuguesa e pelo RGPD no que couber. Fica "
+"eleito o foro da comarca de Viana do Castelo, com renúncia a qualquer outro, "
+"salvo regras imperativas de proteção do consumidor."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:104
+msgid "Clientes/usuários no Brasil"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:104
+msgid ""
+"estes Termos são regidos pela legislação brasileira e pela LGPD. Fica eleito "
+"o foro da comarca de São Paulo/SP, com renúncia a qualquer outro, salvo "
+"regras imperativas de proteção do consumidor."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:105
+msgid ""
+"Se houver contrato específico com cláusula própria de foro/lei aplicável, "
+"prevalecerá o contrato."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:108
+msgid "Comunicações Oficiais"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:109
+msgid ""
+"Comunicações formais podem ser enviadas para contato@empresa.com. Para "
+"dúvidas gerais, utilize também os telefones informados nesta página."
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:116
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "Endereço"
+msgstr ""
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:123
+msgid "Agendar Reunião"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:21
+msgid ""
+"Plataforma de <strong>lista de devedores</strong> (registo, consulta e "
+"regularização) para empresas que operam com risco comercial e exigem "
+"decisões mais seguras."
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:99
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:98
+msgid "Diferenciais da sua empresa"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:8
+msgid "Tem alguma dúvida?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:15
+msgid "O que diferencia a Wanzeller de outras empresas? "
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:21
+msgid ""
+"A Wanzeller é a <strong>empresa matriz</strong> que organiza estratégia, "
+"padrão e execução das suas marcas. Entregamos resultados com especialização "
+"por frente: <strong>crédito e risco</strong> (NicePayer), <strong>tecnologia "
+"e crescimento</strong> (FullTasks) e <strong>plataformas digitais</strong> "
+"(Frugga), sempre com foco em controlo, eficiência e performance."
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:28
+msgid "Como a Nicepayer pode ajudar minha empresa?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:34
+msgid ""
+"A NicePayer atua no ciclo completo de crédito com <strong>Check NicePayer</"
+"strong>, política de crédito, software online e análise técnica. Isto "
+"melhora a qualidade das decisões, reduz risco comercial e aumenta o controlo "
+"do departamento de crédito."
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:41
+msgid "Quais soluções de tecnologia a FullTasks fornece?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:47
+msgid ""
+"A FullTasks entrega <strong>desenvolvimento à medida</strong>, integrações e "
+"automações, além do <strong>Dínamo de Vendas</strong> para estruturar "
+"aquisição, nutrição e conversão. Também executa sites, landing pages e "
+"marketing orientado a resultado."
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:54
+msgid "Quais tipos de empresas se beneficiam das soluções do grupo?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:60
+msgid ""
+"Empresas que operam com <strong>risco comercial</strong>, precisam de "
+"<strong>controlo e padronização</strong> em crédito, ou querem "
+"<strong>crescer com tecnologia</strong> e automação. A Wanzeller direciona o "
+"projeto para a marca certa e executa com governança."
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:67
+msgid "O que é o Frugga?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:73
+msgid ""
+"O Frugga é uma <strong>plataforma digital de restauração</strong> que "
+"permite aos usuários descobrir restaurantes, menus e pratos do dia, "
+"reforçando a presença digital e a visibilidade dos estabelecimentos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:79
+msgid "Como posso começar?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:85
+msgid ""
+"Entre em contacto. Em seguida, fazemos um diagnóstico rápido, definimos o "
+"escopo e encaminhamos para <strong>NicePayer</strong>, <strong>FullTasks</"
+"strong> ou <strong>Frugga</strong>, com um plano de execução e próximos "
+"passos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:7
+msgid "Perguntas & Respostas"
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:8
+msgid "Dúvidas? Aqui estão as respostas"
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:10
+msgid ""
+"Use este bloco para responder as dúvidas mais comuns sobre escopo, "
+"implantação e resultados esperados da sua solução."
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:21
+msgid "Como apresentar o escopo do serviço nesta página?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:25
+msgid ""
+"Descreva o problema resolvido, perfil de cliente atendido, entregáveis por "
+"etapa e critérios de sucesso. Mantenha linguagem objetiva e conectada ao "
+"resultado de negócio."
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:35
+msgid "Quais informações não podem faltar na proposta?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:40
+msgid ""
+"Modelo de implantação, tempo estimado, responsabilidades e premissas "
+"operacionais."
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:43
+msgid ""
+"Indicadores de acompanhamento e evidências de valor ao longo da execução."
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:51
+msgid "Como estruturar o fluxo de implementação?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:55
+msgid ""
+"Separe por fases: diagnóstico, desenho, ativação e operação assistida. Em "
+"cada fase, detalhe entradas, entregas, validação e ponto de decisão para o "
+"próximo passo."
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:65
+msgid "Como transformar esta página em canal de conversão?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:69
+msgid ""
+"Use chamadas para ação com benefício direto, posicione prova de capacidade e "
+"mantenha formulários curtos. O objetivo é reduzir fricção e acelerar o "
+"primeiro contato comercial."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:9
+#: home/templates/home/includes/bloco-formulario-mautic.html:9
+msgid "Descreva aqui a principal oferta de entrada."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:12
+msgid ""
+"Bloco genérico de captura de leads configurado para envio automatizado "
+"(Email). O bloco Mautic permanece disponível para uso futuro."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:23
+#: home/templates/home/includes/bloco-formulario-mautic.html:23
+msgid "Preencha os campos obrigatórios."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:24
+#: home/templates/home/includes/bloco-formulario-mautic.html:24
+msgid "Indique um telemóvel válido. Ex.: 912 345 678 ou +351 912 345 678"
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:25
+#: home/templates/home/includes/bloco-formulario-mautic.html:25
+msgid "Enviando..."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:26
+#: home/templates/home/includes/bloco-formulario-mautic.html:26
+#: home/views.py:595
+msgid "Pronto. Dados enviados com sucesso."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:27
+#: home/templates/home/includes/bloco-formulario-mautic.html:27
+#: home/views.py:591
+msgid "Não foi possível processar o envio. Tente novamente."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:28
+#: home/templates/home/includes/bloco-formulario-mautic.html:28
+#: home/views.py:560
+msgid "Não foi possível validar. Tente novamente."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:29
+#: home/templates/home/includes/bloco-formulario-mautic.html:29
+msgid "Falha ao validar o reCAPTCHA."
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:41
+#: home/templates/home/includes/bloco-formulario-mautic.html:41
+msgid "Apelido"
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:47
+#: home/templates/home/includes/bloco-formulario-mautic.html:47
+msgid "O seu e-mail"
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:50
+#: home/templates/home/includes/bloco-formulario-mautic.html:50
+msgid "Telemóvel (912 345 678)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:56
+#: home/templates/home/includes/bloco-formulario-mautic.html:56
+#: home/templates/home/includes/rodape.html:118
+msgid "Empresa"
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:71
+#: home/templates/home/includes/bloco-formulario-mautic.html:71
+msgid "Enviar pedido"
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-email.html:72
+#: home/templates/home/includes/bloco-formulario-email.html:74
+#: home/templates/home/includes/bloco-formulario-mautic.html:72
+#: home/templates/home/includes/bloco-formulario-mautic.html:73
+msgid "Enviar pedido (Ao clicar, autorizo cookies)"
+msgstr ""
+
+#: home/templates/home/includes/bloco-formulario-mautic.html:12
+msgid ""
+"Bloco genérico de captura de leads configurado para envio automatizado "
+"(Mautic). O bloco Email permanece disponível para uso futuro."
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-agendamento.html:9
+msgid ""
+"Selecione a melhor data e horário para sua primeira conversa com a equipe."
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-home-2.html:21
+#: home/templates/home/includes/bloco-solucoes-inovadoras.html:16
+msgid "Contato"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-home.html:7
+#: home/templates/home/includes/bloco-pensamento.html:3
+msgid "Wanzeller"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-home.html:9
+msgid ""
+"A Wanzeller é a empresa matriz que cria e impulsiona marcas especializadas. "
+"Unimos estratégia, processos e tecnologia para reduzir riscos e acelerar "
+"resultados. Nossas marcas: NicePayer (Check NicePayer e análise de crédito), "
+"FullTasks (desenvolvimento à medida, Dínamo de Vendas, automações e "
+"marketing) e Frugga (plataforma digital para restauração)."
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-home.html:12
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:124
+msgid "Contatos"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-home.html:19
+msgid "Imagem principal"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:2
+#: home/templates/home/meu-servico.html:4
+msgid "Escopo do Meu Serviço"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:3
+msgid "Descreva sua entrega principal e o impacto no negócio"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:4
+msgid ""
+"Use este parágrafo para explicar escopo, perfil de cliente atendido e "
+"critérios de sucesso."
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:5
+msgid ""
+"Adicione detalhes práticos sobre prazo de implantação, modelo de governança "
+"e resultados mensuráveis."
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:6
+msgid "Imagem ilustrativa do serviço"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:4
+msgid "Agendamento Brasil"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:6
+msgid "agendamento"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:7
+msgid "Agendamento Portugal"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:9
+msgid "Entre em contato"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:10
+msgid "Precisa de ajuda ?"
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:11
+msgid ""
+"Mande agora mesmo a sua mensagem usando o nosso WhatsApp que aparece no "
+"íncone ao lado. Ligue para um de nossos telefones abaixo ou agende uma "
+"reunião para falar diretamente conosco através do botão de Agendamento "
+"Online. Estamos à disposição para ajudar a transformar seus desafios em "
+"oportunidades."
+msgstr ""
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:12
+msgid "Imagem de contato"
+msgstr ""
+
+#: home/templates/home/includes/bloco-pensamento-conversao.html:2
+msgid ""
+"Use este bloco para uma mensagem orientada à conversão: benefício claro, "
+"urgência e chamada direta para ação."
+msgstr ""
+
+#: home/templates/home/includes/bloco-pensamento.html:2
+msgid ""
+"Inverter não é apenas fazer o contrário, é olhar para o que ninguém está a "
+"ver e começar por lá."
+msgstr ""
+
+#: home/templates/home/includes/bloco-pensamento.html:4
+msgid "Tire as suas duvidas"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:8
+msgid "Contexto Institucional e Trajetória"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:15
+msgid ""
+"Use este espaço para descrever a origem da empresa, motivação estratégica e "
+"contexto que levou ao modelo atual de atuação."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:18
+msgid ""
+"Inclua marcos importantes, transições de mercado e decisões críticas que "
+"moldaram produtos, governança e padrão de entrega ao cliente."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:21
+msgid ""
+"Reforce como conhecimento institucional, tecnologia e disciplina de "
+"processos sustentam crescimento consistente em novos projetos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:26
+msgid ""
+"Explique posicionamento, proposta de valor e capacidades operacionais que "
+"diferenciam o negócio em cenários competitivos."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:29
+msgid ""
+"Apresente prioridades de expansão, estratégia de parcerias e impacto "
+"esperado para clientes, equipes e indicadores do negócio."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:32
+msgid ""
+"Use esta seção para comunicar confiança, visão de longo prazo e consistência "
+"de execução."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:36
+msgid ""
+"A qualidade da informação hoje constrói decisões mais seguras e resultados "
+"mais fortes amanhã."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:67
+msgid "Governança e Execução"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:71
+msgid "A matriz que define padrão e entrega resultado nas marcas do grupo."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:75
+msgid ""
+"Com mais de uma década de atuação, a Wanzeller organiza estratégia, "
+"processos e execução para as suas marcas. Atuamos com foco em resultados, "
+"integrando <strong>crédito e risco (NicePayer)</strong>, <strong>tecnologia "
+"e crescimento (FullTasks)</strong> e <strong>plataformas digitais (Frugga)</"
+"strong>."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:80
+msgid "CONTATO"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:96
+msgid "NicePayer"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:97
+msgid ""
+"Especialistas em <strong>Check NicePayer</strong> e análise de crédito, com "
+"política, software online e ações antifraude para decisões mais seguras no "
+"risco comercial."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:106
+msgid "FullTasks"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:107
+msgid ""
+"<strong>Desenvolvimento à medida</strong>, Dínamo de Vendas, automações e "
+"marketing para transformar processos em eficiência e crescimento."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:116
+msgid "Frugga"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:117
+msgid ""
+"Plataforma digital para <strong>restauração</strong>, focada em descoberta e "
+"experiência: menus executivos e pratos do dia em lista e mapa."
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-intro-2.html:20
+msgid "Fale Conosco"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-intro-2.html:21
+msgid "Dúvidas"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-intro.html:2
+msgid "Sobre o Wanzeller, por Wanzeller"
+msgstr ""
+
+#: home/templates/home/includes/bloco-quem-somos-intro.html:3
+msgid ""
+"Na Wanzeller, o nosso legado é construído pela integração das nossas marcas: "
+"NicePayer, FullTasks e Frugga. Unimos crédito e risco, tecnologia orientada "
+"a resultado e plataformas digitais para entregar soluções completas a "
+"empresas que precisam de controlo, eficiência e crescimento. "
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:7
+msgid "Excelência em Finanças, Tecnologia e Plataformas"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:10
+msgid ""
+"Na Wanzeller, atuamos como <strong>empresa matriz</strong>, reunindo "
+"estratégia, processos e execução para entregar resultados através de marcas "
+"especializadas. Escolha a marca que melhor atende ao seu objetivo e solicite "
+"contato para avançarmos com o próximo passo."
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:23
+#: home/templates/home/includes/bloco-solucoes-inovadoras.html:14
+msgid "NICEPAYER"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:25
+msgid ""
+"<strong>Check NicePayer e Análise de Crédito</strong> para empresas que "
+"operam com risco comercial, incluindo <strong>lista de devedores</strong>. "
+"Soluções para o ciclo completo de crédito: política de crédito, software "
+"online, análise técnica e gestão de propostas."
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:28
+msgid "ACESSAR NICEPAYER"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:40
+msgid "FULLTASKS"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:42
+msgid ""
+"Tecnologia aplicada a resultado: <strong>desenvolvimento à medida, Dínamo de "
+"Vendas</strong>, automações e integrações. Também entregamos <strong>sites e "
+"landing pages</strong>, dashboards e execução de <strong>marketing digital</"
+"strong> orientado a conversão."
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:45
+msgid "Acessar Fulltasks"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:57
+msgid "MÉTODO INVERTIDO"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:59
+msgid ""
+"<strong>Formação</strong> orientada à <strong>reconversão profissional</"
+"strong>: <strong>experiência real, networking presencial</strong> e "
+"<strong>cursos intensivos</strong>. O <strong>Método Invertido</strong> "
+"capacita para uma <strong>mudança de carreira</strong> prática, guiada e "
+"conectada às <strong>exigências do mercado</strong>."
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:62
+msgid "ACESSAR MÉTODOINVERTIDO"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:74
+#: home/templates/home/includes/bloco-solucoes-inovadoras.html:15
+msgid "FRUGGA"
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:76
+msgid ""
+"<strong>Plataforma digital para restauração</strong> que conecta "
+"utilizadores e estabelecimentos. Descubra restaurantes e <strong>menus a "
+"preço fixo</strong>, pesquise <strong>pratos do dia</strong>, veja "
+"resultados em <strong>lista e mapa</strong>, com área do utilizador e gestão "
+"para donos de restaurante."
+msgstr ""
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:79
+msgid "ACESSAR FRUGGA"
+msgstr ""
+
+#: home/templates/home/includes/bloco-video-servico.html:13
+msgid "Vídeo com Dicas"
+msgstr ""
+
+#: home/templates/home/includes/menu.html:25
+#: home/templates/home/includes/menu.html:81
+#: home/templates/home/includes/rodape.html:122
+msgid "Contacto"
+msgstr ""
+
+#: home/templates/home/includes/rodape.html:113
+msgid ""
+"A Wanzeller é a empresa matriz que cria e impulsiona marcas especializadas "
+"em tecnologia e estratégia."
+msgstr ""
+
+#: home/templates/home/includes/rodape.html:136
+msgid "Follow Us"
+msgstr ""
+
+#: home/templates/home/includes/rodape.html:149
+msgid "All rights reserved."
+msgstr ""
+
+#: home/templates/home/includes/rodape.html:156
+msgid "Privacy Policy"
+msgstr ""
+
+#: home/templates/home/includes/rodape.html:157
+msgid "Terms and Conditions"
+msgstr ""
+
+#: home/templates/home/includes/rodape.html:158
+msgid "Complaints Book"
+msgstr ""
+
+#: home/templates/home/meu-servico.html:5
+msgid ""
+"Use esta página para apresentar a estrutura do serviço principal, etapas e "
+"resultados estratégicos para o negócio."
+msgstr ""
+
+#: home/templates/home/politica-de-privacidade.html:4
+#: home/templates/home/politica-de-privacidade.html:8
+#: home/templates/home/politica-de-privacidade.html:14
+#: home/templates/home/politica-de-privacidade.html:24
+#: home/templates/home/politica-de-privacidade.html:77
+msgid "Política de Privacidade – Nome da Empresa"
+msgstr ""
+
+#: home/templates/home/politica-de-privacidade.html:5
+msgid ""
+"Política de Privacidade aplicável no Brasil (LGPD) e na União Europeia/"
+"Portugal (RGPD). Explica dados coletados, cookies, direitos dos titulares e "
+"contatos."
+msgstr ""
+
+#: home/templates/home/politica-de-privacidade.html:9
+#: home/templates/home/politica-de-privacidade.html:15
+msgid "LGPD e RGPD. Saiba como tratamos dados, cookies e seus direitos."
+msgstr ""
+
+#: home/templates/home/politica-de-privacidade.html:12
+#: home/templates/home/politica-de-privacidade.html:18
+#: home/templates/home/politica-de-privacidade.html:32
+msgid "Imagem da página Política de Privacidade da Nome da Empresa"
+msgstr ""
+
+#: home/templates/home/politica-de-privacidade.html:26
+msgid ""
+"Política de Privacidade aplicável no Brasil (LGPD) e na União Europeia/"
+"Portugal (RGPD)."
+msgstr ""
+
+#: home/templates/home/politica-de-privacidade.html:73
+msgid "Brasil e Portugal"
+msgstr ""
+
+#: home/templates/home/termos-e-condicoes.html:4
+#: home/templates/home/termos-e-condicoes.html:8
+#: home/templates/home/termos-e-condicoes.html:14
+#: home/templates/home/termos-e-condicoes.html:24
+#: home/templates/home/termos-e-condicoes.html:37
+msgid "Termos e Condições – Nome da Empresa"
+msgstr ""
+
+#: home/templates/home/termos-e-condicoes.html:5
+#: home/templates/home/termos-e-condicoes.html:26
+msgid ""
+"Termos de uso aplicáveis ao site, agendamentos e comunicações da Nome da "
+"Empresa no Brasil e em Portugal."
+msgstr ""
+
+#: home/templates/home/termos-e-condicoes.html:9
+msgid ""
+"Regras de uso do site, agendamentos, propriedade intelectual, limitações de "
+"responsabilidade e lei aplicável."
+msgstr ""
+
+#: home/templates/home/termos-e-condicoes.html:12
+#: home/templates/home/termos-e-condicoes.html:18
+#: home/templates/home/termos-e-condicoes.html:32
+msgid "Imagem da página Termos e Condições da Nome da Empresa"
+msgstr ""
+
+#: home/templates/home/termos-e-condicoes.html:15
+msgid "Condições de uso do site e serviços de agendamento."
+msgstr ""
+
+#: home/templates/home/vamos-conversar.html:4
+msgid "Vamos Conversar"
+msgstr ""
+
+#: home/templates/home/vamos-conversar.html:5
+msgid ""
+"Use esta página para estratégia de contato, links de agenda e fluxo de pré-"
+"vendas."
+msgstr ""
+
+#: home/views.py:362
+msgid "Workshop não encontrado."
+msgstr ""
+
+#: home/views.py:385
+msgid "Viana do Castelo"
+msgstr ""
+
+#: home/views.py:542
+msgid "Token ausente."
+msgstr ""
+
+#: home/views.py:553
+msgid "Falha ao verificar reCAPTCHA. Tente novamente."
+msgstr ""
+
+#: home/views.py:574
+msgid "Dados recebidos com sucesso."
+msgstr ""

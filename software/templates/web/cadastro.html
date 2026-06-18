@@ -1,0 +1,50 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Horta Viva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-lime-200 selection:text-lime-900 flex flex-col min-h-screen">
+    {% include "web/components/header.html" %}
+
+    <main class="flex-grow flex items-center justify-center px-4 py-12">
+        <div class="bg-white p-8 rounded-xl shadow-md border border-stone-100 max-w-md w-full">
+            <h2 class="text-2xl font-bold text-stone-800 mb-6 text-center">Criar Conta</h2>
+            <form id="register-form" method="POST" action="{% url 'cadastro' %}" class="space-y-4">
+                {% csrf_token %}
+                {% if form.errors %}
+                <div class="bg-red-100 text-red-700 p-3 rounded text-sm">
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {{ form.as_p }}
+                <div class="flex items-start mt-2 mb-4">
+                    <input type="checkbox" id="reg-termos" required class="mt-1 h-4 w-4 rounded border-stone-300 text-lime-600 focus:ring-lime-500">
+                    <label for="reg-termos" class="ml-2 block text-sm text-stone-700">Li e aceito os <a href="#" class="text-lime-700 font-bold hover:underline">Termos e Condições</a> e a <a href="#" class="text-lime-700 font-bold hover:underline">Política de Privacidade</a>.</label>
+                </div>
+                <button type="submit" class="w-full bg-stone-800 hover:bg-stone-900 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md">Registar</button>
+            </form>
+            <div class="mt-6 text-center">
+                <p class="text-sm text-stone-600">Já tem conta? <a href="{% url 'login' %}" class="text-lime-700 font-bold hover:underline">Faça login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'web/app.js' %}"></script>
+</body>
+</html>

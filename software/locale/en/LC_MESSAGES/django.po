@@ -1,0 +1,2647 @@
+# Wanzeller CMS - FULL INTEGRATED TRANSLATION FILE (EN)
+# Everything merged: Core + Blog + Commercial + Legal + Hero
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-24 14:55+0100\n"
+"PO-Revision-Date: 2026-04-14 14:10+0000\n"
+"Last-Translator: Tech Lead <ai@assistant.com>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/management/commands/criar_exemplo_conteudos.py:83
+#: blog/management/commands/criar_exemplo_conteudos.py:90
+msgid "Conteúdos"
+msgstr "Contents"
+
+#: blog/management/commands/criar_exemplo_conteudos.py:84
+#: blog/management/commands/criar_exemplo_conteudos.py:92
+msgid ""
+"Aqui você pode publicar o conteúdo mais relevante da empresa: artigos, "
+"materiais e novidades."
+msgstr ""
+"Here you can publish the company's most relevant content: articles, materials, "
+"and news."
+
+#: blog/management/commands/criar_exemplo_conteudos.py:85
+#: blog/management/commands/criar_exemplo_conteudos.py:93
+msgid "Área de conteúdos com exemplos completos para uso no CMS."
+msgstr "Content area with complete examples for CMS use."
+
+#: blog/management/commands/criar_exemplo_conteudos.py:128
+msgid "Guia Completo de Conteúdo no CMS"
+msgstr "Complete CMS Content Guide"
+
+#: blog/management/commands/criar_exemplo_conteudos.py:129
+msgid ""
+"Exemplo completo com blocos de texto, mídia, tabela e chamadas para ação."
+msgstr "Complete example with text blocks, media, tables, and calls to action."
+
+#: blog/management/commands/criar_exemplo_conteudos.py:130
+msgid "Artigo demonstrativo com múltiplos blocos Wagtail."
+msgstr "Demonstration article with multiple Wagtail blocks."
+
+#: blog/management/commands/criar_exemplo_conteudos.py:134
+msgid "Boas Práticas para Estratégia Digital"
+msgstr "Best Practices for Digital Strategy"
+
+#: blog/management/commands/criar_exemplo_conteudos.py:135
+msgid "Modelo de artigo com estrutura editorial, destaques e conteúdo técnico."
+msgstr "Article model with editorial structure, highlights, and technical content."
+
+#: blog/management/commands/criar_exemplo_conteudos.py:136
+msgid "Estrutura de publicação para comunicação institucional."
+msgstr "Publishing structure for institutional communication."
+
+#: blog/management/commands/criar_exemplo_conteudos.py:156
+msgid "Imagem ilustrativa do conteúdo"
+msgstr "Content illustrative image"
+
+#: blog/models.py:22 blog/models.py:88
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:15
+msgid "Introdução"
+msgstr "Introduction"
+
+#: blog/models.py:25 blog/models.py:91
+msgid "Conteúdo"
+msgstr "Content"
+
+#: blog/models.py:77
+msgid "Objeto com tag"
+msgstr "Tagged object"
+
+#: blog/models.py:98
+msgid "Imagem destacada"
+msgstr "Featured image"
+
+#: blog/models.py:106
+msgid "Vídeo (YouTube/Vimeo)"
+msgstr "Video (YouTube/Vimeo)"
+
+#: blog/models.py:109
+msgid ""
+"Informe a URL do vídeo. A imagem destacada será usada como miniatura "
+"clicável. Obrigatório ter imagem se houver vídeo."
+msgstr ""
+"Enter the video URL. The featured image will be used as a clickable "
+"thumbnail. Image is required if a video is provided."
+
+#: blog/models.py:115
+msgid "Legenda da imagem/vídeo"
+msgstr "Image/video caption"
+
+#: blog/models.py:116 blog/snippets.py:17
+msgid "Tags"
+msgstr "Tags"
+
+#: blog/models.py:118 home/templates/home/includes/bloco-blog-articles.html:56
+msgid "Visualizações"
+msgstr "Views"
+
+#: blog/models.py:142
+msgid ""
+"Se houver vídeo, a imagem destacada é obrigatória para exibi-lo corretamente."
+msgstr ""
+"If there is a video, the featured image is mandatory for it to display "
+"correctly."
+
+#: blog/models.py:174 blog/models.py:179
+msgid "Desconhecido"
+msgstr "Unknown"
+
+#: blog/snippets.py:16
+msgid "Tag"
+msgstr "Tag"
+
+#: blog/snippets.py:21
+msgid "Título"
+msgstr "Title"
+
+#: blog/snippets.py:22
+msgid "Slug"
+msgstr "Slug"
+
+#: blog/snippets.py:29
+msgid "Itens do menu"
+msgstr "Menu items"
+
+#: blog/snippets.py:33
+msgid "Menu"
+msgstr "Menu"
+
+#: blog/snippets.py:34
+msgid "Menus"
+msgstr "Menus"
+
+#: blog/snippets.py:50
+msgid "Item pai"
+msgstr "Parent item"
+
+#: blog/snippets.py:52
+msgid "Título do item"
+msgstr "Item title"
+
+#: blog/snippets.py:59
+msgid "Página de destino"
+msgstr "Destination page"
+
+#: blog/snippets.py:61
+msgid "URL externa"
+msgstr "External URL"
+
+#: blog/templates/blog/artigo.html:36 blog/templates/blog/artigo.html:37
+msgid "Central de Conteúdos da Empresa"
+msgstr "Company Content Hub"
+
+#: blog/templates/blog/artigo.html:38
+msgid ""
+"Área editorial com artigos estratégicos e técnicos como exemplo completo de "
+"CMS."
+msgstr ""
+"Editorial area with strategic and technical articles as a full CMS example."
+
+#: blog/templates/blog/artigo.html:74
+msgid "Início"
+msgstr "Home"
+
+#: blog/templates/blog/artigo.html:97
+msgid "Visualizações:"
+msgstr "Views:"
+
+#: blog/templates/blog/artigo.html:151
+msgid "Link copiado!"
+msgstr "Link copied!"
+
+#: blog/templates/blog/artigo.html:152
+msgid "Não foi possível copiar"
+msgstr "Could not copy link"
+
+#: blog/templates/blog/artigo.html:152
+msgid "Copiar link"
+msgstr "Copy link"
+
+#: blog/templates/blog/artigo.html:175
+#, python-format
+msgid "%(total)s visualização no total."
+msgid_plural "%(total)s visualizações no total."
+msgstr[0] "%(total)s view in total."
+msgstr[1] "%(total)s views in total."
+
+#: blog/templates/blog/artigo.html:191
+msgid "Voltar"
+msgstr "Back"
+
+#: blog/templates/blog/artigo.html:194
+msgid "Próximo →"
+msgstr "Next →"
+
+#: blog/templates/blog/artigo.html:210
+msgid "Leia também"
+msgstr "Read also"
+
+#: blog/templates/blog/artigo.html:226
+#: home/templates/home/includes/bloco-blog-articles.html:43
+msgid "Artigo"
+msgstr "Article"
+
+#: blog/templates/blog/blocks/embed_block.html:12
+msgid "Vídeo incorporado do conteúdo"
+msgstr "Embedded video content"
+
+#: blog/templates/blog/conteudo.html:50
+msgid "Pesquisar conteúdos..."
+msgstr "Search content..."
+
+#: blog/templates/blog/conteudo.html:51
+#: home/templates/home/includes/bloco-blog-pesquisa.html:28
+msgid "Buscar"
+msgstr "Search"
+
+#: blog/templates/wagtailadmin/account/password_reset/done.html:3
+#: blog/templates/wagtailadmin/account/password_reset/form.html:4
+msgid "Reiniciar senha"
+msgstr "Reset password"
+
+#: blog/templates/wagtailadmin/account/password_reset/done.html:15
+msgid "Verifique seu email"
+msgstr "Check your email"
+
+#: blog/templates/wagtailadmin/account/password_reset/done.html:18
+msgid ""
+"Um link para redefinir a sua senha foi enviado por e-mail, caso exista uma "
+"conta associada a este endereço."
+msgstr ""
+"A link to reset your password has been sent by email if an account is "
+"associated with this address."
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:15
+msgid "Reset your password"
+msgstr "Reset your password"
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:16
+msgid "Recupere a sua senha"
+msgstr "Recover your password"
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:27
+msgid "Enter your email address to reset your password"
+msgstr "Enter your email address to reset your password"
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:28
+msgid "Introduza o seu email para recuperar a senha"
+msgstr "Enter your email to recover your password"
+
+#: blog/templates/wagtailadmin/account/password_reset/form.html:49
+msgid "Recuperar Senha"
+msgstr "Recover Password"
+
+#: blog/templates/wagtailadmin/home/account_summary.html:9
+msgid "Account"
+msgstr "Account"
+
+#: blog/templates/wagtailadmin/login.html:4
+msgid "Login"
+msgstr "Login"
+
+#: blog/templates/wagtailadmin/login.html:17
+msgid "Bem-vindo de volta!"
+msgstr "Welcome back!"
+
+#: blog/templates/wagtailadmin/login.html:18
+msgid "Preencha os seus dados no formulário ao lado para acessar o sistema."
+msgstr "Fill in your details in the form to access the system."
+
+#: blog/templates/wagtailadmin/login.html:31 comercial/forms.py:70
+msgid "Email"
+msgstr "Email"
+
+#: blog/templates/wagtailadmin/login.html:36
+msgid "Senha"
+msgstr "Password"
+
+#: blog/templates/wagtailadmin/login.html:49
+msgid "Lembrar Acesso"
+msgstr "Remember login"
+
+#: blog/templates/wagtailadmin/login.html:62
+msgid "Entrar"
+msgstr "Sign In"
+
+#: blog/templates/wagtailadmin/login.html:66
+msgid "Esqueceu a senha?"
+msgstr "Forgot password?"
+
+#: comercial/forms.py:13
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:149
+#: home/templates/home/includes/bloco-conteudo-termos.html:25
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "Portugal"
+msgstr "Portugal"
+
+#: comercial/forms.py:15 comercial/views.py:67
+msgid "Cartão de crédito"
+msgstr "Credit Card"
+
+#: comercial/forms.py:16 comercial/views.py:68
+msgid "MBWay"
+msgstr "MBWay"
+
+#: comercial/forms.py:17 comercial/views.py:69
+msgid "Referência Multibanco"
+msgstr "Multibanco Reference"
+
+#: comercial/forms.py:46
+msgid "Item a adquirir"
+msgstr "Item to purchase"
+
+#: comercial/forms.py:50
+msgid "Quantidade"
+msgstr "Quantity"
+
+#: comercial/forms.py:66
+#: home/templates/home/includes/bloco-formulario-email.html:38
+#: home/templates/home/includes/bloco-formulario-mautic.html:38
+msgid "Nome"
+msgstr "Name"
+
+#: comercial/forms.py:76
+msgid "NIF"
+msgstr "VAT Number"
+
+#: comercial/forms.py:89
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "Telefone"
+msgstr "Phone"
+
+#: comercial/forms.py:94
+msgid "Morada de faturação"
+msgstr "Billing Address"
+
+#: comercial/forms.py:99
+msgid "Código postal"
+msgstr "Postal Code"
+
+#: comercial/forms.py:104
+msgid "Cidade"
+msgstr "City"
+
+#: comercial/forms.py:109
+msgid "País"
+msgstr "Country"
+
+#: comercial/forms.py:114
+msgid "Método de pagamento"
+msgstr "Payment Method"
+
+#: comercial/forms.py:120
+msgid "Concordo com os Termos e Politica de Privacidade"
+msgstr "I agree to the Terms and Privacy Policy"
+
+#: comercial/forms.py:268
+msgid "Este checkout aceita apenas faturação em Portugal."
+msgstr "This checkout only accepts billing in Portugal."
+
+#: comercial/forms.py:281
+msgid "Nenhum item disponivel para esta oferta."
+msgstr "No items available for this offer."
+
+#: comercial/forms.py:304
+msgid "Informe um NIF português válido (9 dígitos)."
+msgstr "Please enter a valid Portuguese VAT number (9 digits)."
+
+#: comercial/forms.py:320
+msgid "Selecione uma quantidade válida."
+msgstr "Select a valid quantity."
+
+#: comercial/forms.py:322
+msgid "Quantidade indisponível para o item selecionado."
+msgstr "Quantity unavailable for the selected item."
+
+#: comercial/forms.py:332
+msgid "Método de pagamento inválido para este checkout."
+msgstr "Invalid payment method for this checkout."
+
+#: comercial/servicos/estoque.py:57
+#, python-format
+msgid "Stock insuficiente para o item '%(item)s'."
+msgstr "Insufficient stock for item '%(item)s'."
+
+#: comercial/servicos/estoque.py:80
+#, python-format
+msgid ""
+"Reserva inconsistente para o item '%(item)s': tentativa de libertar acima do "
+"reservado."
+msgstr ""
+"Inconsistent reservation for item '%(item)s': attempt to release above "
+"reserved amount."
+
+#: comercial/servicos/estoque.py:103
+#, python-format
+msgid ""
+"Reserva inconsistente para o item '%(item)s': não há saldo reservado "
+"suficiente para baixa."
+msgstr ""
+"Inconsistent reservation for item '%(item)s': insufficient reserved balance "
+"for markdown."
+
+#: comercial/servicos/estoque.py:108
+#, python-format
+msgid ""
+"Stock inconsistente para o item '%(item)s': total menor que a baixa "
+"solicitada."
+msgstr ""
+"Inconsistent stock for item '%(item)s': total less than the requested "
+"markdown."
+
+#: comercial/servicos/estoque.py:161
+msgid "Quantidade deve ser maior que zero."
+msgstr "Quantity must be greater than zero."
+
+#: comercial/servicos/notificacoes.py:51
+msgid "Confirmação de pagamento"
+msgstr "Payment confirmation"
+
+#: comercial/servicos/notificacoes.py:299
+msgid "Cartão"
+msgstr "Card"
+
+#: comercial/servicos/notificacoes.py:301
+msgid "Referência"
+msgstr "Reference"
+
+#: comercial/servicos/notificacoes.py:302
+msgid "N/D"
+msgstr "N/A"
+
+#: comercial/servicos/pagamentos.py:1369
+msgid "Pedido não está disponível para novo pagamento."
+msgstr "Order is not available for a new payment."
+
+#: comercial/servicos/pagamentos.py:1372
+msgid "Pedido expirado. Inicie um novo checkout."
+msgstr "Order expired. Start a new checkout."
+
+#: comercial/servicos/pagamentos.py:1421
+msgid "Webhook sem transaction_id."
+msgstr "Webhook without transaction_id."
+
+#: comercial/servicos/pagamentos.py:1425
+msgid "Pagamento não encontrado para transaction_id informado."
+msgstr "Payment not found for the provided transaction_id."
+
+#: comercial/servicos/pagamentos.py:1467
+msgid "Pagamento não encontrado para retorno informado."
+msgstr "Payment not found for the provided return."
+
+#: comercial/servicos/pagamentos.py:1842 comercial/servicos/pagamentos.py:1846
+msgid "Payload vazio."
+msgstr "Empty payload."
+
+#: comercial/servicos/pagamentos.py:1861 comercial/servicos/pagamentos.py:1864
+msgid "Payload inválido."
+msgstr "Invalid payload."
+
+#: comercial/servicos/pagamentos.py:1877
+msgid ""
+"COMERCIAL_SIBS_SECRET_KEY não configurada para descriptografar webhook da "
+"SIBS."
+msgstr "COMERCIAL_SIBS_SECRET_KEY not configured to decrypt SIBS webhook."
+
+#: comercial/servicos/pagamentos.py:1882
+msgid "Dependência pycryptodome ausente para descriptografar webhook da SIBS."
+msgstr "Missing pycryptodome dependency to decrypt SIBS webhook."
+
+#: comercial/servicos/pagamentos.py:1894
+msgid "Falha ao descriptografar payload do webhook da SIBS."
+msgstr "Failed to decrypt SIBS webhook payload."
+
+#: comercial/servicos/pagamentos.py:1897
+msgid "Payload descriptografado inválido."
+msgstr "Invalid decrypted payload."
+
+#: comercial/servicos/pedidos.py:65
+msgid "Quantidade de compra inválida."
+msgstr "Invalid purchase quantity."
+
+#: comercial/servicos/pedidos.py:74
+msgid "Oferta indisponível para checkout."
+msgstr "Offer unavailable for checkout."
+
+#: comercial/servicos/pedidos.py:82
+msgid "Oferta sem itens configurados."
+msgstr "Offer has no configured items."
+
+#: comercial/servicos/pedidos.py:118
+#, python-format
+msgid "Item '%(item)s' está inativo para venda."
+msgstr "Item '%(item)s' is inactive for sale."
+
+#: comercial/servicos/pedidos.py:122
+msgid "Este item permite apenas compra unitária."
+msgstr "This item only allows single-unit purchases."
+
+#: comercial/servicos/pedidos.py:227
+msgid "Selecione um item para continuar o checkout."
+msgstr "Select an item to continue the checkout."
+
+#: comercial/servicos/pedidos.py:233
+msgid "Item selecionado indisponível para esta oferta."
+msgstr "Selected item unavailable for this offer."
+
+#: comercial/views.py:38
+msgid "Rascunho"
+msgstr "Draft"
+
+#: comercial/views.py:39 comercial/views.py:79 comercial/views.py:80
+msgid "Aguardando pagamento"
+msgstr "Awaiting payment"
+
+#: comercial/views.py:40 comercial/views.py:82
+msgid "Pago"
+msgstr "Paid"
+
+#: comercial/views.py:41
+msgid "Cancelado"
+msgstr "Cancelled"
+
+#: comercial/views.py:42 comercial/views.py:57
+msgid "Expirado"
+msgstr "Expired"
+
+#: comercial/views.py:44 comercial/views.py:59
+msgid "Estado desconhecido"
+msgstr "Unknown state"
+
+#: comercial/views.py:52
+msgid "Pendente"
+msgstr "Pending"
+
+#: comercial/views.py:53 comercial/views.py:81
+msgid "Em processamento"
+msgstr "Processing"
+
+#: comercial/views.py:54
+msgid "Confirmado"
+msgstr "Confirmed"
+
+#: comercial/views.py:55
+msgid "Recusado"
+msgstr "Declined"
+
+#: comercial/views.py:56
+msgid "Erro"
+msgstr "Error"
+
+#: comercial/views.py:71
+msgid "Não definido"
+msgstr "Not defined"
+
+#: comercial/views.py:83
+msgid "Parcialmente pago"
+msgstr "Partially paid"
+
+#: comercial/views.py:84
+msgid "Expirada"
+msgstr "Expired"
+
+#: comercial/views.py:85 comercial/views.py:86
+msgid "Cancelada"
+msgstr "Cancelled"
+
+#: comercial/views.py:88
+msgid "Não disponível"
+msgstr "Not available"
+
+#: comercial/views.py:320 comercial/views.py:409
+msgid "Oferta não encontrada."
+msgstr "Offer not found."
+
+#: comercial/views.py:445 comercial/views.py:661
+msgid "Transação não encontrada."
+msgstr "Transaction not found."
+
+#: comercial/views.py:582
+msgid "Consulta de estado indisponivel."
+msgstr "Status query unavailable."
+
+#: comercial/views.py:587
+msgid "Pedido não encontrado."
+msgstr "Order not found."
+
+#: home/servicos_comercial.py:317
+msgid "Reservar vaga da manhã"
+msgstr "Reserve morning slot"
+
+#: home/servicos_comercial.py:318
+msgid "Reservar vaga da noite"
+msgstr "Reserve evening slot"
+
+#: home/servicos_comercial.py:319
+msgid "Reservar vaga da turma única"
+msgstr "Reserve single-class slot"
+
+#: home/servicos_comercial.py:320 home/servicos_comercial.py:322
+msgid "Reservar vaga"
+msgstr "Reserve slot"
+
+#: home/templates/home/agendamento.html:4
+#: home/templates/home/includes/bloco-agendamento-embed.html:7
+#: home/templates/home/includes/bloco-conteudo-termos.html:55
+#: home/templates/home/includes/bloco-hero-agendamento.html:7
+msgid "Agendamento"
+msgstr "Scheduling"
+
+#: home/templates/home/agendamento.html:5
+msgid ""
+"Página de agendamento online para definir data e horário da reunião inicial."
+msgstr ""
+"Online scheduling page to set the date and time for the initial meeting."
+
+#: home/templates/home/base.html:24 home/templates/home/base.html:46
+#: home/templates/home/base.html:59
+msgid "Título Principal da Empresa"
+msgstr "Main Company Title"
+
+#: home/templates/home/base.html:26
+msgid ""
+"Escreva aqui o resumo principal da sua empresa, destacando proposta de "
+"valor, público atendido e principais diferenciais competitivos."
+msgstr ""
+"Write here your company's main summary, highlighting value proposition, "
+"target audience, and key competitive advantages."
+
+#: home/templates/home/base.html:28 home/templates/home/base.html:42
+#: home/templates/home/base.html:84 home/templates/home/base.html:122
+msgid "Nome da Empresa"
+msgstr "Company Name"
+
+#: home/templates/home/base.html:48
+msgid ""
+"Escreva aqui a mensagem mais importante do seu site e reforce o impacto da "
+"sua empresa no mercado."
+msgstr ""
+"Write your site's most important message here and reinforce your company's "
+"impact on the market."
+
+#: home/templates/home/base.html:52 home/templates/home/base.html:65
+msgid "Imagem de capa do site"
+msgstr "Website cover image"
+
+#: home/templates/home/base.html:61
+msgid ""
+"Use este espaço para descrever o serviço principal e os resultados esperados "
+"para seus clientes."
+msgstr ""
+"Use this space to describe the main service and the expected results for "
+"your clients."
+
+#: home/templates/home/base.html:94
+msgid "Logotipo da empresa"
+msgstr "Company logo"
+
+#: home/templates/home/base.html:98
+msgid ""
+"Edite este campo com a descrição estratégica da sua empresa, segmento de "
+"atuação e modelo de serviço."
+msgstr ""
+"Edit this field with your company's strategic description, business segment, "
+"and service model."
+
+#: home/templates/home/base.html:104
+msgid "Atendimento ao cliente"
+msgstr "Customer Service"
+
+#: home/templates/home/base.html:132 home/templates/home/includes/menu.html:21
+#: home/templates/home/includes/menu.html:77
+#: home/templates/home/quem-somos.html:4
+msgid "Quem Somos"
+msgstr "About Us"
+
+#: home/templates/home/base.html:142
+msgid "Soluções"
+msgstr "Solutions"
+
+#: home/templates/home/base.html:152
+msgid "vamos-conversar"
+msgstr "let-us-talk"
+
+#: home/templates/home/blog.html:4 home/templates/home/includes/menu.html:25
+#: home/templates/home/includes/menu.html:81
+#: home/templates/home/includes/rodape.html:121
+msgid "Blog"
+msgstr "Blog"
+
+#: home/templates/home/blog.html:5 home/templates/home/quem-somos.html:5
+msgid ""
+"Apresente a história da empresa, posicionamento e capacidades para projetos "
+"futuros."
+msgstr ""
+"Present the company's history, positioning, and capabilities for future "
+"projects."
+
+#: home/templates/home/curso-deploy-web-docker.html:4
+msgid "Deploy Web com Docker"
+msgstr "Web Deploy with Docker"
+
+#: home/templates/home/curso-deploy-web-docker.html:6
+msgid ""
+"Curso prático de deploy web com Docker, focado em colocar aplicações em "
+"produção com segurança e previsibilidade."
+msgstr ""
+"Practical course on web deploy with Docker, focused on putting applications "
+"into production with safety and predictability."
+
+#: home/templates/home/curso-introducao-gestao-sites.html:4
+msgid "Introdução e Gestão de Sites"
+msgstr "Introduction and Website Management"
+
+#: home/templates/home/curso-introducao-gestao-sites.html:6
+msgid ""
+"Curso introdutório para entender a criação, gestão e evolução de sites "
+"institucionais e presencia online."
+msgstr ""
+"Introductory course to understand the creation, management, and evolution of "
+"institutional websites and online presence."
+
+#: home/templates/home/curso-markint-digital-presenca-online.html:4
+msgid "Marketing Digital e Presença Online"
+msgstr "Digital Marketing and Online Presence"
+
+#: home/templates/home/curso-markint-digital-presenca-online.html:6
+msgid ""
+"Curso de marketing digital e presença online para construir estratégias de "
+"visibilidade e atração de clientes na web."
+msgstr ""
+"Course on digital marketing and online presence to build visibility and "
+"customer attraction strategies on the web."
+
+#: home/templates/home/curso-programacao-web.html:4
+msgid "Programação Web"
+msgstr "Web Programming"
+
+#: home/templates/home/curso-programacao-web.html:6
+msgid ""
+"Curso de programação web focado em criação de sites e aplicações modernas "
+"para presença digital profissional."
+msgstr ""
+"Web programming course focused on creating modern websites and applications "
+"for a professional digital presence."
+
+#: home/templates/home/home.html:10 home/templates/home/includes/menu.html:20
+#: home/templates/home/includes/rodape.html:118
+#: home/templates/home/includes/rodape.html:120
+msgid "Wenderson"
+msgstr "Wenderson"
+
+#: home/templates/home/home.html:11
+msgid ""
+"Escreva aqui o resumo mais importante do seu negócio, produtos e "
+"diferenciais estratégicos para o perfil ideal de cliente."
+msgstr ""
+"Write your business's most important summary, products, and strategic "
+"advantages for the ideal customer profile here."
+
+#: home/templates/home/includes/bloco-blog-articles.html:10
+msgid "Últimos Artigos e Reflexões"
+msgstr "Latest Articles and Reflections"
+
+#: home/templates/home/includes/bloco-blog-articles.html:11
+msgid ""
+"Acompanhe as minhas análises sobre inteligência artificial, risco de crédito "
+"e o impacto da tecnologia na economia. Conteúdo direto e sem filtros para o "
+"ajudar a navegar no mercado atual."
+msgstr ""
+"Follow my analysis on artificial intelligence, credit risk, and the impact "
+"of technology on the economy. Direct and unfiltered content to help you navigate "
+"the current market."
+
+#: home/templates/home/includes/bloco-blog-pesquisa.html:10
+msgid "Cursos e Workshops"
+msgstr "Courses and Workshops"
+
+#: home/templates/home/includes/bloco-blog-pesquisa.html:13
+msgid ""
+"Escolha o curso ou workshop que melhor corresponde aos seus objetivos de "
+"formação neste momento."
+msgstr ""
+"Choose the course or workshop that best matches your training goals at this "
+"moment."
+
+#: home/templates/home/includes/bloco-blog-pesquisa.html:24
+msgid "Pesquise por curso ou workshop"
+msgstr "Search for a course or workshop"
+
+#: home/templates/home/includes/bloco-canais-contato.html:7
+msgid "Vamos Falar?"
+msgstr "Let's Talk?"
+
+#: home/templates/home/includes/bloco-canais-contato.html:9
+msgid ""
+"Procura consultoria especializada em Inteligência Artificial e Risco de "
+"Crédito para a sua empresa? Ou tem um convite para palestras e eventos? "
+"Entre em contacto diretamente."
+msgstr ""
+"Looking for specialized consulting in Artificial Intelligence and Credit Risk "
+"for your company? Or do you have an invitation for lectures and events? Get "
+"in touch directly."
+
+#: home/templates/home/includes/bloco-canais-contato.html:24
+msgid "Consultoria e Mentoria"
+msgstr "Consulting and Mentoring"
+
+#: home/templates/home/includes/bloco-canais-contato.html:25
+msgid ""
+"Agende uma reunião para avaliarmos como a tecnologia e a análise de risco "
+"podem escalar o seu negócio."
+msgstr ""
+"Schedule a meeting so we can evaluate how technology and risk analysis can "
+"scale your business."
+
+#: home/templates/home/includes/bloco-canais-contato.html:28
+msgid "Agendar Horário"
+msgstr "Schedule a Time"
+
+#: home/templates/home/includes/bloco-canais-contato.html:42
+msgid ""
+"Para propostas rápidas, parcerias corporativas ou convites para palestras, "
+"envie-me uma mensagem."
+msgstr ""
+"For quick proposals, corporate partnerships, or lecture invitations, send me "
+"a message."
+
+#: home/templates/home/includes/bloco-canais-contato.html:61
+msgid "E-mail Direto"
+msgstr "Direct Email"
+
+#: home/templates/home/includes/bloco-chamada-conversao-solucao.html:9
+msgid ""
+"Defina aqui a proposta de valor central e a primeira decisão esperada do "
+"visitante."
+msgstr ""
+"Define here the core value proposition and the visitor's first expected "
+"decision."
+
+#: home/templates/home/includes/bloco-chamada-conversao-solucao.html:12
+msgid ""
+"Use este bloco para comunicar benefício prático e guiar o visitante para a "
+"próxima etapa de aquisição."
+msgstr ""
+"Use this block to communicate practical benefits and guide the visitor to "
+"the next acquisition stage."
+
+#: home/templates/home/includes/bloco-chamada-conversao-solucao.html:15
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:12
+msgid "Quero iniciar agora"
+msgstr "I want to start now"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:7
+#: home/templates/home/includes/bloco-como-funciona.html:7
+msgid "Por que Escolher a Wanzeller?"
+msgstr "Why Choose Wanzeller?"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:20
+msgid "Check NicePayer (NicePayer) "
+msgstr "Check NicePayer (NicePayer)"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:32
+msgid "Análise de Crédito e Política (NicePayer)"
+msgstr "Credit Analysis and Policy (NicePayer)"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:33
+msgid ""
+"Estruturamos a <strong>política de crédito</strong> e a análise técnica para "
+"padronizar aprovações, reduzir risco e aumentar o controlo do departamento "
+"de crédito."
+msgstr ""
+"We structure the <strong>credit policy</strong> and technical analysis to "
+"standardize approvals, reduce risk, and increase credit department control."
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:44
+msgid "Software de Crédito e Gestão (NicePayer)"
+msgstr "Credit and Management Software (NicePayer)"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:45
+msgid ""
+"Implementamos <strong>software online</strong> para o ciclo de crédito, com "
+"gestão de propostas, pedidos de exceção, formalização de garantias e ações "
+"antifraude."
+msgstr ""
+"We implement <strong>online software</strong> for the credit cycle, "
+"featuring proposal management, exception requests, collateral formalization, "
+"and anti-fraud actions."
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:58
+msgid "Desenvolvimento à Medida (FullTasks)"
+msgstr "Custom Development (FullTasks)"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:59
+msgid ""
+"Desenvolvemos soluções <strong>à medida</strong> e integrações alinhadas ao "
+"seu processo, com foco em performance, escalabilidade e entrega rápida de "
+"valor."
+msgstr ""
+"We develop <strong>custom solutions</strong> and integrations aligned with "
+"your process, focusing on performance, scalability, and fast value delivery."
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:70
+msgid "Dínamo de Vendas (FullTasks)"
+msgstr "Sales Dynamo (FullTasks)"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:71
+msgid ""
+"Implementamos o <strong>Dínamo de Vendas</strong> com automações, conteúdo e "
+"marketing para gerar procura, nutrir leads e aumentar conversão com "
+"previsibilidade."
+msgstr ""
+"We implement the <strong>Sales Dynamo</strong> with automations, content, "
+"and marketing to generate demand, nurture leads, and increase conversion "
+"with predictability."
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:82
+msgid "Plataforma Digital Restauração (Frugga)"
+msgstr "Digital Restaurant Platform (Frugga)"
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:83
+msgid ""
+"Plataforma para restauração com <strong>descoberta</strong> de restaurantes, "
+"menus e pratos do dia, reforçando a presença digital e a visibilidade dos "
+"estabelecimentos."
+msgstr ""
+"Restaurant platform featuring <strong>discovery</strong> of restaurants, "
+"menus, and daily specials, reinforcing the digital presence and visibility "
+"of establishments."
+
+#: home/templates/home/includes/bloco-como-funciona-home.html:90
+#: home/templates/home/includes/bloco-hero-home-2.html:22
+#: home/templates/home/includes/rodape.html:126
+msgid "Nossas Marcas"
+msgstr "Our Brands"
+
+#: home/templates/home/includes/bloco-como-funciona.html:9
+msgid ""
+"Uma mudança de carreira nunca foi tão fácil no mundo de hoje. Serás guiado e "
+"focado no mercado atual."
+msgstr ""
+"A career change has never been easier in today's world. You will be guided "
+"and focused on the current market."
+
+#: home/templates/home/includes/bloco-como-funciona.html:23
+msgid "Etapa 1: Inscrição"
+msgstr "Step 1: Registration"
+
+#: home/templates/home/includes/bloco-como-funciona.html:24
+msgid ""
+"Na inscrição terá de fornecer os dados necessários e o pagamento da "
+"inscrição."
+msgstr "Upon registration, you must provide the necessary details and payment."
+
+#: home/templates/home/includes/bloco-como-funciona.html:35
+msgid "Etapa 2 : A formação"
+msgstr "Step 2: Training"
+
+#: home/templates/home/includes/bloco-como-funciona.html:36
+msgid ""
+"Durante o tempo do curso será guiado e acompanhado para adquirir os "
+"conhecimentos todos necessários."
+msgstr ""
+"Throughout the course, you will be guided and supported to acquire all "
+"necessary knowledge."
+
+#: home/templates/home/includes/bloco-como-funciona.html:47
+msgid "Etapa 3: Após a conclusão"
+msgstr "Step 3: After Completion"
+
+#: home/templates/home/includes/bloco-como-funciona.html:48
+msgid ""
+"Após a conclusão do curso você adquirira um certificado e poderá participar "
+"noutro curso ou até integrar o mundo do trabalho."
+msgstr ""
+"Upon completing the course, you will earn a certificate and can participate "
+"in another course or even join the workforce."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:8
+#: home/templates/home/includes/bloco-conteudo-termos.html:73
+#: home/templates/home/includes/bloco-conteudo-termos.html:122
+msgid "Política de Privacidade"
+msgstr "Privacy Policy"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:9
+#: home/templates/home/includes/bloco-conteudo-termos.html:10
+msgid "Última atualização em:"
+msgstr "Last updated on:"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:16
+msgid ""
+"Esta Política descreve como a Nome da Empresa trata dados pessoais em "
+"conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 – "
+"LGPD, Brasil) e com o Regulamento (UE) 2016/679 – RGPD, aplicável em "
+"Portugal e demais países do Espaço Económico Europeu. Aplica-se aos nossos "
+"sites, páginas de agendamento online, formulários de contato, comunicação "
+"por WhatsApp, e conteúdos incorporados de terceiros (por exemplo, vídeos e "
+"Microsoft Bookings)."
+msgstr ""
+"This Policy describes how Company Name treats personal data in compliance "
+"with the General Data Protection Law (Law No. 13.709/2018 – LGPD, Brazil) "
+"and Regulation (EU) 2016/679 – GDPR, applicable in Portugal and other "
+"countries in the European Economic Area. It applies to our websites, online "
+"scheduling pages, contact forms, WhatsApp communications, and third-party "
+"embedded content (e.g., videos and Microsoft Bookings)."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:19
+msgid ""
+"Somos responsáveis pelo tratamento quando determinamos as finalidades e os "
+"meios de tratamento de dados pessoais. Em alguns casos, atuamos como "
+"operadores (subprocessadores) para clientes empresariais, conforme contrato."
+msgstr ""
+"We are responsible for the processing when we determine the purposes and "
+"means of personal data processing. In some cases, we act as operators (sub-"
+"processors) for corporate clients, as per contract."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:24
+msgid "Definições essenciais"
+msgstr "Essential Definitions"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:26
+msgid "Dados Pessoais"
+msgstr "Personal Data"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:26
+msgid ""
+"qualquer informação relacionada a uma pessoa natural identificada ou "
+"identificável."
+msgstr ""
+"any information related to an identified or identifiable natural person."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:27
+msgid "Tratamento"
+msgstr "Processing"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:27
+msgid ""
+"toda operação com dados pessoais, como coleta, armazenamento, uso, partilha "
+"e eliminação."
+msgstr ""
+"every operation involving personal data, such as collection, storage, use, "
+"sharing, and deletion."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:28
+msgid "Controlador"
+msgstr "Controller"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:28
+msgid "quem decide as finalidades e os meios de tratamento."
+msgstr "the person who decides the purposes and means of processing."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:29
+msgid "Operador"
+msgstr "Processor"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:29
+msgid "quem trata dados em nome do controlador."
+msgstr "the person who processes data on behalf of the controller."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:30
+msgid "Cookies"
+msgstr "Cookies"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:30
+msgid ""
+"arquivos armazenados no navegador que permitem funcionalidades, métricas e "
+"marketing."
+msgstr ""
+"files stored in the browser that enable features, metrics, and marketing."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:34
+msgid "Quais dados coletamos"
+msgstr "What data we collect"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:35
+msgid ""
+"Coletamos dados estritamente necessários para prestar serviços e operar o "
+"site. As categorias incluem:"
+msgstr ""
+"We collect data strictly necessary to provide services and operate the site. "
+"Categories include:"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:38
+msgid "Informações fornecidas por você"
+msgstr "Information provided by you"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:40
+msgid ""
+"Dados de identificação e contato enviados em formulários (nome, e-mail, "
+"telefone) e mensagens por WhatsApp."
+msgstr ""
+"Identification and contact data sent via forms (name, email, phone) and "
+"WhatsApp messages."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:41
+msgid ""
+"Dados de agendamento em Microsoft Bookings (horário, nome, e-mail, empresa)."
+msgstr "Scheduling data in Microsoft Bookings (time, name, email, company)."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:42
+msgid "Dados contratuais e de faturação quando há contratação de serviços."
+msgstr "Contractual and billing data when services are hired."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:44
+msgid "Coleta automática"
+msgstr "Automatic collection"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:45
+msgid ""
+"Podemos usar cookies e tecnologias similares para medir audiência, melhorar "
+"o site e, quando consentido, para marketing. O nosso controlador RGPD.js "
+"bloqueia conteúdos e rastreadores até que haja consentimento."
+msgstr ""
+"We may use cookies and similar technologies to measure audience, improve the "
+"site, and, when consented to, for marketing. Our GDPR.js controller blocks "
+"content and trackers until consent is given."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:48
+msgid "Conteúdos incorporados"
+msgstr "Embedded content"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:49
+msgid ""
+"Vídeos (YouTube/Vimeo) e a agenda Microsoft Bookings permanecem bloqueados "
+"até o consentimento. Ao clicar para reproduzir ou visualizar, você autoriza "
+"o carregamento do conteúdo e dos cookies associados."
+msgstr ""
+"Videos (YouTube/Vimeo) and the Microsoft Bookings calendar remain blocked "
+"until consent is given. By clicking to play or view, you authorize the "
+"loading of content and associated cookies."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:52
+msgid "Informações de outras fontes"
+msgstr "Information from other sources"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:53
+msgid ""
+"Podemos receber dados de provedores de pagamento, parceiros e plataformas "
+"publicitárias quando você tiver consentido nessas plataformas."
+msgstr ""
+"We may receive data from payment providers, partners, and advertising "
+"platforms when you have consented on those platforms."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:58
+msgid "Finalidades do tratamento"
+msgstr "Processing purposes"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:60
+msgid ""
+"Prestar e melhorar serviços, responder contatos e realizar agendamentos."
+msgstr ""
+"Providing and improving services, responding to contacts, and making "
+"appointments."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:61
+msgid "Executar obrigações pré-contratuais e contratuais com clientes."
+msgstr "Executing pre-contractual and contractual obligations with clients."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:62
+msgid "Cumprir obrigações legais e fiscais."
+msgstr "Complying with legal and tax obligations."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:63
+msgid "Medição de audiência e marketing, somente com consentimento."
+msgstr "Audience measurement and marketing, only with consent."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:67
+msgid "Bases legais"
+msgstr "Legal bases"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:68
+msgid "LGPD (Brasil – art. 7º)"
+msgstr "LGPD (Brazil – art. 7)"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:68
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:69
+msgid "consentimento; execução de contrato; cumprimento de obrigação legal."
+msgstr "consent; contract execution; compliance with legal obligation."
+
+#: home/home/templates/home/includes/bloco-conteudo-privacidade.html:69
+msgid "RGPD (UE – art. 6º)"
+msgstr "GDPR (EU – art. 6)"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:70
+msgid ""
+"Não utilizamos dados sensíveis em nossas operações padrão. Caso um cliente "
+"compartilhe conteúdos próprios que contenham dados sensíveis, o tratamento "
+"seguirá estritamente as instruções contratuais."
+msgstr ""
+"We do not use sensitive data in our standard operations. If a client shares "
+"their own content containing sensitive data, the processing will strictly "
+"follow contractual instructions."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:75
+msgid "Cookies e controle de consentimento"
+msgstr "Cookies and consent control"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:76
+msgid ""
+"O banner de consentimento oferece duas opções: “Aceitar” e “Recusar”. Ao "
+"clicar em “Aceitar”, você autoriza todas as categorias de cookies listadas "
+"abaixo (funcionais, estatísticos/analytics e marketing), incluindo o "
+"carregamento de vídeos incorporados e da agenda Microsoft Bookings. Ao "
+"clicar em “Recusar”, limitamos o uso ao estritamente necessário e mantemos "
+"conteúdos bloqueados."
+msgstr ""
+"The consent banner offers two options: \"Accept\" and \"Decline\". By "
+"clicking \"Accept\", you authorize all categories of cookies listed below "
+"(functional, statistical/analytics, and marketing), including the loading of "
+"embedded videos and the Microsoft Bookings calendar. By clicking "
+"\"Decline\", we limit usage to strictly necessary and keep content blocked."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:79
+msgid "Categorias previstas"
+msgstr "Anticipated Categories"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:79
+msgid ""
+"Funcionais necessários; Estatística/Analytics (ex.: Google Analytics); "
+"Marketing/Ads (ex.: Meta Pixel, LinkedIn, Twitter/X, TikTok, Microsoft Ads, "
+"Google Ads), Automação/CRM."
+msgstr ""
+"Necessary Functional; Statistics/Analytics (e.g., Google Analytics); "
+"Marketing/Ads (e.g., Meta Pixel, LinkedIn, Twitter/X, TikTok, Microsoft Ads, "
+"Google Ads), Automation/CRM."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:80
+msgid ""
+"Você pode revogar o consentimento a qualquer momento. Utilize o botão abaixo "
+"para apagar o cookie de consentimento e reexibir o banner, ou limpe os "
+"cookies do seu navegador."
+msgstr ""
+"You can revoke consent at any time. Use the button below to clear the "
+"consent cookie and re-display the banner, or clear your browser's cookies."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:84
+msgid "Revogar consentimento"
+msgstr "Revoke consent"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:88
+msgid "Partilha de dados com terceiros"
+msgstr "Data sharing with third parties"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:89
+msgid ""
+"Compartilhamos dados com prestadores que nos apoiam em infraestrutura, "
+"hospedagem, e funcionalidades do site e marketing, sempre sob contratos e "
+"medidas de segurança compatíveis com LGPD/RGPD. Só partilhamos quando "
+"necessário para a finalidade informada, por obrigação legal, ou com o seu "
+"consentimento."
+msgstr ""
+"We share data with providers that support us in infrastructure, hosting, "
+"site functionality, and marketing, always under contracts and security "
+"measures compatible with LGPD/GDPR. We only share when necessary for the "
+"informed purpose, by legal obligation, or with your consent."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:94
+msgid "Transferências internacionais"
+msgstr "International transfers"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:95
+msgid ""
+"Alguns fornecedores podem tratar dados fora do seu país. Para a UE/Portugal, "
+"usamos salvaguardas adequadas previstas no RGPD (ex.: Cláusulas Contratuais "
+"Padrão). Para o Brasil, observamos os requisitos da LGPD para transferências "
+"internacionais."
+msgstr ""
+"Some providers may process data outside your country. For the EU/Portugal, "
+"we use appropriate safeguards provided for in the GDPR (e.g., Standard "
+"Contractual Clauses). For Brazil, we observe the requirements of the LGPD "
+"for international transfers."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:100
+msgid "Medidas de segurança"
+msgstr "Security measures"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:101
+msgid ""
+"Adotamos medidas técnicas e organizacionais proporcionais ao risco, como "
+"controle de acesso, criptografia em trânsito, registros de auditoria e "
+"segregação de ambientes. Nenhuma medida é absoluta; avaliamos e aprimoramos "
+"continuamente."
+msgstr ""
+"We adopt technical and organizational measures proportionate to the risk, "
+"such as access control, encryption in transit, audit logs, and environment "
+"segregation. No measure is absolute; we evaluate and improve continuously."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:106
+msgid "Prazos de retenção"
+msgstr "Retention periods"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:107
+msgid ""
+"Mantemos dados apenas pelo tempo necessário às finalidades informadas e "
+"conforme prazos legais e fiscais aplicáveis. Após o prazo, eliminamos ou "
+"anonimizamos de forma segura."
+msgstr ""
+"We keep data only as long as necessary for the informed purposes and "
+"according to applicable legal and tax periods. After the period, we securely "
+"delete or anonymize it."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:112
+msgid "Seus direitos"
+msgstr "Your rights"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:113
+msgid "LGPD (Brasil)"
+msgstr "LGPD (Brazil)"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:113
+msgid ""
+"confirmação de tratamento, acesso, correção, anonimização, bloqueio, "
+"eliminação, portabilidade, informação sobre partilhas, revogação do "
+"consentimento e revisão de decisões automatizadas."
+msgstr ""
+"confirmation of processing, access, correction, anonymization, blocking, "
+"deletion, portability, information on sharing, revocation of consent, and "
+"review of automated decisions."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:114
+msgid "RGPD (UE/Portugal)"
+msgstr "GDPR (EU/Portugal)"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:114
+msgid ""
+"acesso, retificação, apagamento, limitação, portabilidade, oposição e "
+"retirada do consentimento; direito de reclamar à autoridade supervisora."
+msgstr ""
+"access, rectification, erasure, limitation, portability, opposition, and "
+"withdrawal of consent; right to complain to the supervisory authority."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:117
+msgid "Privacidade de crianças e adolescentes"
+msgstr "Privacy for children and adolescents"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:118
+msgid ""
+"Nossos serviços não se destinam a menores. Se acreditar que coletamos dados "
+"de menor sem a devida autorização, contacte-nos para remoção."
+msgstr ""
+"Our services are not intended for minors. If you believe we have collected a "
+"minor's data without proper authorization, please contact us for removal."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:123
+#: home/templates/home/includes/bloco-conteudo-termos.html:9
+msgid "Termos e Condições"
+msgstr "Terms and Conditions"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:126
+#, python-format
+msgid ""
+"Esta Política de Privacidade deve ser lida em conjunto com os nossos <a "
+"href=\"%(termos_url)s\" class=\"color--blue\">Termos e Condições</a>. O uso "
+"do site e dos serviços implica a aceitação de ambos os documentos."
+msgstr ""
+"This Privacy Policy should be read in conjunction with our <a "
+"href=\"%(termos_url)s\" class=\"color--blue\">Terms and Conditions</a>. Use "
+"of the site and services implies acceptance of both documents."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:134
+msgid "Alterações desta Política"
+msgstr "Changes to this Policy"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:135
+msgid ""
+"Podemos atualizar esta Política para refletir mudanças legais ou "
+"operacionais. A data de “Última atualização” no topo indica a versão vigente."
+msgstr ""
+"We may update this Policy to reflect legal or operational changes. The "
+"\"Last Updated\" date at the top indicates the current version."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:140
+msgid "Como nos contactar"
+msgstr "How to contact us"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:142
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:148
+#: home/templates/home/includes/bloco-conteudo-termos.html:26
+#: home/templates/home/includes/bloco-conteudo-termos.html:116
+msgid "Brasil"
+msgstr "Brazil"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:142
+#: home/templates/home/includes/bloco-conteudo-termos.html:116
+msgid "Telefone/WhatsApp"
+msgstr "Phone/WhatsApp"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:142
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+msgid "E-mail"
+msgstr "Email"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:143
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "(chamada fixa a cobrar)"
+msgstr "(fixed call collect)"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:147
+msgid "Identificação empresarial"
+msgstr "Corporate identification"
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:148
+msgid ""
+"Empresa Exemplo LTDA – CNPJ 44.728.577/0001-90 – Endereço conforme acima."
+msgstr "Example Company LTDA – CNPJ 44.728.577/0001-90 – Address as above."
+
+#: home/templates/home/includes/bloco-conteudo-privacidade.html:149
+msgid "Empresa Exemplo Lda – NIPC 514873078 – Endereço conforme acima."
+msgstr "Example Company Lda – NIPC 514873078 – Address as above."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:17
+msgid "Introdução e Aceitação"
+msgstr "Introduction and Acceptance"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:18
+msgid ""
+"Estes Termos e Condições regem o uso do site da Nome da Empresa, de suas "
+"páginas de agendamento e dos canais de contato indicados. Ao aceder, "
+"navegar, enviar informações, marcar reunião ou interagir com funcionalidades "
+"do site, você concorda com estes Termos. Se não concordar, não utilize o "
+"site."
+msgstr ""
+"These Terms and Conditions govern the use of the Company Name website, its "
+"scheduling pages, and indicated contact channels. By accessing, browsing, "
+"submitting information, scheduling a meeting, or interacting with site "
+"features, you agree to these Terms. If you do not agree, do not use the site."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:23
+msgid "Quem somos"
+msgstr "Who we are"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:25
+msgid ""
+"Empresa Exemplo Lda – NIPC 514873078 – Rua Eng. João Branco, 87, 4900-299, "
+"Viana do Castelo."
+msgstr ""
+"Example Company Lda – NIPC 514873078 – Rua Eng. João Branco, 87, 4900-299, "
+"Viana do Castelo."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:26
+msgid ""
+"Empresa Exemplo LTDA – CNPJ 44.728.577/0001-90 – Av. Paulista, 1636 – Conj. "
+"4 Pavimento 15 – Bela Vista – São Paulo/SP – CEP 01310-200."
+msgstr ""
+"Example Company LTDA – CNPJ 44.728.577/0001-90 – Av. Paulista, 1636 – Conj. "
+"4 Pavimento 15 – Bela Vista – São Paulo/SP – CEP 01310-200."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+#: home/templates/home/includes/bloco-conteudo-termos.html:114
+msgid "Contactos"
+msgstr "Contacts"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:27
+msgid "Brasil/WhatsApp"
+msgstr "Brazil/WhatsApp"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:31
+msgid "Escopo de Aplicação"
+msgstr "Scope of Application"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:32
+msgid ""
+"Estes Termos aplicam-se ao uso informativo do site, aos formulários de "
+"contato, ao agendamento online (Microsoft Bookings) e a conteúdos "
+"incorporados de terceiros (por exemplo, vídeos). Serviços profissionais "
+"eventualmente contratados são regidos pelos respetivos contratos e propostas "
+"comerciais."
+msgstr ""
+"These Terms apply to the informative use of the website, contact forms, "
+"online scheduling (Microsoft Bookings), and third-party embedded content (e."
+"g., videos). Any professional services hired are governed by their "
+"respective contracts and commercial proposals."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:37
+msgid "Uso Permitido e Restrições"
+msgstr "Permitted Use and Restrictions"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:39
+msgid ""
+"Use o site de forma lícita, para finalidades informativas ou para solicitar "
+"contato/agendamento."
+msgstr ""
+"Use the site lawfully, for informational purposes, or to request contact/"
+"scheduling."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:40
+msgid ""
+"É proibido violar a segurança, tentar acesso não autorizado, realizar "
+"scraping massivo, inserir código malicioso, ou utilizar o site para fins "
+"fraudulentos."
+msgstr ""
+"Violating security, attempting unauthorized access, performing mass "
+"scraping, inserting malicious code, or using the site for fraudulent "
+"purposes is prohibited."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:41
+msgid ""
+"O conteúdo não constitui aconselhamento jurídico, fiscal ou financeiro. "
+"Decisões devem considerar avaliação profissional e o contexto do utilizador."
+msgstr ""
+"The content does not constitute legal, tax, or financial advice. Decisions "
+"should consider professional evaluation and the user's context."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:45
+msgid "Conteúdos e Serviços de Terceiros"
+msgstr "Third-Party Content and Services"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:46
+msgid ""
+"O site pode incorporar funcionalidades e conteúdos de terceiros (por "
+"exemplo, Microsoft Bookings, YouTube, Vimeo, plataformas de métricas e "
+"marketing). Tais serviços são regidos pelos termos e políticas dos "
+"respetivos fornecedores. A Nome da Empresa não controla as práticas desses "
+"terceiros."
+msgstr ""
+"The site may incorporate features and content from third parties (e.g., "
+"Microsoft Bookings, YouTube, Vimeo, metrics, and marketing platforms). These "
+"services are governed by the terms and policies of their respective "
+"providers. Company Name does not control the practices of these third "
+"parties."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:51
+msgid "Agendamentos Online"
+msgstr "Online Scheduling"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:52
+msgid ""
+"O agendamento de reuniões é uma conveniência e não garante oferta, "
+"disponibilidade permanente ou início de relação contratual. Reservamo-nos o "
+"direito de reprogramar, cancelar ou recusar reuniões em casos de "
+"indisponibilidade, conflito de agenda, finalidade inadequada ou risco "
+"operacional."
+msgstr ""
+"Scheduling meetings is a convenience and does not guarantee an offer, "
+"permanent availability, or the beginning of a contractual relationship. We "
+"reserve the right to reschedule, cancel, or refuse meetings in cases of "
+"unavailability, scheduling conflict, inappropriate purpose, or operational "
+"risk."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:55
+msgid "Para agendar, aceda a"
+msgstr "To schedule, go to"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:58
+msgid "Preços, Impostos e Pagamentos"
+msgstr "Prices, Taxes, and Payments"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:59
+msgid ""
+"Salvo indicação expressa, conteúdos do site são gratuitos. Serviços "
+"profissionais são orçamentados por proposta e, quando aplicável, acrescidos "
+"de impostos e taxas segundo a legislação local. Faturação e condições de "
+"pagamento constarão do contrato/proposta correspondente."
+msgstr ""
+"Unless expressly indicated, site content is free. Professional services are "
+"quoted by proposal and, when applicable, inclusive of taxes and fees "
+"according to local law. Billing and payment conditions will be set in the "
+"corresponding contract/proposal."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:64
+msgid "Propriedade Intelectual"
+msgstr "Intellectual Property"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:65
+msgid ""
+"Marcas, logótipos, layouts, textos, imagens e código-fonte do site são "
+"protegidos por direitos de propriedade intelectual. É proibida a reprodução, "
+"modificação, distribuição ou exploração comercial sem autorização prévia por "
+"escrito."
+msgstr ""
+"Trademarks, logos, layouts, texts, images, and the website's source code are "
+"protected by intellectual property rights. Reproduction, modification, "
+"distribution, or commercial exploitation without prior written authorization "
+"is prohibited."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:70
+msgid "Privacidade e Cookies"
+msgstr "Privacy and Cookies"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:71
+msgid ""
+"O tratamento de dados pessoais e o uso de cookies seguem a nossa Política de "
+"Privacidade, que integra estes Termos por referência."
+msgstr ""
+"Personal data processing and cookie usage follow our Privacy Policy, which "
+"integrates these Terms by reference."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:76
+msgid "Limitação de Responsabilidade"
+msgstr "Limitation of Liability"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:78
+msgid ""
+"O site é fornecido tal como está, sem garantias de disponibilidade contínua, "
+"ausência de erros ou adequação a um propósito específico."
+msgstr ""
+"The site is provided as is, without guarantees of continuous availability, "
+"absence of errors, or fitness for a specific purpose."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:79
+msgid ""
+"Na medida permitida por lei, a Nome da Empresa não será responsável por "
+"danos indiretos, incidentais, especiais, punitivos ou lucros cessantes "
+"decorrentes do uso ou da impossibilidade de uso do site."
+msgstr ""
+"To the extent permitted by law, Company Name will not be liable for "
+"indirect, incidental, special, punitive damages, or lost profits arising "
+"from the use or inability to use the site."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:80
+msgid ""
+"Nada nestes Termos exclui responsabilidades que não possam ser excluídas nos "
+"termos da lei aplicável."
+msgstr ""
+"Nothing in these Terms excludes liabilities that cannot be excluded under "
+"applicable law."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:84
+msgid "Garantias e Isenções"
+msgstr "Warranties and Disclaimers"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:85
+msgid ""
+"A Nome da Empresa envida esforços razoáveis para manter informações "
+"atualizadas, mas não garante exatidão, integralidade ou atualização contínua "
+"dos conteúdos. Conteúdos podem ser alterados sem aviso."
+msgstr ""
+"Company Name makes reasonable efforts to keep information updated but does "
+"not guarantee the accuracy, completeness, or continuous updating of content. "
+"Content may be changed without notice."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:90
+msgid "Suspensão e Término"
+msgstr "Suspension and Termination"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:91
+msgid ""
+"Podemos suspender, restringir ou terminar o acesso ao site, total ou "
+"parcialmente, em caso de violação destes Termos, exigência legal, risco de "
+"segurança ou manutenção técnica."
+msgstr ""
+"We may suspend, restrict, or terminate access to the site, in whole or in "
+"part, in case of violation of these Terms, legal requirement, security risk, "
+"or technical maintenance."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:96
+msgid "Alterações destes Termos"
+msgstr "Changes to these Terms"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:97
+msgid ""
+"Podemos atualizar estes Termos para refletir mudanças legais, técnicas ou "
+"operacionais. A data de “Última atualização” indica a versão vigente. A "
+"continuidade de uso após alterações constitui aceitação dos novos termos."
+msgstr ""
+"We may update these Terms to reflect legal, technical, or operational "
+"changes. The \"Last Updated\" date indicates the current version. Continued "
+"use after changes constitutes acceptance of the new terms."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:102
+msgid "Lei Aplicável e Resolução de Conflitos"
+msgstr "Applicable Law and Dispute Resolution"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:103
+msgid "Clientes/usuários em Portugal/UE"
+msgstr "Clients/users in Portugal/EU"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:103
+msgid ""
+"estes Termos são regidos pela lei portuguesa e pelo RGPD no que couber. Fica "
+"eleito o foro da comarca de Viana do Castelo, com renúncia a qualquer outro, "
+"salvo regras imperativas de proteção do consumidor."
+msgstr ""
+"these Terms are governed by Portuguese law and the GDPR where applicable. "
+"The forum of the district of Viana do Castelo is elected, waiving any other, "
+"except mandatory rules for consumer protection."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:104
+msgid "Clientes/usuários no Brasil"
+msgstr "Clients/users in Brazil"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:104
+msgid ""
+"estes Termos são regidos pela legislação brasileira e pela LGPD. Fica eleito "
+"o foro da comarca de São Paulo/SP, com renúncia a qualquer outro, salvo "
+"regras imperativas de proteção do consumidor."
+msgstr ""
+"these Terms are governed by Brazilian legislation and the LGPD. The forum of "
+"the district of São Paulo/SP is elected, waiving any other, except mandatory "
+"rules for consumer protection."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:105
+msgid ""
+"Se houver contrato específico com cláusula própria de foro/lei aplicável, "
+"prevalecerá o contrato."
+msgstr ""
+"If there is a specific contract with its own forum/applicable law clause, "
+"the contract will prevail."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:108
+msgid "Comunicações Oficiais"
+msgstr "Official Communications"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:109
+msgid ""
+"Comunicações formais podem ser enviadas para contato@empresa.com. Para "
+"dúvidas gerais, utilize também os telefones informados nesta página."
+msgstr ""
+"Formal communications can be sent to contato@empresa.com. For general "
+"questions, also use the phone numbers provided on this page."
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:116
+#: home/templates/home/includes/bloco-conteudo-termos.html:117
+msgid "Endereço"
+msgstr "Address"
+
+#: home/templates/home/includes/bloco-conteudo-termos.html:123
+msgid "Agendar Reunião"
+msgstr "Schedule Meeting"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:8
+msgid "O Meu Percurso e Experiência"
+msgstr "My Path and Experience"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:16
+msgid "Formação Académica"
+msgstr "Academic Background"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:22
+msgid ""
+"<strong>2019 – 2021:</strong> Mestrado em Engenharia Informática no "
+"Instituto Politécnico de Viana do Castelo (IPVC)."
+msgstr ""
+"<strong>2019 – 2021:</strong> Master's in Computer Engineering at the Polytechnic Institute of Viana do Castelo (IPVC)."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:23
+msgid ""
+"<strong>2000 – 2001:</strong> Curso de Especialização em Análise Económica "
+"pela Universidade Federal de Sergipe."
+msgstr ""
+"<strong>2000 – 2001:</strong> Specialization Course in Economic Analysis from the Federal University of Sergipe."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:24
+msgid ""
+"<strong>1995 – 1998:</strong> Licenciatura em Ciências Atuariais pela "
+"Faculdade do Rio de Janeiro."
+msgstr ""
+"<strong>1995 – 1998:</strong> Bachelor's in Actuarial Sciences from the College of Rio de Janeiro."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:25
+msgid ""
+"<strong>1991 – 1994:</strong> Técnico em Processamento de Dados no Centro "
+"Técnico Congregacional."
+msgstr ""
+"<strong>1991 – 1994:</strong> Data Processing Technician at the Congregational Technical Center."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:33
+msgid "Experiência Profissional"
+msgstr "Professional Experience"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:39
+msgid ""
+"<strong>2018 – Presente:</strong> CTO (Chief Technology Officer) na "
+"Personaltech, Unipessoal Lda."
+msgstr ""
+"<strong>2018 – Present:</strong> CTO (Chief Technology Officer) at Personaltech, Unipessoal Lda."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:40
+msgid ""
+"<strong>2021 – 2023:</strong> Jornalista Profissional no portal de notícias "
+"BR.NEWS."
+msgstr ""
+"<strong>2021 – 2023:</strong> Professional Journalist at the news portal BR.NEWS."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:41
+msgid ""
+"<strong>+20 Anos de Experiência:</strong> Analista de Risco, Crédito e "
+"Atuário em grandes instituições bancárias (HSBC, BBVA, Banco BIC e Mercantil "
+"do Brasil)."
+msgstr ""
+"<strong>20+ Years of Experience:</strong> Risk Analyst, Credit Analyst, and Actuary at major banking institutions (HSBC, BBVA, Banco BIC, and Mercantil do Brasil)."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:49
+msgid "Docência e Investigação"
+msgstr "Teaching and Research"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:55
+msgid ""
+"<strong>2022 – Presente:</strong> Professor Assistente Convidado no IPVC "
+"(ESTG), nos cursos de Engenharia Informática e Multimédia."
+msgstr ""
+"<strong>2022 – Present:</strong> Invited Assistant Professor at IPVC (ESTG), in the Computer Engineering and Multimedia programs."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:56
+msgid ""
+"<strong>2024:</strong> Publicação internacional sobre Inteligência "
+"Artificial (LLMs) e automação de conteúdos (ICEIS)."
+msgstr ""
+"<strong>2024:</strong> International publication on Artificial Intelligence (LLMs) and content automation (ICEIS)."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:57
+msgid ""
+"<strong>2021 – 2023:</strong> Autor de artigos científicos sobre sistemas de "
+"apoio à decisão, scoring e risco de crédito em parceria com a Universidade "
+"de Vigo."
+msgstr ""
+"<strong>2021 – 2023:</strong> Author of scientific articles on decision support systems, scoring, and credit risk in partnership with the University of Vigo."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:65
+msgid "Empreendedorismo e Comunicação"
+msgstr "Entrepreneurship and Communication"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:71
+msgid ""
+"<strong>Criador de Conteúdo:</strong> Canal de YouTube com mais de 110 mil "
+"subscritores focado em literacia financeira e análise de crédito."
+msgstr ""
+"<strong>Content Creator:</strong> YouTube channel with over 110,000 subscribers focused on financial literacy and credit analysis."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:72
+msgid ""
+"<strong>Fundador de Plataformas:</strong> Criador do ecossistema de soluções "
+"B2B e B2C que inclui NicePayer, FullTasks, Método Invertido e Frugga."
+msgstr ""
+"<strong>Platform Founder:</strong> Creator of the B2B and B2C solutions ecosystem that includes NicePayer, FullTasks, Método Invertido, and Frugga."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-home.html:83
+msgid "Imagem"
+msgstr "Image"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:8
+msgid "Tem alguma dúvida?"
+msgstr "Any questions?"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:15
+msgid "O que diferencia a Wanzeller de outras empresas? "
+msgstr "What differentiates Wanzeller from other companies?"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:21
+msgid ""
+"A Wanzeller é a <strong>empresa matriz</strong> que organiza estratégia, "
+"padrão e execução das suas marcas. Entregamos resultados com especialização "
+"por frente: <strong>crédito e risco</strong> (NicePayer), <strong>tecnologia "
+"e crescimento</strong> (FullTasks) e <strong>plataformas digitais</strong> "
+"(Frugga), sempre com foco em controlo, eficiência e performance."
+msgstr ""
+"Wanzeller is the <strong>parent company</strong> that organizes the "
+"strategy, standards, and execution for its brands. We deliver results with "
+"specialized fronts: <strong>credit and risk</strong> (NicePayer), "
+"<strong>technology and growth</strong> (FullTasks), and <strong>digital "
+"platforms</strong> (Frugga), always focusing on control, efficiency, and "
+"performance."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:28
+msgid "Como a Nicepayer pode ajudar minha empresa?"
+msgstr "How can NicePayer help my company?"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:34
+msgid ""
+"A NicePayer atua no ciclo completo de crédito com <strong>Check NicePayer</"
+"strong>, política de crédito, software online e análise técnica. Isto "
+"melhora a qualidade das decisões, reduz risco comercial e aumenta o controlo "
+"do departamento de crédito."
+msgstr ""
+"NicePayer operates throughout the credit cycle with <strong>Check NicePayer</"
+"strong>, credit policy, online software, and technical analysis. This "
+"improves decision quality, reduces commercial risk, and increases credit "
+"department control."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:41
+msgid "Quais soluções de tecnologia a FullTasks fornece?"
+msgstr "What technology solutions does FullTasks provide?"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:47
+msgid ""
+"A FullTasks entrega <strong>desenvolvimento à medida</strong>, integrações e "
+"automações, além do <strong>Dínamo de Vendas</strong> para estruturar "
+"aquisição, nutrição e conversão. Também executa sites, landing pages e "
+"marketing orientado a resultado."
+msgstr ""
+"FullTasks delivers <strong>custom development</strong>, integrations, and "
+"automations, plus the <strong>Sales Dynamo</strong> to structure "
+"acquisition, nurturing, and conversion. It also executes websites, landing "
+"pages, and results-oriented marketing."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:54
+msgid "Quais tipos de empresas se beneficiam das soluções do grupo?"
+msgstr "What types of companies benefit from the group's solutions?"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:60
+msgid ""
+"Empresas que operam com <strong>risco comercial</strong>, precisam de "
+"<strong>controlo e padronização</strong> em crédito, ou querem "
+"<strong>crescer com tecnologia</strong> e automação. A Wanzeller direciona o "
+"projeto para a marca certa e executa com governança."
+msgstr ""
+"Companies operating with <strong>commercial risk</strong>, needing "
+"<strong>control and standardization</strong> in credit, or wanting to "
+"<strong>grow with technology</strong> and automation. Wanzeller directs the "
+"project to the right brand and executes with governance."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:67
+msgid "O que é o Frugga?"
+msgstr "What is Frugga?"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:73
+msgid ""
+"O Frugga é uma <strong>plataforma digital de restauração</strong> que "
+"permite aos usuários descobrir restaurantes, menus e pratos do dia, "
+"reforçando a presença digital e a visibilidade dos estabelecimentos."
+msgstr ""
+"Frugga is a <strong>digital restaurant platform</strong> that allows users "
+"to discover restaurants, menus, and daily specials, reinforcing the digital "
+"presence and visibility of establishments."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:79
+msgid "Como posso começar?"
+msgstr "How can I start?"
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:85
+msgid ""
+"Entre em contacto. Em seguida, fazemos um diagnóstico rápido, definimos o "
+"escopo e encaminhamos para <strong>NicePayer</strong>, <strong>FullTasks</"
+"strong> ou <strong>Frugga</strong>, com um plano de execução e próximos "
+"passos."
+msgstr ""
+"Get in touch. We then conduct a quick diagnosis, define the scope, and "
+"direct to <strong>NicePayer</strong>, <strong>FullTasks</strong>, or "
+"<strong>Frugga</strong>, with an execution plan and next steps."
+
+#: home/templates/home/includes/bloco-diferenciais-faq-quem-somos.html:98
+msgid "Diferenciais da sua empresa"
+msgstr "Your company's advantages"
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:7
+msgid "Perguntas & Respostas"
+msgstr "Questions & Answers"
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:8
+msgid "Dúvidas? Aqui estão as respostas"
+msgstr "Questions? Here are the answers"
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:10
+msgid ""
+"Use este bloco para responder as dúvidas mais comuns sobre escopo, "
+"implantação e resultados esperados da sua solução."
+msgstr ""
+"Use this block to answer common questions about the scope, implementation, "
+"and expected results of your solution."
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:21
+msgid "Como apresentar o escopo do serviço nesta página?"
+msgstr "How to present the scope of service on this page?"
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:25
+msgid ""
+"Descreva o problema resolvido, perfil de cliente atendido, entregáveis por "
+"etapa e critérios de sucesso. Mantenha linguagem objetiva e conectada ao "
+"resultado de negócio."
+msgstr ""
+"Describe the problem solved, target audience, stage deliverables, and "
+"success criteria. Maintain objective language connected to the business "
+"outcome."
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:35
+msgid "Quais informações não podem faltar na proposta?"
+msgstr "What information must be included in the proposal?"
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:40
+msgid ""
+"Modelo de implantação, tempo estimado, responsabilidades e premissas "
+"operacionais."
+msgstr ""
+"Implementation model, estimated time, responsibilities, and operational "
+"assumptions."
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:43
+msgid ""
+"Indicadores de acompanhamento e evidências de valor ao longo da execução."
+msgstr "Monitoring indicators and evidence of value throughout execution."
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:51
+msgid "Como estruturar o fluxo de implementação?"
+msgstr "How to structure the implementation flow?"
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:55
+msgid ""
+"Separe por fases: diagnóstico, desenho, ativação e operação assistida. Em "
+"cada fase, detalhe entradas, entregas, validação e ponto de decisão para o "
+"próximo passo."
+msgstr ""
+"Separate into stages: diagnosis, design, activation, and assisted operation. "
+"In each stage, detail inputs, deliverables, validation, and the decision "
+"point for the next step."
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:65
+msgid "Como transformar esta página em canal de conversão?"
+msgstr "How to turn this page into a conversion channel?"
+
+#: home/templates/home/includes/bloco-faqs-solucao-cms.html:69
+msgid ""
+"Use chamadas para ação com benefício direto, posicione prova de capacidade e "
+"mantenha formulários curtos. O objetivo é reduzir fricção e acelerar o "
+"primeiro contato comercial."
+msgstr ""
+"Use calls to action with direct benefits, position proof of capability, and "
+"keep forms short. The goal is to reduce friction and accelerate the first "
+"commercial contact."
+
+#: home/templates/home/includes/bloco-formulario-email.html:9
+#: home/templates/home/includes/bloco-formulario-mautic.html:9
+msgid "Descreva aqui a principal oferta de entrada."
+msgstr "Describe the main entry offer here."
+
+#: home/templates/home/includes/bloco-formulario-email.html:12
+msgid ""
+"Bloco genérico de captura de leads configurado para envio automatizado "
+"(Email). O bloco Mautic permanece disponível para uso futuro."
+msgstr ""
+"Generic lead capture block configured for automated sending (Email). The "
+"Mautic block remains available for future use."
+
+#: home/templates/home/includes/bloco-formulario-email.html:23
+#: home/templates/home/includes/bloco-formulario-mautic.html:23
+msgid "Preencha os campos obrigatórios."
+msgstr "Please fill in the required fields."
+
+#: home/templates/home/includes/bloco-formulario-email.html:24
+#: home/templates/home/includes/bloco-formulario-mautic.html:24
+msgid "Indique um telemóvel válido. Ex.: 912 345 678 ou +351 912 345 678"
+msgstr ""
+"Please provide a valid mobile number. E.g., 912 345 678 or +351 912 345 678"
+
+#: home/templates/home/includes/bloco-formulario-email.html:25
+#: home/templates/home/includes/bloco-formulario-mautic.html:25
+msgid "Enviando..."
+msgstr "Sending..."
+
+#: home/templates/home/includes/bloco-formulario-email.html:26
+#: home/templates/home/includes/bloco-formulario-mautic.html:26
+#: home/views.py:595
+msgid "Pronto. Dados enviados com sucesso."
+msgstr "Done. Data sent successfully."
+
+#: home/templates/home/includes/bloco-formulario-email.html:27
+#: home/templates/home/includes/bloco-formulario-mautic.html:27
+#: home/views.py:591
+msgid "Não foi possível processar o envio. Tente novamente."
+msgstr "Failed to process the submission. Please try again."
+
+#: home/templates/home/includes/bloco-formulario-email.html:28
+#: home/templates/home/includes/bloco-formulario-mautic.html:28
+#: home/views.py:560
+msgid "Não foi possível validar. Tente novamente."
+msgstr "Failed to validate. Please try again."
+
+#: home/templates/home/includes/bloco-formulario-email.html:29
+#: home/templates/home/includes/bloco-formulario-mautic.html:29
+msgid "Falha ao validar o reCAPTCHA."
+msgstr "Failed to validate reCAPTCHA."
+
+#: home/templates/home/includes/bloco-formulario-email.html:41
+#: home/templates/home/includes/bloco-formulario-mautic.html:41
+msgid "Apelido"
+msgstr "Surname"
+
+#: home/templates/home/includes/bloco-formulario-email.html:47
+#: home/templates/home/includes/bloco-formulario-mautic.html:47
+msgid "O seu e-mail"
+msgstr "Your email"
+
+#: home/templates/home/includes/bloco-formulario-email.html:50
+#: home/templates/home/includes/bloco-formulario-mautic.html:50
+msgid "Telemóvel (912 345 678)"
+msgstr "Mobile (912 345 678)"
+
+#: home/templates/home/includes/bloco-formulario-email.html:56
+#: home/templates/home/includes/bloco-formulario-mautic.html:56
+msgid "Empresa"
+msgstr "Company"
+
+#: home/templates/home/includes/bloco-formulario-email.html:71
+#: home/templates/home/includes/bloco-formulario-mautic.html:71
+msgid "Enviar pedido"
+msgstr "Send request"
+
+#: home/templates/home/includes/bloco-formulario-email.html:72
+#: home/templates/home/includes/bloco-formulario-email.html:74
+#: home/templates/home/includes/bloco-formulario-mautic.html:72
+#: home/templates/home/includes/bloco-formulario-mautic.html:73
+msgid "Enviar pedido (Ao clicar, autorizo cookies)"
+msgstr "Send request (By clicking, I authorize cookies)"
+
+#: home/templates/home/includes/bloco-formulario-mautic.html:12
+msgid ""
+"Bloco genérico de captura de leads configurado para envio automatizado "
+"(Mautic). O bloco Email permanece disponível para uso futuro."
+msgstr ""
+"Generic lead capture block configured for automated sending (Mautic). The "
+"Email block remains available for future use."
+
+#: home/templates/home/includes/bloco-hero-agendamento.html:9
+msgid ""
+"Selecione a melhor data e horário para sua primeira conversa com a equipe."
+msgstr ""
+"Select the best date and time for your first conversation with the team."
+
+#: home/templates/home/includes/bloco-hero-home-2.html:21
+#: home/templates/home/includes/bloco-solucoes-inovadoras.html:16
+msgid "Contato"
+msgstr "Contact"
+
+#: home/templates/home/includes/bloco-hero-home.html:29
+#: home/templates/home/includes/bloco-hero-home.html:47
+msgid "Imagem principal"
+msgstr "Main Image"
+
+#: home/templates/home/includes/bloco-hero-home.html:34
+msgid "Wenderson Wanzeller"
+msgstr "Wenderson Wanzeller"
+
+#: home/templates/home/includes/bloco-hero-home.html:36
+msgid ""
+"Engenheiro Informático, Mestre em Engenharia Informática, jornalista e "
+"atuário registado em Portugal e no Brasil. Atua há mais de 20 anos com "
+"tecnologia, cibersegurança, marketing e comunicação digital."
+msgstr ""
+"Computer Engineer, Master in Computer Engineering, journalist, and actuary "
+"registered in Portugal and Brazil. Has been working for over 20 years with "
+"technology, cybersecurity, marketing, and digital communication."
+
+#: home/templates/home/includes/bloco-hero-home.html:39
+msgid "Saiba Mais"
+msgstr "Learn More"
+
+#: home/templates/home/includes/bloco-hero-home.html:40
+#: home/templates/home/includes/bloco-servicos-grade-home.html:7
+msgid "Meus Sites"
+msgstr "My Sites"
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:2
+#: home/templates/home/meu-servico.html:4
+msgid "Escopo do Meu Serviço"
+msgstr "Scope of My Service"
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:3
+msgid "Descreva sua entrega principal e o impacto no negócio"
+msgstr "Describe your main delivery and the business impact"
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:4
+msgid ""
+"Use este parágrafo para explicar escopo, perfil de cliente atendido e "
+"critérios de sucesso."
+msgstr ""
+"Use this paragraph to explain scope, customer profile served, and success "
+"criteria."
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:5
+msgid ""
+"Adicione detalhes práticos sobre prazo de implantação, modelo de governança "
+"e resultados mensuráveis."
+msgstr ""
+"Add practical details about implementation timeline, governance model, and "
+"measurable results."
+
+#: home/templates/home/includes/bloco-hero-meu-servico.html:6
+msgid "Imagem ilustrativa do serviço"
+msgstr "Service illustrative image"
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:4
+msgid "Agendamento Brasil"
+msgstr "Brazil Scheduling"
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:6
+msgid "agendamento"
+msgstr "scheduling"
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:7
+msgid "Agendamento Portugal"
+msgstr "Portugal Scheduling"
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:9
+msgid "Entre em contato"
+msgstr "Get in touch"
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:10
+msgid "Precisa de ajuda ?"
+msgstr "Need help?"
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:11
+msgid ""
+"Mande agora mesmo a sua mensagem usando o nosso WhatsApp que aparece no "
+"íncone ao lado. Ligue para um de nossos telefones abaixo ou agende uma "
+"reunião para falar diretamente conosco através do botão de Agendamento "
+"Online. Estamos à disposição para ajudar a transformar seus desafios em "
+"oportunidades."
+msgstr ""
+"Send your message right now using our WhatsApp icon on the side. Call one of "
+"our phones below or schedule a meeting to talk directly with us through the "
+"Online Scheduling button. We are available to help turn your challenges into "
+"opportunities."
+
+#: home/templates/home/includes/bloco-hero-vamos-conversar.html:12
+msgid "Imagem de contato"
+msgstr "Contact image"
+
+#: home/templates/home/includes/bloco-pensamento-conversao.html:2
+msgid ""
+"Use este bloco para uma mensagem orientada à conversão: benefício claro, "
+"urgência e chamada direta para ação."
+msgstr ""
+"Use this block for a conversion-oriented message: clear benefit, urgency, "
+"and direct call to action."
+
+#: home/templates/home/includes/bloco-pensamento.html:2
+msgid ""
+"Inverter não é apenas fazer o contrário, é olhar para o que ninguém está a "
+"ver e começar por lá."
+msgstr ""
+"Inverting is not just doing the opposite; it's looking at what no one else "
+"is seeing and starting there."
+
+#: home/templates/home/includes/bloco-pensamento.html:3
+msgid "Wanzeller"
+msgstr "Wanzeller"
+
+#: home/templates/home/includes/bloco-pensamento.html:4
+msgid "Tire as suas duvidas"
+msgstr "Clear your doubts"
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:8
+msgid "Contexto Institucional e Trajetória"
+msgstr "Institutional Context and Trajectory"
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:15
+msgid ""
+"Use este espaço para descrever a origem da empresa, motivação estratégica e "
+"contexto que levou ao modelo atual de atuação."
+msgstr ""
+"Use this space to describe the company's origin, strategic motivation, and "
+"context that led to the current operating model."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:18
+msgid ""
+"Inclua marcos importantes, transições de mercado e decisões críticas que "
+"moldaram produtos, governança e padrão de entrega ao cliente."
+msgstr ""
+"Include key milestones, market transitions, and critical decisions that "
+"shaped products, governance, and client delivery standards."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:21
+msgid ""
+"Reforce como conhecimento institucional, tecnologia e disciplina de "
+"processos sustentam crescimento consistente em novos projetos."
+msgstr ""
+"Reinforce how institutional knowledge, technology, and process discipline "
+"sustain consistent growth in new projects."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:26
+msgid ""
+"Explique posicionamento, proposta de valor e capacidades operacionais que "
+"diferenciam o negócio em cenários competitivos."
+msgstr ""
+"Explain positioning, value proposition, and operational capabilities that "
+"differentiate the business in competitive scenarios."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:29
+msgid ""
+"Apresente prioridades de expansão, estratégia de parcerias e impacto "
+"esperado para clientes, equipes e indicadores do negócio."
+msgstr ""
+"Present expansion priorities, partnership strategy, and expected impact on "
+"clients, teams, and business indicators."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:32
+msgid ""
+"Use esta seção para comunicar confiança, visão de longo prazo e consistência "
+"de execução."
+msgstr ""
+"Use this section to communicate trust, long-term vision, and consistent "
+"execution."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto.html:36
+msgid ""
+"A qualidade da informação hoje constrói decisões mais seguras e resultados "
+"mais fortes amanhã."
+msgstr ""
+"The quality of information today builds safer decisions and stronger results "
+"tomorrow."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:67
+msgid "Governança e Execução"
+msgstr "Governance and Execution"
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:71
+msgid "A matriz que define padrão e entrega resultado nas marcas do grupo."
+msgstr ""
+"The parent company that defines standards and delivers results across the "
+"group's brands."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:75
+msgid ""
+"Com mais de uma década de atuação, a Wanzeller organiza estratégia, "
+"processos e execução para as suas marcas. Atuamos com foco em resultados, "
+"integrando <strong>crédito e risco (NicePayer)</strong>, <strong>tecnologia "
+"e crescimento (FullTasks)</strong> e <strong>plataformas digitais (Frugga)</"
+"strong>."
+msgstr ""
+"With over a decade of experience, Wanzeller organizes strategy, processes, "
+"and execution for its brands. We focus on results, integrating "
+"<strong>credit and risk (NicePayer)</strong>, <strong>technology and growth "
+"(FullTasks)</strong>, and <strong>digital platforms (Frugga)</strong>."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:80
+msgid "CONTATO"
+msgstr "CONTACT"
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:96
+msgid "NicePayer"
+msgstr "NicePayer"
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:97
+msgid ""
+"Especialistas em <strong>Check NicePayer</strong> e análise de crédito, com "
+"política, software online e ações antifraude para decisões mais seguras no "
+"risco comercial."
+msgstr ""
+"Specialists in <strong>Check NicePayer</strong> and credit analysis, with "
+"policy, online software, and anti-fraud actions for safer commercial risk "
+"decisions."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:106
+msgid "FullTasks"
+msgstr "FullTasks"
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:107
+msgid ""
+"<strong>Desenvolvimento à medida</strong>, Dínamo de Vendas, automações e "
+"marketing para transformar processos em eficiência e crescimento."
+msgstr ""
+"<strong>Custom development</strong>, Sales Dynamo, automations, and "
+"marketing to transform processes into efficiency and growth."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:116
+msgid "Frugga"
+msgstr "Frugga"
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:117
+msgid ""
+"Plataforma digital para <strong>restauração</strong>, focada em descoberta e "
+"experiência: menus executivos e pratos do dia em lista e mapa."
+msgstr ""
+"Digital platform for <strong>restaurants</strong>, focused on discovery and "
+"experience: executive menus and daily specials in list and map views."
+
+#: home/templates/home/includes/bloco-quem-somos-contexto2.html:126
+msgid "Contatos"
+msgstr "Contacts"
+
+#: home/templates/home/includes/bloco-quem-somos-intro-2.html:20
+msgid "Fale Conosco"
+msgstr "Contact Us"
+
+#: home/templates/home/includes/bloco-quem-somos-intro-2.html:21
+msgid "Dúvidas"
+msgstr "Questions"
+
+#: home/templates/home/includes/bloco-quem-somos-intro.html:2
+msgid "Sobre o Wanzeller, por Wanzeller"
+msgstr "About Wanzeller, by Wanzeller"
+
+#: home/templates/home/includes/bloco-quem-somos-intro.html:3
+msgid ""
+"Na Wanzeller, o nosso legado é construído pela integração das nossas marcas: "
+"NicePayer, FullTasks e Frugga. Unimos crédito e risco, tecnologia orientada "
+"a resultado e plataformas digitais para entregar soluções completas a "
+"empresas que precisam de controlo, eficiência e crescimento. "
+msgstr ""
+"At Wanzeller, our legacy is built through the integration of our brands: "
+"NicePayer, FullTasks, and Frugga. We combine credit and risk, results-"
+"oriented technology, and digital platforms to deliver complete solutions to "
+"companies needing control, efficiency, and growth."
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:10
+msgid ""
+"Como engenheiro e investigador, o meu foco é transformar dados e tecnologia "
+"em resultados. Desenvolvi diversas marcas especializadas que operam no "
+"cruzamento entre a cibersegurança, o crédito e o marketing digital. Explore "
+"as plataformas que lidero atualmente."
+msgstr ""
+"As an engineer and researcher, my focus is transforming data and technology "
+"into results. I have developed several specialized brands operating at the "
+"intersection of cybersecurity, credit, and digital marketing. Explore the "
+"platforms I currently lead."
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:24
+#: home/templates/home/includes/bloco-solucoes-inovadoras.html:14
+msgid "NICEPAYER"
+msgstr "NICEPAYER"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:26
+msgid ""
+"<strong>Check NicePayer e Análise de Crédito</strong> para empresas que "
+"operam com risco comercial, incluindo <strong>lista de devedores</strong>. "
+"Soluções para o ciclo completo de crédito."
+msgstr ""
+"<strong>Check NicePayer and Credit Analysis</strong> for companies operating "
+"with commercial risk, including <strong>debtor lists</strong>. Solutions for "
+"the complete credit cycle."
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:29
+msgid "ACESSAR NICEPAYER"
+msgstr "ACCESS NICEPAYER"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:41
+msgid "FULLTASKS"
+msgstr "FULLTASKS"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:43
+msgid ""
+"Tecnologia aplicada a resultado: <strong>desenvolvimento à medida, Dínamo de "
+"Vendas</strong>, automações e <strong>marketing digital</strong> orientado a "
+"conversão."
+msgstr ""
+"Technology applied to results: <strong>custom development, Sales Dynamo</strong>, "
+"automations, and conversion-oriented <strong>digital marketing</strong>."
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:46
+msgid "ACESSAR FULLTASKS"
+msgstr "ACCESS FULLTASKS"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:58
+msgid "MÉTODO INVERTIDO"
+msgstr "INVERTED METHOD"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:60
+msgid ""
+"<strong>Formação</strong> orientada à <strong>reconversão profissional</"
+"strong> através de experiência real e cursos intensivos conectados às "
+"exigências do mercado."
+msgstr ""
+"<strong>Training</strong> oriented toward <strong>professional retraining</strong> "
+"through real experience and intensive courses connected to market demands."
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:63
+msgid "ACESSAR MÉTODO INVERTIDO"
+msgstr "ACCESS INVERTED METHOD"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:75
+#: home/templates/home/includes/bloco-solucoes-inovadoras.html:15
+msgid "FRUGGA"
+msgstr "FRUGGA"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:77
+msgid ""
+"<strong>Plataforma para restauração</strong> que conecta utilizadores a "
+"menus a preço fixo e pratos do dia, com gestão completa para donos de "
+"restaurante."
+msgstr ""
+"<strong>Restaurant platform</strong> connecting users to fixed-price menus "
+"and daily specials, with complete management for restaurant owners."
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:80
+msgid "ACESSAR FRUGGA"
+msgstr "ACCESS FRUGGA"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:92
+msgid "WANZELLER"
+msgstr "WANZELLER"
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:94
+msgid ""
+"A <strong>empresa matriz</strong> do meu ecossistema. Reunimos estratégia e "
+"execução para entregar soluções em <strong>inteligência artificial</strong> "
+"e <strong>gestão de risco</strong>."
+msgstr ""
+"The <strong>parent company</strong> of my ecosystem. We combine strategy and "
+"execution to deliver solutions in <strong>artificial intelligence</strong> and "
+"<strong>risk management</strong>."
+
+#: home/templates/home/includes/bloco-servicos-grade-home.html:97
+msgid "ACESSAR WANZELLER"
+msgstr "ACCESS WANZELLER"
+
+#: home/templates/home/includes/bloco-video-servico.html:13
+msgid "Vídeo com Dicas"
+msgstr "Video with Tips"
+
+#: home/templates/home/includes/menu.html:26
+#: home/templates/home/includes/menu.html:82
+msgid "Contacto"
+msgstr "Contact"
+
+#: home/templates/home/includes/rodape.html:113
+msgid ""
+"Professor, Investigador e CTO focado na intersecção entre Inteligência "
+"Artificial, Risco de Crédito e Estratégia de Negócios."
+msgstr ""
+"Professor, Researcher, and CTO focused on the intersection of Artificial "
+"Intelligence, Credit Risk, and Business Strategy."
+
+#: home/templates/home/includes/rodape.html:136
+msgid "Follow Me"
+msgstr "Follow Me"
+
+#: home/templates/home/includes/rodape.html:149
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+#: home/templates/home/includes/rodape.html:156
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#: home/templates/home/includes/rodape.html:157
+msgid "Terms and Conditions"
+msgstr "Terms and Conditions"
+
+#: home/templates/home/includes/rodape.html:158
+msgid "Complaints Book"
+msgstr "Complaints Book"
+
+#: home/templates/home/meu-servico.html:5
+msgid ""
+"Use esta página para apresentar a estrutura do serviço principal, etapas e "
+"resultados estratégicos para o negócio."
+msgstr ""
+"Use this page to present the main service structure, stages, and strategic "
+"business outcomes."
+
+#: home/templates/home/politica-de-privacidade.html:4
+#: home/templates/home/politica-de-privacidade.html:8
+#: home/templates/home/politica-de-privacidade.html:14
+#: home/templates/home/politica-de-privacidade.html:24
+#: home/templates/home/politica-de-privacidade.html:77
+msgid "Política de Privacidade – Nome da Empresa"
+msgstr "Privacy Policy – Company Name"
+
+#: home/templates/home/politica-de-privacidade.html:5
+msgid ""
+"Política de Privacidade aplicável no Brasil (LGPD) e na União Europeia/"
+"Portugal (RGPD). Explica dados coletados, cookies, direitos dos titulares e "
+"contatos."
+msgstr ""
+"Privacy Policy applicable in Brazil (LGPD) and the European Union/Portugal "
+"(GDPR). Explains collected data, cookies, data subjects' rights, and "
+"contacts."
+
+#: home/templates/home/politica-de-privacidade.html:9
+#: home/templates/home/politica-de-privacidade.html:15
+msgid "LGPD e RGPD. Saiba como tratamos dados, cookies e seus direitos."
+msgstr "LGPD and GDPR. Learn how we handle data, cookies, and your rights."
+
+#: home/templates/home/politica-de-privacidade.html:12
+#: home/templates/home/politica-de-privacidade.html:18
+#: home/templates/home/politica-de-privacidade.html:32
+msgid "Imagem da página Política de Privacidade da Nome da Empresa"
+msgstr "Privacy Policy page image of Company Name"
+
+#: home/templates/home/politica-de-privacidade.html:26
+msgid ""
+"Política de Privacidade aplicável no Brasil (LGPD) e na União Europeia/"
+"Portugal (RGPD)."
+msgstr ""
+"Privacy Policy applicable in Brazil (LGPD) and the European Union/Portugal "
+"(GDPR)."
+
+#: home/templates/home/politica-de-privacidade.html:73
+msgid "Brasil e Portugal"
+msgstr "Brazil and Portugal"
+
+#: home/templates/home/termos-e-condicoes.html:4
+#: home/templates/home/termos-e-condicoes.html:8
+#: home/templates/home/termos-e-condicoes.html:14
+#: home/templates/home/termos-e-condicoes.html:24
+#: home/templates/home/termos-e-condicoes.html:37
+msgid "Termos e Condições – Nome da Empresa"
+msgstr "Terms and Conditions – Company Name"
+
+#: home/templates/home/termos-e-condicoes.html:5
+#: home/templates/home/termos-e-condicoes.html:26
+msgid ""
+"Termos de uso aplicáveis ao site, agendamentos e comunicações da Nome da "
+"Empresa no Brasil e em Portugal."
+msgstr ""
+"Terms of use applicable to the Company Name site, scheduling, and "
+"communications in Brazil and Portugal."
+
+#: home/templates/home/termos-e-condicoes.html:9
+msgid ""
+"Regras de uso do site, agendamentos, propriedade intelectual, limitações de "
+"responsabilidade e lei aplicável."
+msgstr ""
+"Rules for site use, scheduling, intellectual property, liability "
+"limitations, and applicable law."
+
+#: home/templates/home/termos-e-condicoes.html:12
+#: home/templates/home/termos-e-condicoes.html:18
+#: home/templates/home/termos-e-condicoes.html:32
+msgid "Imagem da página Termos e Condições da Nome da Empresa"
+msgstr "Terms and Conditions page image of Company Name"
+
+#: home/templates/home/termos-e-condicoes.html:15
+msgid "Condições de uso do site e serviços de agendamento."
+msgstr "Terms of use for the site and scheduling services."
+
+#: home/templates/home/vamos-conversar.html:4
+msgid "Vamos Conversar"
+msgstr "Let's Talk"
+
+#: home/templates/home/vamos-conversar.html:5
+msgid ""
+"Use esta página para estratégia de contato, links de agenda e fluxo de pré-"
+"vendas."
+msgstr ""
+"Use this page for contact strategy, booking links, and pre-sales workflow."
+
+#: home/views.py:362
+msgid "Workshop não encontrado."
+msgstr "Workshop not found."
+
+#: home/views.py:385
+msgid "Viana do Castelo"
+msgstr "Viana do Castelo"
+
+#: home/views.py:542
+msgid "Token ausente."
+msgstr "Missing token."
+
+#: home/views.py:553
+msgid "Falha ao verificar reCAPTCHA. Tente novamente."
+msgstr "Failed to verify reCAPTCHA. Please try again."
+
+#: home/views.py:574
+msgid "Dados recebidos com sucesso."
+msgstr "Data received successfully."

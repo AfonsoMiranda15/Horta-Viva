@@ -1,0 +1,82 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  AGENT_DISABLELOGGINGTOFILE: true
+
+  dockerRegistryServiceConnection: "DockerWanzeller"
+  dockerImageRepository: "wwanzeller/metodoinvertido"
+  dockerImageTag: "latest"
+
+  dockerfileProduction: "docker/producao/Dockerfile"
+  deployComposeSourceFolder: "docker/producao"
+
+  sshServiceConnectionProduction: "MetodoInvertido-Production"
+  remoteDeployPathProduction: "/home/wenderson/sites/metodoinvertido/producao"
+
+stages:
+  - stage: BuildAndPush
+    displayName: "Build e Push da Imagem"
+    jobs:
+      - job: BuildDockerImage
+        displayName: "Build Docker"
+        steps:
+          - task: Docker@2
+            displayName: "Login no Docker Registry"
+            inputs:
+              command: login
+              containerRegistry: "$(dockerRegistryServiceConnection)"
+
+          - task: Docker@2
+            displayName: "Build da Imagem"
+            inputs:
+              command: build
+              repository: "$(dockerImageRepository)"
+              dockerfile: "$(dockerfileProduction)"
+              buildContext: "."
+              tags: |
+                $(dockerImageTag)
+
+          - task: Docker@2
+            displayName: "Push da Imagem"
+            inputs:
+              command: push
+              repository: "$(dockerImageRepository)"
+              tags: |
+                $(dockerImageTag)
+
+  - stage: DeployProduction
+    displayName: "Deploy Produção"
+    dependsOn: BuildAndPush
+    jobs:
+      - job: DeployProduction
+        displayName: "Deploy no ambiente de produção"
+        steps:
+          - task: CopyFilesOverSSH@0
+            displayName: "Sincronizar docker/producao para produção"
+            inputs:
+              sshEndpoint: "$(sshServiceConnectionProduction)"
+              sourceFolder: "$(deployComposeSourceFolder)"
+              targetFolder: "$(remoteDeployPathProduction)"
+
+          - task: SSH@0
+            displayName: "Atualizar ambiente de produção"
+            inputs:
+              sshEndpoint: "$(sshServiceConnectionProduction)"
+              runOptions: "commands"
+              failOnStdErr: false
+              commands: |
+                set -e
+                mkdir -p "$(remoteDeployPathProduction)"
+                test -f "$(remoteDeployPathProduction)/.env" || (echo ".env de produção ausente em $(remoteDeployPathProduction)" && exit 1)
+                echo "$(senhaDocker)" | docker login -u "$(usuarioDocker)" --password-stdin 2>&1 || exit 1
+                docker pull $(dockerImageRepository):latest 2>&1
+                export APP_IMAGE=$(dockerImageRepository):latest
+                docker compose --ansi never --project-name metodoinvertido-prod --env-file "$(remoteDeployPathProduction)/.env" -f "$(remoteDeployPathProduction)/docker-compose-producao.yaml" run --rm init 2>&1
+                docker compose --ansi never --project-name metodoinvertido-prod --env-file "$(remoteDeployPathProduction)/.env" -f "$(remoteDeployPathProduction)/docker-compose-producao.yaml" up -d web 2>&1
+                docker image prune -f 2>&1

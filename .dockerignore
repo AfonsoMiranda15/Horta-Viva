@@ -1,0 +1,16 @@
+.git
+.gitignore
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+logs/
+software/static/
+software/media/
+HEXTONE/
+docs/
+infra/
+scripts/
+docker/**/*.env

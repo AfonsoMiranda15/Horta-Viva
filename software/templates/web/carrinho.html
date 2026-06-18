@@ -1,0 +1,292 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Horta Viva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-lime-200 selection:text-lime-900">
+    {% include "web/components/header.html" %}
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-3xl font-extrabold text-stone-800 mb-8 pb-4 border-b border-stone-200">Carrinho de Compras</h1>
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Items Lista -->
+            <div class="flex-1">
+                <div class="bg-white rounded-xl shadow-md border border-stone-100 p-6">
+                    <table class="w-full text-left border-collapse" id="cart-table">
+                        <thead>
+                            <tr class="border-b border-stone-200 text-stone-500 uppercase text-xs font-bold tracking-wider">
+                                <th class="pb-3">Produto</th>
+                                <th class="pb-3">Qtd</th>
+                                <th class="pb-3 text-right">Subtotal</th>
+                                <th class="pb-3"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items" class="divide-y divide-stone-100">
+                            <!-- JS Items Here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Resumo -->
+            <div class="w-full lg:w-96">
+                <div class="bg-white rounded-xl shadow-md border border-stone-100 p-6 space-y-6">
+                    <h2 class="text-xl font-bold text-stone-800 border-b border-stone-100 pb-3">Resumo da Encomenda</h2>
+                    
+                    <div class="flex justify-between text-stone-600">
+                        <span>Subtotal de Produtos</span>
+                        <span id="cart-subtotal" class="font-semibold text-stone-800">€ 0.00</span>
+                    </div>
+
+                    <div class="border-t border-stone-100 pt-4">
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Calcular Frete (CEP/Código Postal)</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="cep-input" placeholder="0000-000" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-600 focus:border-transparent text-sm">
+                            <button onclick="calculateFreight()" class="bg-stone-200 hover:bg-stone-300 text-stone-700 px-4 py-2 rounded-lg font-semibold transition text-sm">Calcular</button>
+                        </div>
+                        <div id="freight-result" class="mt-2 text-sm text-lime-700 font-semibold hidden"></div>
+                    </div>
+
+                    <div class="border-t border-stone-100 pt-4 mt-2">
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Cupão de Desconto</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="cupom-input" placeholder="CÓDIGO" class="w-full px-3 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-600 focus:border-transparent text-sm uppercase">
+                            <button onclick="applyCoupon()" class="bg-stone-200 hover:bg-stone-300 text-stone-700 px-4 py-2 rounded-lg font-semibold transition text-sm">Aplicar</button>
+                        </div>
+                        <div id="cupom-result" class="mt-2 text-sm font-semibold hidden"></div>
+                    </div>
+
+                    <div class="flex justify-between text-lg font-extrabold text-stone-800 border-t border-stone-200 pt-4 mt-4">
+                        <span>Total a Pagar</span>
+                        <span id="cart-total" class="text-lime-700 text-2xl">€ 0.00</span>
+                    </div>
+
+                    <a href="{% url 'checkout' %}" class="w-full block text-center bg-lime-700 hover:bg-lime-800 text-white font-bold py-4 rounded-lg shadow-md transition-colors duration-200">
+                        Avançar para Checkout &rarr;
+                    </a>
+                    <div class="text-center">
+                        <a href="{% url 'categorias' %}" class="text-sm font-semibold text-lime-700 hover:underline">Continuar a Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-stone-900 text-stone-300 py-12 mt-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                <!-- Column 1: Quem somos -->
+                <div>
+                    <h3 class="text-xl font-bold text-lime-500 mb-4">Quem somos</h3>
+                    <p class="text-stone-400 mb-4">Temos o orgulho de manter parcerias que duram<br>mais de 20 anos...</p>
+                    <a href="{% url 'quem-somos' %}" class="text-lime-400 hover:text-lime-300 font-semibold transition-colors">Leia mais</a>
+                </div>
+                
+                <!-- Column 2: Funcionamento -->
+                <div>
+                    <h3 class="text-xl font-bold text-lime-500 mb-4">Funcionamento</h3>
+                    <p class="text-stone-400 mb-2">Segunda – Sexta das 06:30h às 17:30h</p>
+                    <p class="text-stone-400">Sábado das 06:30h às 11:30h</p>
+                </div>
+                
+                <!-- Column 3: Contato -->
+                <div>
+                    <h3 class="text-xl font-bold text-lime-500 mb-4">Contato</h3>
+                    <p class="text-stone-400 font-semibold mb-2">Telefone:</p>
+                    <p class="text-stone-400">(79) 3214-5397</p>
+                    <p class="text-stone-400">(79) 9 9961-9618</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 pt-8 text-center text-stone-500 text-sm">
+                <p>&copy; 2026 Por Personal Tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'web/app.js' %}"></script>
+    <script>
+        let freightCost = 0;
+        let subtotalCache = 0;
+        let discountCost = 0;
+        let activeCoupon = null;
+
+        function renderCart() {
+            const tbody = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="py-8 text-center text-stone-500 font-medium">O seu carrinho está vazio.</td></tr>';
+                document.getElementById('cart-subtotal').innerText = '€ 0.00';
+                document.getElementById('cart-total').innerText = '€ 0.00';
+                subtotalCache = 0;
+                return;
+            }
+
+            subtotalCache = 0;
+            tbody.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotalCache += itemTotal;
+                return `
+                    <tr class="hover:bg-stone-50 transition-colors">
+                        <td class="py-4 font-semibold text-stone-800">🌿 ${item.name}</td>
+                        <td class="py-4">
+                            <div class="flex items-center gap-2">
+                                <button onclick="changeQty('${item.name.replace(/'/g, "\\'")}', -1)" class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center font-bold text-stone-700 hover:bg-stone-300">-</button>
+                                <span class="font-bold w-6 text-center">${item.quantity}</span>
+                                <button onclick="changeQty('${item.name.replace(/'/g, "\\'")}', 1)" class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center font-bold text-stone-700 hover:bg-stone-300">+</button>
+                            </div>
+                        </td>
+                        <td class="py-4 text-right font-bold text-lime-700">€ ${itemTotal.toFixed(2)}</td>
+                        <td class="py-4 text-right">
+                            <button onclick="removeFromCart('${item.name.replace(/'/g, "\\'")}')" class="text-red-500 hover:text-red-700 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('cart-subtotal').innerText = `€ ${subtotalCache.toFixed(2)}`;
+            updateTotal();
+        }
+
+        function changeQty(name, delta) {
+            const item = cart.find(i => i.name === name);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.name !== name);
+                }
+                localStorage.setItem('hortaviva_cart', JSON.stringify(cart));
+                renderCart();
+                updateCartCount();
+            }
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(i => i.name !== name);
+            localStorage.setItem('hortaviva_cart', JSON.stringify(cart));
+            renderCart();
+            updateCartCount();
+        }
+
+        async function calculateFreight() {
+            const cep = document.getElementById('cep-input').value;
+            const resEl = document.getElementById('freight-result');
+            
+            if(!cep) return;
+            
+            try {
+                const response = await fetch(`${BASE_URL}/fretes/validar-cep/`, {
+                    method: 'POST',
+                    headers: getAuthHeaders(),
+                    body: JSON.stringify({ cep: cep, valor_carrinho: subtotalCache })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.erro || 'Erro ao calcular frete');
+                }
+
+                const data = await response.json();
+                freightCost = parseFloat(data.valor_frete);
+                localStorage.setItem('hortaviva_freight', freightCost);
+
+                resEl.classList.remove('hidden', 'text-red-600');
+                resEl.classList.add('text-lime-700');
+                resEl.innerHTML = freightCost === 0 ? 'Frete Grátis!' : `Frete: € ${freightCost.toFixed(2)} (${data.prazo_dias} dias úteis)`;
+                
+                updateTotal();
+            } catch (error) {
+                freightCost = 0;
+                localStorage.removeItem('hortaviva_freight');
+                resEl.classList.remove('hidden', 'text-lime-700');
+                resEl.classList.add('text-red-600');
+                resEl.innerHTML = error.message;
+                updateTotal();
+            }
+        }
+
+        async function applyCoupon() {
+            const codigo = document.getElementById('cupom-input').value;
+            const resEl = document.getElementById('cupom-result');
+            
+            if(!codigo) return;
+            
+            try {
+                const response = await fetch(`${BASE_URL}/cupons/validar/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ codigo: codigo })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.erro || 'Erro ao aplicar cupão');
+                }
+
+                const cupom = await response.json();
+                activeCoupon = cupom;
+                localStorage.setItem('hortaviva_cupom', JSON.stringify(cupom));
+
+                resEl.classList.remove('hidden', 'text-red-600');
+                resEl.classList.add('text-lime-700');
+                
+                updateTotal();
+            } catch (error) {
+                discountCost = 0;
+                activeCoupon = null;
+                localStorage.removeItem('hortaviva_cupom');
+                resEl.classList.remove('hidden', 'text-lime-700');
+                resEl.classList.add('text-red-600');
+                resEl.innerHTML = error.message;
+                updateTotal();
+            }
+        }
+
+        function updateTotal() {
+            if (activeCoupon) {
+                if (activeCoupon.desconto_fixo) {
+                    discountCost = parseFloat(activeCoupon.desconto_fixo);
+                } else if (activeCoupon.desconto_percentual) {
+                    discountCost = subtotalCache * (parseFloat(activeCoupon.desconto_percentual) / 100);
+                }
+                const resEl = document.getElementById('cupom-result');
+                resEl.innerHTML = `Cupão ${activeCoupon.codigo} aplicado! (-€ ${discountCost.toFixed(2)})`;
+            } else {
+                discountCost = 0;
+            }
+
+            let total = subtotalCache + freightCost - discountCost;
+            if (total < 0) total = 0;
+            document.getElementById('cart-total').innerText = `€ ${total.toFixed(2)}`;
+            localStorage.setItem('hortaviva_total', total);
+            localStorage.setItem('hortaviva_discount', discountCost);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+            // Tenta recuperar cupão do storage
+            const savedCoupon = localStorage.getItem('hortaviva_cupom');
+            if (savedCoupon) {
+                activeCoupon = JSON.parse(savedCoupon);
+                document.getElementById('cupom-input').value = activeCoupon.codigo;
+                const resEl = document.getElementById('cupom-result');
+                resEl.classList.remove('hidden', 'text-red-600');
+                resEl.classList.add('text-lime-700');
+                updateTotal();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=hortaviva_db
+      - POSTGRES_USER=hortaviva_admin
+      - POSTGRES_PASSWORD=senha_secreta
+    ports:
+      - "8500:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@hortaviva.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "8510:80"
+    depends_on:
+      - db
+
+  web:
+    build: .
+    command: python software/manage.py runserver 0.0.0.0:8520
+    volumes:
+      - .:/app
+    ports:
+      - "8520:8520"
+    environment:
+      - DATABASE_URL=postgres://hortaviva_admin:senha_secreta@db:5432/hortaviva_db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+    external: true
+    name: hortaviva_postgres_data

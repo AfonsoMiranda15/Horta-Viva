@@ -1,0 +1,87 @@
+name: wanzeller
+
+services:
+  traefik:
+    image: traefik:v2.11
+    container_name: edge-traefik
+    restart: unless-stopped
+    command:
+      - --global.sendanonymoususage=false
+      - --log.level=INFO
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --providers.docker.network=wanzeller
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.le.acme.email=${TRAEFIK_ACME_EMAIL}
+      - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
+      - --certificatesresolvers.le.acme.httpchallenge=true
+      - --certificatesresolvers.le.acme.httpchallenge.entrypoint=web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - traefik-certificates:/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - wanzeller
+
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: edge-portainer
+    restart: unless-stopped
+    command:
+      - --host=unix:///var/run/docker.sock
+    ports:
+      - "127.0.0.1:9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-data:/data
+    networks:
+      - wanzeller
+
+  postgres:
+    image: postgres:17
+    container_name: core-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "127.0.0.1:15432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - wanzeller
+
+  minio:
+    image: minio/minio:latest
+    container_name: core-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    ports:
+      - "127.0.0.1:19000:9000"
+      - "127.0.0.1:19001:9001"
+    volumes:
+      - minio-data:/data
+    networks:
+      - wanzeller
+
+volumes:
+  traefik-certificates:
+    name: traefik-certificates
+  portainer-data:
+    name: portainer-data
+  postgres-data:
+    name: postgres-data
+  minio-data:
+    name: minio-data
+
+networks:
+  wanzeller:
+    name: wanzeller
+    external: true

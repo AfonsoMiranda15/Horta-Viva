@@ -1,0 +1,180 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - Horta Viva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-lime-200 selection:text-lime-900">
+    {% include "web/components/header.html" %}
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row gap-8">
+        <!-- Sidebar Filtros -->
+        <aside class="w-full md:w-72 flex-shrink-0">
+            <h2 class="text-xl font-extrabold text-stone-800 mb-4">Filtrar Produtos</h2>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-stone-100 space-y-6">
+                <div>
+                    <h3 class="font-bold text-stone-700 mb-3 border-b border-stone-100 pb-2">Categoria</h3>
+                    <ul class="space-y-3 text-sm text-stone-600 font-medium">
+                        <li><label class="flex items-center cursor-pointer hover:text-lime-700 transition"><input type="checkbox" class="mr-3 rounded text-lime-700 focus:ring-lime-600 h-4 w-4" value="fruta"> Fruta</label></li>
+                        <li><label class="flex items-center cursor-pointer hover:text-lime-700 transition"><input type="checkbox" class="mr-3 rounded text-lime-700 focus:ring-lime-600 h-4 w-4" value="legume"> Legume</label></li>
+                        <li><label class="flex items-center cursor-pointer hover:text-lime-700 transition"><input type="checkbox" class="mr-3 rounded text-lime-700 focus:ring-lime-600 h-4 w-4" value="verdura"> Verdura</label></li>
+                        <li><label class="flex items-center cursor-pointer hover:text-lime-700 transition"><input type="checkbox" class="mr-3 rounded text-lime-700 focus:ring-lime-600 h-4 w-4" value="tempero"> Tempero</label></li>
+                        <li><label class="flex items-center cursor-pointer hover:text-lime-700 transition"><input type="checkbox" class="mr-3 rounded text-lime-700 focus:ring-lime-600 h-4 w-4" value="mercearia"> Mercearia</label></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-stone-700 mb-3 border-b border-stone-100 pb-2">Preço Máximo</h3>
+                    <input type="range" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-lime-700" min="0" max="100" value="50" oninput="document.getElementById('preco-label').innerText = 'Até €' + this.value">
+                    <p class="text-sm font-semibold text-lime-800 mt-2" id="preco-label">Até €50</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-stone-700 mb-3 border-b border-stone-100 pb-2">Promoções</h3>
+                    <label class="flex items-center cursor-pointer hover:text-lime-700 transition text-sm font-medium text-stone-600">
+                        <input type="checkbox" class="mr-3 rounded text-lime-700 focus:ring-lime-600 h-4 w-4" value="promo">
+                        Apenas em Promoção
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Produtos -->
+        <div class="flex-1">
+            <h1 class="text-3xl font-extrabold text-stone-800 mb-8 pb-4 border-b border-stone-200" id="categoria-titulo">Todos os Produtos</h1>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fetch via JS (app.js irá renderizar aqui) -->
+            </div>
+        </div>
+    </main>
+    <footer class="bg-stone-900 text-stone-300 py-12 mt-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                <!-- Column 1: Quem somos -->
+                <div>
+                    <h3 class="text-xl font-bold text-lime-500 mb-4">Quem somos</h3>
+                    <p class="text-stone-400 mb-4">Temos o orgulho de manter parcerias que duram<br>mais de 20 anos...</p>
+                    <a href="{% url 'quem-somos' %}" class="text-lime-400 hover:text-lime-300 font-semibold transition-colors">Leia mais</a>
+                </div>
+                
+                <!-- Column 2: Funcionamento -->
+                <div>
+                    <h3 class="text-xl font-bold text-lime-500 mb-4">Funcionamento</h3>
+                    <p class="text-stone-400 mb-2">Segunda – Sexta das 06:30h às 17:30h</p>
+                    <p class="text-stone-400">Sábado das 06:30h às 11:30h</p>
+                </div>
+                
+                <!-- Column 3: Contato -->
+                <div>
+                    <h3 class="text-xl font-bold text-lime-500 mb-4">Contato</h3>
+                    <p class="text-stone-400 font-semibold mb-2">Telefone:</p>
+                    <p class="text-stone-400">(79) 3214-5397</p>
+                    <p class="text-stone-400">(79) 9 9961-9618</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 pt-8 text-center text-stone-500 text-sm">
+                <p>&copy; 2026 Por Personal Tech</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'web/app.js' %}"></script>
+    <script>
+        document.addEventListener('productsLoaded', applyFilters);
+
+        function bindFilters() {
+            const catCheckboxes = document.querySelectorAll('input[type="checkbox"]:not([value="promo"])');
+            const promoCheckbox = document.querySelector('input[type="checkbox"][value="promo"]');
+            const priceSlider = document.querySelector('input[type="range"]');
+
+            if (catCheckboxes) {
+                catCheckboxes.forEach(el => el.addEventListener('change', applyFilters));
+            }
+            if (promoCheckbox) promoCheckbox.addEventListener('change', applyFilters);
+            if (priceSlider) priceSlider.addEventListener('input', applyFilters); // 'input' é mais reativo que 'change'
+        }
+
+        function applyFilters() {
+            if (typeof allProducts === 'undefined' || allProducts.length === 0) return;
+
+            const catCheckboxes = document.querySelectorAll('input[type="checkbox"]:not([value="promo"])');
+            const promoCheckbox = document.querySelector('input[type="checkbox"][value="promo"]');
+            const priceSlider = document.querySelector('input[type="range"]');
+
+            // 1. Filtro Categoria
+            const selectedCats = Array.from(catCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value.toLowerCase());
+            
+            // 2. Filtro Promoção
+            const isPromoOnly = promoCheckbox ? promoCheckbox.checked : false;
+
+            // 3. Filtro Preço
+            const maxPrice = priceSlider ? parseFloat(priceSlider.value) : 1000;
+
+            // 4. Filtro de Pesquisa Global (q)
+            const searchInput = document.getElementById('global-search');
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+            const filtered = allProducts.filter(p => {
+                const catName = p.categoria_nome ? p.categoria_nome.toLowerCase() : '';
+                const pNome = p.nome ? p.nome.toLowerCase() : '';
+                
+                // 1. Filtro Categoria
+                const bateCategoria = selectedCats.length === 0 || selectedCats.includes(catName);
+
+                // 2. Filtro Preço (valida contra o preço ativo, seja o promocional ou o normal)
+                const precoAtual = (p.preco_promocional && parseFloat(p.preco_promocional) > 0) 
+                    ? parseFloat(p.preco_promocional) 
+                    : parseFloat(p.preco || 0);
+                const batePreco = precoAtual <= maxPrice;
+
+                // 3. Filtro Promoção
+                const batePromocao = !isPromoOnly || (p.preco_promocional && parseFloat(p.preco_promocional) > 0);
+
+                // 4. Filtro de Busca
+                const bateBusca = !query || pNome.includes(query) || catName.includes(query);
+
+                return bateCategoria && batePreco && batePromocao && bateBusca;
+            });
+
+            // Atualiza o título se houver 1 categoria selecionada
+            const titleEl = document.getElementById('categoria-titulo');
+            if (titleEl) {
+                if (selectedCats.length === 1) {
+                    titleEl.innerText = 'Categoria: ' + selectedCats[0].charAt(0).toUpperCase() + selectedCats[0].slice(1);
+                } else if (selectedCats.length > 1) {
+                    titleEl.innerText = 'Várias Categorias';
+                } else {
+                    titleEl.innerText = 'Todos os Produtos';
+                }
+            }
+
+            renderProducts(filtered);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            bindFilters();
+            const urlParams = new URLSearchParams(window.location.search);
+            const tipo = urlParams.get('tipo');
+            if(tipo) {
+                const checkbox = document.querySelector(`input[value="${tipo}"]`);
+                if(checkbox) {
+                    checkbox.checked = true;
+                    // Se o carregamento já ocorreu e os produtos existem em cache, filtra logo
+                    if (typeof allProducts !== 'undefined' && allProducts.length > 0) {
+                        applyFilters();
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

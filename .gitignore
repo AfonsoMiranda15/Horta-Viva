@@ -1,0 +1,24 @@
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Artefatos locais do sistema
+.DS_Store
+
+# Artefatos de execução Django (não versionar)
+software/static/
+software/media/
+
+# Variáveis de ambiente locais/secretas
+docker/**/*.env
+
+# Logs locais
+logs/
+*.log
+
+# Script local de live-reload (injeção de extensão/ambiente dev)
+refresh.js
+**/refresh.js
+
+HEXTONE/
