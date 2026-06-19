@@ -24,4 +24,7 @@ EXPOSE 8520
 RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate --noinput
 
+# Executa o seeder do teu projeto para criar os produtos e carregar as imagens na base de dados
+RUN python manage.py seeder
+
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8520"]
