@@ -266,3 +266,11 @@ LOGIN_REDIRECT_URL = '/api/'
 CIELO_MERCHANT_ID = '6f019861-5b70-4be5-9b6a-dd712f6d05a5'
 CIELO_MERCHANT_KEY = 'AX8emQ5DR8P5lg0Y5Cj8iZKrTwdQObh48jIfTldG'
 
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}

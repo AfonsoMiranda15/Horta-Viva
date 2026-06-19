@@ -11,6 +11,6 @@ django-filter
 requests
 django-webpush
 gunicorn
-whitenoise[brotli]
+whitenoise==6.5.0
 dj-database-url
 python-dotenv
