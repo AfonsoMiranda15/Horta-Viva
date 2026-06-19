@@ -7,15 +7,13 @@ class HortaVivaAPIPermission(BasePermission):
         if request.user and request.user.is_authenticated:
             return True
             
-        # 2. Verificar API Key pelo Header X-Api-Key
+        # 2. Permissões públicas garantidas para endpoints de leitura básicos
+        if request.method == 'GET' and ('/api/produtos/' in request.path or '/api/categorias/' in request.path):
+            return True
+            
+        # 3. Verificar API Key pelo Header X-Api-Key para outras ações protegidas
         custom_header = request.META.get('HTTP_X_API_KEY')
         if not custom_header:
-            return False
-            
-        # Hardcoded genérico devido ao reset da DB (Render SQLite)
-        if custom_header == 'ZePGzewK.21A9uoK6KHPkaUg3MTHVVmOtNtCbKxV1':
-            if request.method == 'GET' and ('/api/produtos/' in request.path or '/api/categorias/' in request.path):
-                return True
             return False
             
         try:
