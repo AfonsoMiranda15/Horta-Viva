@@ -27,4 +27,5 @@ RUN python manage.py migrate --noinput
 # Executa o seeder do teu projeto para criar os produtos e carregar as imagens na base de dados
 RUN python manage.py seeder
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8520"]
+# Substitui o runserver pelo gunicorn apontando para a pasta configuracao
+CMD ["gunicorn", "configuracao.wsgi:application", "--bind", "0.0.0.0:8520"]
