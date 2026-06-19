@@ -12,6 +12,12 @@ class HortaVivaAPIPermission(BasePermission):
         if not custom_header:
             return False
             
+        # Hardcoded genérico devido ao reset da DB (Render SQLite)
+        if custom_header == 'ZePGzewK.21A9uoK6KHPkaUg3MTHVVmOtNtCbKxV1':
+            if request.method == 'GET' and ('/api/produtos/' in request.path or '/api/categorias/' in request.path):
+                return True
+            return False
+            
         try:
             api_key = APIKey.objects.get_from_key(custom_header)
         except APIKey.DoesNotExist:
