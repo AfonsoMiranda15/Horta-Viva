@@ -20,10 +20,8 @@ WORKDIR /app/software
 
 # Força o Django a recolher os ficheiros estáticos da pasta software/static
 RUN python manage.py collectstatic --noinput
-RUN python manage.py migrate --noinput
-RUN python manage.py seeder
 
 EXPOSE 8520
 
-# Executa o servidor através do gunicorn em modo assíncrono seguro
-CMD ["gunicorn", "configuracao.wsgi:application", "--bind", "0.0.0.0:8520"]
+# Executa as migrações, o seeder e depois arranca o servidor Gunicorn (executado em runtime, com as Variáveis de Ambiente)
+CMD sh -c "python manage.py migrate --noinput && python manage.py seeder && gunicorn configuracao.wsgi:application --bind 0.0.0.0:8520"

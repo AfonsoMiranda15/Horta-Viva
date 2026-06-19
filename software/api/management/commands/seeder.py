@@ -10,6 +10,11 @@ class Command(BaseCommand):
     help = 'Popula a base de dados com massa de testes (Seeder)'
 
     def handle(self, *args, **kwargs):
+        # Verifica se já existem dados para evitar apagar a DB de Produção
+        if Categoria.objects.exists():
+            self.stdout.write(self.style.SUCCESS("A base de dados já possui dados. O Seeder foi ignorado."))
+            return
+
         self.stdout.write("Limpando base de dados...")
         Pagamento.objects.all().delete()
         ItemPedido.objects.all().delete()
