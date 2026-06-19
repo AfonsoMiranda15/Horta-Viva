@@ -14,7 +14,7 @@ import os
 import dj_database_url
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Garante que o BASE_DIR é a raiz onde está o manage.py (software/)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -56,9 +56,9 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Tem de ser exatamente aqui
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -135,18 +135,19 @@ LOCALE_PATHS = [
 ]
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+# Configurações de Produção para os Estáticos
 STATIC_URL = '/static/'
 
-# Aponta para a pasta static que está dentro de software/
+# Caminho absoluto da pasta onde estão guardados originalmente (software/static)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# Pasta para onde o collectstatic vai enviar tudo no deploy
+# Caminho absoluto da pasta temporária onde o collectstatic junta tudo para o Render ler
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Desativa a validação estrita do manifesto do WhiteNoise
+WHITENOISE_MANIFEST_STRICT = False
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -278,5 +279,3 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
-
-WHITENOISE_MANIFEST_STRICT = False

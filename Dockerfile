@@ -15,17 +15,15 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copia a árvore inteira do projeto para dentro do container
 COPY . /app/
 
-# Como o Django está dentro da pasta software/, mudamos o WORKDIR para lá
+# Garante que o Docker entra na pasta do código antes de compilar
 WORKDIR /app/software
 
-# Expõe a porta de desenvolvimento desejada
-EXPOSE 8520
-
+# Força o Django a recolher os ficheiros estáticos da pasta software/static
 RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate --noinput
-
-# Executa o seeder do teu projeto para criar os produtos e carregar as imagens na base de dados
 RUN python manage.py seeder
 
-# Substitui o runserver pelo gunicorn apontando para a pasta configuracao
+EXPOSE 8520
+
+# Executa o servidor através do gunicorn em modo assíncrono seguro
 CMD ["gunicorn", "configuracao.wsgi:application", "--bind", "0.0.0.0:8520"]
