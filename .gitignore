@@ -7,7 +7,7 @@ __pycache__/
 .DS_Store
 
 # Artefatos de execução Django (não versionar)
-software/static/
+software/staticfiles/
 software/media/
 
 # Variáveis de ambiente locais/secretas
