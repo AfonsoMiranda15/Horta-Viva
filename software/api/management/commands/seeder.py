@@ -21,6 +21,10 @@ class Command(BaseCommand):
         Categoria.objects.all().delete()
         RegraFrete.objects.all().delete()
 
+        self.stdout.write("Criando conta de Admin...")
+        if not User.objects.filter(username='admin').exists():
+            User.objects.create_superuser('admin', 'admin@hortaviva.com', 'admin')
+
         self.stdout.write("Criando Categorias...")
         cat_frutas = Categoria.objects.create(nome="Frutas")
         cat_legumes = Categoria.objects.create(nome="Legumes")
