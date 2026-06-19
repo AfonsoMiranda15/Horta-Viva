@@ -78,7 +78,13 @@ class ClienteViewSet(viewsets.ModelViewSet):
     def favoritos(self, request):
         user = request.user
         if not hasattr(user, 'cliente'):
-            return Response({'erro': 'Usuário não tem perfil de cliente associado.'}, status=status.HTTP_400_BAD_REQUEST)
+            Cliente.objects.create(
+                user=user,
+                nome=user.username,
+                email=user.email,
+                telefone='',
+                cpf_cnpj=''
+            )
             
         cliente = user.cliente
         
@@ -539,7 +545,13 @@ class PedidoViewSet(viewsets.ModelViewSet):
     def recompra_rapida(self, request, pk=None):
         user = request.user
         if not hasattr(user, 'cliente'):
-            return Response({'erro': 'Usuário não tem perfil de cliente associado.'}, status=status.HTTP_400_BAD_REQUEST)
+            Cliente.objects.create(
+                user=user,
+                nome=user.username,
+                email=user.email,
+                telefone='',
+                cpf_cnpj=''
+            )
             
         ultimo_pedido = self.get_object()
         
