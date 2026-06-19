@@ -29,10 +29,19 @@ class ProdutoSerializer(serializers.ModelSerializer):
     galeria = ImagemProdutoSerializer(many=True, read_only=True)
     categoria_nome = serializers.CharField(source='categoria.nome', read_only=True)
     variacoes_detalhes = TermoAtributoSerializer(source='variacoes', many=True, read_only=True)
+    imagem_principal = serializers.SerializerMethodField()
 
     class Meta:
         model = Produto
         fields = '__all__'
+
+    def get_imagem_principal(self, obj):
+        if not obj.imagem_principal:
+            return None
+        nome_imagem = str(obj.imagem_principal)
+        if nome_imagem.startswith('/static/'):
+            return nome_imagem
+        return obj.imagem_principal.url
 
 class EnderecoSerializer(serializers.ModelSerializer):
     class Meta:
