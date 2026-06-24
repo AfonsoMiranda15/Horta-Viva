@@ -24,13 +24,14 @@ services:
 
   web:
     build: .
-    command: python software/manage.py runserver 0.0.0.0:8520
+    command: python manage.py runserver 0.0.0.0:8520
     volumes:
       - .:/app
     ports:
       - "8520:8520"
     environment:
       - DATABASE_URL=postgres://hortaviva_admin:senha_secreta@db:5432/hortaviva_db
+      - DEBUG=True
     depends_on:
       - db
 

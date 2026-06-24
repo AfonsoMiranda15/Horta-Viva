@@ -40,6 +40,7 @@
         transform-origin: right;
         transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .nav-link-underline.active::after,
     .nav-link-underline:hover::after {
         transform: scale-x(1);
         transform-origin: left;
@@ -107,7 +108,7 @@
             <!-- Logo Section -->
             <div class="flex-shrink-0 flex items-center">
                 <a href="{% url 'index' %}" class="flex items-center group/logo">
-                    <img src="{% static 'web/images/logo-876-215.png' %}" alt="Horta Viva" class="h-12 header-logo transition-all duration-300 group-hover/logo:scale-[1.02]">
+                    <img src="{% static 'web/images/logo.svg' %}" alt="Horta Viva" class="h-12 header-logo transition-all duration-300 group-hover/logo:scale-[1.02]">
                 </a>
             </div>
             
@@ -157,8 +158,8 @@
                         </ul>
                     </div>
                 </div>
-                <a href="{% url 'promocoes' %}" class="nav-link-underline text-stone-700 hover:text-lime-700 transition-colors font-semibold text-[15px] tracking-wide">{% trans "Promoções" %}</a>
-                <a href="{% url 'contato' %}" class="nav-link-underline text-stone-700 hover:text-lime-700 transition-colors font-semibold text-[15px] tracking-wide">Contactos</a>
+                <a href="{% url 'promocoes' %}" class="nav-link-underline {% if request.resolver_match.url_name == 'promocoes' or request.resolver_match.url_name == 'index' %}active text-lime-700{% else %}text-stone-700{% endif %} hover:text-lime-700 transition-colors font-semibold text-[15px] tracking-wide">{% trans "Promoções" %}</a>
+                <a href="{% url 'contato' %}" class="nav-link-underline {% if request.resolver_match.url_name == 'contato' or request.resolver_match.url_name == 'index' %}active text-lime-700{% else %}text-stone-700{% endif %} hover:text-lime-700 transition-colors font-semibold text-[15px] tracking-wide">Contactos</a>
             </div>
 
             <!-- Desktop Action Icons / Buttons -->

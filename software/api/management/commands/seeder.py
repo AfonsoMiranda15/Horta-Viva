@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from decimal import Decimal
 from django.utils import timezone
 from api.models import (
-    Categoria, Produto, Cliente, Endereco, RegraFrete, Pedido, ItemPedido, Pagamento
+    Categoria, Produto, Cliente, Endereco, RegraFrete, Pedido, ItemPedido, Pagamento, Banner
 )
 
 class Command(BaseCommand):
@@ -25,6 +25,7 @@ class Command(BaseCommand):
         Produto.objects.all().delete()
         Categoria.objects.all().delete()
         RegraFrete.objects.all().delete()
+        Banner.objects.all().delete()
 
         self.stdout.write("Criando conta de Admin...")
         if not User.objects.filter(username='admin').exists():
@@ -110,5 +111,10 @@ class Command(BaseCommand):
             pedido.save()
 
             Pagamento.objects.create(pedido=pedido, metodo='cartao', status='aprovado' if pedido.status != 'aguardando' else 'pendente')
+
+        self.stdout.write("Criando Banners...")
+        Banner.objects.create(titulo="A Época do Morango Chegou!", imagem="banners/morango.png", link="/promocoes/", ordem=1, ativo=True)
+        Banner.objects.create(titulo="Frescura Direta do Campo", imagem="banners/alface.png", link="/categorias/?tipo=verdura", ordem=2, ativo=True)
+        Banner.objects.create(titulo="Seleção 100% Orgânica", imagem="banners/organico.png", link="/categorias/?tipo=legume", ordem=3, ativo=True)
 
         self.stdout.write(self.style.SUCCESS("Seeder executado com sucesso! Dados inseridos."))

@@ -46,7 +46,7 @@ class ProdutoViewSet(viewsets.ModelViewSet):
     }
 
     def get_queryset(self):
-        queryset = Produto.objects.all()
+        queryset = Produto.objects.filter(produto_ativo=True).order_by('-produto_em_destaque', 'nome')
         em_promocao = self.request.query_params.get('em_promocao', None)
         if em_promocao is not None and em_promocao.lower() == 'true':
             queryset = queryset.filter(preco_promocional__isnull=False, preco_promocional__gt=0)
@@ -238,7 +238,7 @@ class PedidoViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         if hasattr(user, 'cliente'):
-            return Pedido.objects.filter(cliente=user.cliente)
+            return Pedido.objects.filter(cliente=user.cliente).order_by('-criado_em')
         return Pedido.objects.none()
 
     def perform_update(self, serializer):
@@ -260,7 +260,8 @@ class PedidoViewSet(viewsets.ModelViewSet):
 
 
     def create(self, request, *args, **kwargs):
-        dados = request.data
+        # Utilizar um dicionário normal caso seja QueryDict
+        dados = request.data.copy() if hasattr(request.data, 'copy') else dict(request.data)
         itens_data = dados.pop('itens', [])
         
         # Cielo data
@@ -273,35 +274,97 @@ class PedidoViewSet(viewsets.ModelViewSet):
             dados['numero'] = str(uuid.uuid4().hex[:10].upper())
             
         cupom_id = dados.pop('cupom_id', None)
+        
+        # --- Cálculo Backend ---
+        from .models import Produto
+        total_produtos_calc = Decimal('0.00')
+        for item in itens_data:
+            try:
+                produto = Produto.objects.get(id=item['produto'])
+                
+                qtd_solicitada = int(item.get('quantidade', 1))
+                if qtd_solicitada > produto.estoque:
+                    return Response({'erro': f"A quantidade solicitada para '{produto.nome}' excede o stock disponível ({int(produto.estoque)} unidades)."}, status=status.HTTP_400_BAD_REQUEST)
+                    
+                preco = produto.preco_promocional if produto.preco_promocional and produto.preco_promocional > 0 else produto.preco
+                item['preco_unitario'] = preco
+                total_produtos_calc += preco * Decimal(str(qtd_solicitada))
+            except Produto.DoesNotExist:
+                return Response({'erro': 'Um ou mais produtos no carrinho não foram encontrados.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        custo_frete = Decimal(str(dados.get('custo_frete', '0.00')))
+        
+        desconto_cupom = Decimal('0.00')
+        cupom_obj = None
+        if cupom_id:
+            from .models import Cupom
+            try:
+                cupom_obj = Cupom.objects.get(id=cupom_id)
+                if cupom_obj.is_valido():
+                    if cupom_obj.desconto_fixo:
+                        desconto_cupom = cupom_obj.desconto_fixo
+                    elif cupom_obj.desconto_percentual:
+                        desconto_cupom = total_produtos_calc * (cupom_obj.desconto_percentual / Decimal('100'))
+            except Cupom.DoesNotExist:
+                pass
+                
+        total_pedido_calc = total_produtos_calc + custo_frete - desconto_cupom
+        if total_pedido_calc < 0:
+            total_pedido_calc = Decimal('0.00')
+            
+        dados['total_produtos'] = str(total_produtos_calc.quantize(Decimal('0.01')))
+        dados['total_pedido'] = str(total_pedido_calc.quantize(Decimal('0.01')))
+        dados['custo_frete'] = str(custo_frete.quantize(Decimal('0.01')))
+        # --- Fim Cálculo Backend ---
 
         serializer = self.get_serializer(data=dados)
         serializer.is_valid(raise_exception=True)
         pedido = serializer.save()
 
-        if cupom_id:
-            from .models import Cupom
-            try:
-                cupom = Cupom.objects.get(id=cupom_id)
-                pedido.cupom = cupom
-                pedido.save(update_fields=['cupom'])
-                
-                cupom.usos_atuais += 1
-                if cupom.limite_usos and cupom.usos_atuais >= cupom.limite_usos:
-                    cupom.ativo = False
-                cupom.save(update_fields=['usos_atuais', 'ativo'])
-            except Cupom.DoesNotExist:
-                pass
+        if cupom_obj and cupom_obj.is_valido():
+            pedido.cupom = cupom_obj
+            pedido.save(update_fields=['cupom'])
+            
+            cupom_obj.usos_atuais += 1
+            if cupom_obj.limite_usos and cupom_obj.usos_atuais >= cupom_obj.limite_usos:
+                cupom_obj.ativo = False
+            cupom_obj.save(update_fields=['usos_atuais', 'ativo'])
 
-        from .models import ItemPedido, Produto
+        from .models import ItemPedido
         for item in itens_data:
-            produto = Produto.objects.get(id=item['produto'])
-            ItemPedido.objects.create(
-                pedido=pedido,
+            try:
+                produto = Produto.objects.get(id=item['produto'])
+                ItemPedido.objects.create(
+                    pedido=pedido,
+                    produto=produto,
+                    nome_produto=item.get('nome_produto', produto.nome),
+                    quantidade=item['quantidade'],
+                    preco_unitario=item.get('preco_unitario', produto.preco)
+                )
+            except Produto.DoesNotExist:
+                pass
+            
+            # Abater stock imediatamente para reservar
+            produto.estoque -= int(item['quantidade'])
+            produto.save()
+            from .models import MovimentacaoEstoque
+            MovimentacaoEstoque.objects.create(
                 produto=produto,
-                nome_produto=item.get('nome_produto', produto.nome),
-                quantidade=item['quantidade'],
-                preco_unitario=item['preco_unitario']
+                quantidade=-int(item['quantidade']),
+                tipo='saida',
+                observacao=f"Reserva - Pedido {pedido.numero}",
+                pedido=pedido
             )
+            if produto.estoque <= 0:
+                from django.contrib.auth.models import User
+                from .models import Notificacao
+                admins = User.objects.filter(is_staff=True)
+                for admin in admins:
+                    Notificacao.objects.create(
+                        usuario=admin,
+                        titulo=f"Produto Esgotado: {produto.nome}",
+                        mensagem=f"O produto '{produto.nome}' (SKU: {produto.sku}) esgotou após a compra do pedido #{pedido.numero}. Por favor, verifique o stock."
+                    )
 
         # Integração Cielo
         forma_pagamento = pedido.forma_pagamento
@@ -327,20 +390,38 @@ class PedidoViewSet(viewsets.ModelViewSet):
             "Payment": {
                 "Type": "CreditCard" if forma_pagamento == 'cartao' else ("Pix" if forma_pagamento == 'pix' else "Boleto"),
                 "Amount": valor_centavos,
-                "Installments": 1,
             }
         }
         
-        if forma_pagamento == 'cartao' and card_number:
-            payload_cielo["Payment"]["CreditCard"] = {
-                "CardNumber": str(card_number),
-                "Holder": str(card_holder),
-                "ExpirationDate": str(card_expiration),
-                "SecurityCode": str(card_cvv),
-                "Brand": "Visa" # Simplificando no sandbox
-            }
+        if forma_pagamento == 'cartao':
+            payload_cielo["Payment"]["Installments"] = 1
+            if card_number:
+                payload_cielo["Payment"]["CreditCard"] = {
+                    "CardNumber": str(card_number),
+                    "Holder": str(card_holder),
+                    "ExpirationDate": str(card_expiration),
+                    "SecurityCode": str(card_cvv),
+                    "Brand": "Visa" # Simplificando no sandbox
+                }
             # Vamos direto com a captura para cartão
             payload_cielo["Payment"]["Capture"] = True
+            
+            # Recorrência Programada Cielo
+            if pedido.is_recorrente:
+                interval = "Monthly"
+                if pedido.frequencia_dias == 60:
+                    interval = "Bimonthly"
+                elif pedido.frequencia_dias == 90:
+                    interval = "Quarterly"
+                elif pedido.frequencia_dias == 180:
+                    interval = "SemiAnnual"
+                elif pedido.frequencia_dias == 365:
+                    interval = "Annual"
+                
+                payload_cielo["Payment"]["RecurrentPayment"] = {
+                    "AuthorizeNow": True,
+                    "Interval": interval
+                }
             
         elif forma_pagamento == 'boleto':
             payload_cielo["Payment"]["Provider"] = "Bradesco2"
@@ -370,6 +451,20 @@ class PedidoViewSet(viewsets.ModelViewSet):
                 except:
                     erro_msg = "Erro ao processar o pagamento na operadora."
                 
+                
+                # Restaurar stock
+                for item in pedido.itens.all():
+                    produto = item.produto
+                    produto.estoque += item.quantidade
+                    produto.save()
+                    from .models import MovimentacaoEstoque
+                    MovimentacaoEstoque.objects.create(
+                        produto=produto,
+                        quantidade=item.quantidade,
+                        tipo='entrada',
+                        observacao=f"Cielo Erro - Pedido {pedido.numero}",
+                        pedido=pedido
+                    )
                 pedido.status = 'cancelado'
                 pedido.save()
                 return Response({'erro': erro_msg}, status=status.HTTP_400_BAD_REQUEST)
@@ -385,21 +480,6 @@ class PedidoViewSet(viewsets.ModelViewSet):
                     pedido.status = 'pago'
                     pedido.save()
                     
-                    # Abater stock
-                    for item in pedido.itens.all():
-                        produto = item.produto
-                        quantidade = item.quantidade
-                        produto.estoque -= quantidade
-                        produto.save()
-                        from .models import MovimentacaoEstoque
-                        MovimentacaoEstoque.objects.create(
-                            produto=produto,
-                            quantidade=-quantidade,
-                            tipo='saida',
-                            observacao=f"Venda - Pedido {pedido.numero}",
-                            pedido=pedido
-                        )
-                    
                 # Criar a notificação solicitada
                 from .models import Notificacao
                 user = pedido.cliente.user
@@ -413,17 +493,44 @@ class PedidoViewSet(viewsets.ModelViewSet):
 
             elif status_code in [3, 10]: # Denied, Voided
                 status_pagamento = "recusado"
+                # Restaurar stock
+                for item in pedido.itens.all():
+                    produto = item.produto
+                    produto.estoque += item.quantidade
+                    produto.save()
+                    from .models import MovimentacaoEstoque
+                    MovimentacaoEstoque.objects.create(
+                        produto=produto,
+                        quantidade=item.quantidade,
+                        tipo='entrada',
+                        observacao=f"Pagamento Recusado - Pedido {pedido.numero}",
+                        pedido=pedido
+                    )
                 pedido.status = 'cancelado'
                 pedido.save()
                 return Response({'erro': 'Pagamento recusado pela operadora do cartão.'}, status=status.HTTP_400_BAD_REQUEST)
                 
             if forma_pagamento == 'pix':
                 qr_code = payment_res.get('QrCodeString', '')
+                qr_code_image = payment_res.get('QrCodeBase64Image', '')
             elif forma_pagamento == 'boleto':
                 boleto_url = payment_res.get('Url', '')
                 
         except Exception as e:
             logger.error(f"Erro ao comunicar com a Cielo: {e}")
+            # Restaurar stock
+            for item in pedido.itens.all():
+                produto = item.produto
+                produto.estoque += item.quantidade
+                produto.save()
+                from .models import MovimentacaoEstoque
+                MovimentacaoEstoque.objects.create(
+                    produto=produto,
+                    quantidade=item.quantidade,
+                    tipo='entrada',
+                    observacao=f"Falha Gateway - Pedido {pedido.numero}",
+                    pedido=pedido
+                )
             pedido.status = 'cancelado'
             pedido.save()
             return Response({'erro': 'Falha na comunicação com o gateway de pagamento.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -442,6 +549,7 @@ class PedidoViewSet(viewsets.ModelViewSet):
         response_data['status'] = pedido.status  # Garante que a resposta reflete o status atualizado
         if forma_pagamento == 'pix':
             response_data['qr_code'] = qr_code
+            response_data['qr_code_image'] = qr_code_image
         elif forma_pagamento == 'boleto':
             response_data['boleto_url'] = boleto_url
             
@@ -517,6 +625,16 @@ class PedidoViewSet(viewsets.ModelViewSet):
                         observacao=f"Venda - Pedido {pedido.numero}",
                         pedido=pedido
                     )
+                    if produto.estoque <= 0:
+                        from django.contrib.auth.models import User
+                        from .models import Notificacao
+                        admins = User.objects.filter(is_staff=True)
+                        for admin in admins:
+                            Notificacao.objects.create(
+                                usuario=admin,
+                                titulo=f"Produto Esgotado: {produto.nome}",
+                                mensagem=f"O produto '{produto.nome}' (SKU: {produto.sku}) esgotou. Por favor, verifique o stock."
+                            )
 
             pedido.status = novo_status
             
@@ -561,6 +679,9 @@ class PedidoViewSet(viewsets.ModelViewSet):
         itens = ultimo_pedido.itens.all()
         lista_itens = []
         for item in itens:
+            if item.produto.estoque < item.quantidade:
+                return Response({'erro': f"O produto '{item.produto.nome}' tem apenas {int(item.produto.estoque)} unidades disponíveis (são necessárias {int(item.quantidade)} para esta encomenda)."}, status=status.HTTP_400_BAD_REQUEST)
+                
             lista_itens.append({
                 'produto_id': item.produto.id,
                 'nome': item.produto.nome,

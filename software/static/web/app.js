@@ -229,7 +229,7 @@ function updateCartCount() {
     }
 }
 
-function addToCart(productId, productName, price) {
+function addToCart(productId, productName, price, maxStock) {
     if (!isAuthenticated()) {
         showToast('Precisa de iniciar sessão para adicionar produtos ao carrinho.', 'error');
         setTimeout(() => window.location.href = '/minha-conta/', 2000);
@@ -237,10 +237,18 @@ function addToCart(productId, productName, price) {
     }
     
     const existing = cart.find(item => item.name === productName);
+    const currentQty = existing ? existing.quantity : 0;
+    
+    if (maxStock !== undefined && currentQty >= maxStock) {
+        showToast(`Apenas ${maxStock} unidades disponíveis em stock!`, 'error');
+        return;
+    }
+
     if (existing) {
         existing.quantity += 1;
+        existing.maxStock = maxStock !== undefined ? maxStock : existing.maxStock;
     } else {
-        cart.push({ id: productId, name: productName, price: price, quantity: 1 });
+        cart.push({ id: productId, name: productName, price: price, quantity: 1, maxStock: maxStock });
     }
     localStorage.setItem('hortaviva_cart', JSON.stringify(cart));
     updateCartCount();
@@ -300,14 +308,34 @@ function renderProducts(products) {
 
     products.forEach(p => {
         let badgesHTML = '';
-        if (p.produto_organico) {
-            badgesHTML += `<span class="bg-lime-200 text-lime-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm">🌿 Orgânico</span>`;
-        }
-        if (p.produto_sazonal) {
-            badgesHTML += `<span class="bg-yellow-200 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm ml-1">☀️ Sazonal</span>`;
+        if (p.estoque <= 0) {
+            badgesHTML += `<span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded shadow-sm border border-red-200">Esgotado</span>`;
+        } else {
+            badgesHTML += `<span class="bg-lime-100 text-lime-800 text-xs font-bold px-2 py-1 rounded shadow-sm border border-lime-200">Em Stock</span>`;
         }
         
-        const price = parseFloat(p.preco || 0).toFixed(2);
+        if (p.produto_organico) {
+            badgesHTML += `<span class="bg-lime-200 text-lime-900 text-xs font-bold px-2 py-1 rounded shadow-sm">🌿 Orgânico</span>`;
+        }
+        if (p.produto_sazonal) {
+            badgesHTML += `<span class="bg-yellow-200 text-yellow-900 text-xs font-bold px-2 py-1 rounded shadow-sm">☀️ Sazonal</span>`;
+        }
+        if (p.produto_em_destaque) {
+            badgesHTML += `<span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded shadow-sm">⭐ Destaque</span>`;
+        }
+        if (p.produto_variavel) {
+            badgesHTML += `<span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded shadow-sm">📦 Variável</span>`;
+        }
+        
+        let hasPromo = false;
+        let basePrice = parseFloat(p.preco || 0);
+        let promoPrice = parseFloat(p.preco_promocional || 0);
+        if (promoPrice > 0 && promoPrice < basePrice) {
+            hasPromo = true;
+        }
+        
+        const price = hasPromo ? promoPrice.toFixed(2) : basePrice.toFixed(2);
+        const oldPrice = basePrice.toFixed(2);
         
         let fallbackImage = 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800';
         const nameLower = p.nome ? p.nome.toLowerCase() : '';
@@ -333,8 +361,7 @@ function renderProducts(products) {
         }
 
         grid.innerHTML += `
-            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden relative group border border-stone-100 flex flex-col">
-                <div class="absolute top-3 left-3 flex gap-1 z-10">${badgesHTML}</div>
+            <div class="bg-white rounded-xl hover:shadow-xl transition-shadow duration-300 overflow-hidden relative group flex flex-col ${p.produto_em_destaque ? 'border-2 border-purple-500 shadow-lg shadow-purple-100' : 'border border-stone-100 shadow-md'}">
                 <button onclick="toggleFavorite(${p.id}, this)" class="absolute top-3 right-3 z-20 p-2 rounded-full bg-black/20 hover:bg-black/40 backdrop-blur-sm transition-colors duration-200 shadow-sm focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-colors duration-200 ${favorites.includes(p.id) ? 'text-red-500 fill-current' : 'text-white'}" fill="${favorites.includes(p.id) ? 'currentColor' : 'none'}" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -345,16 +372,21 @@ function renderProducts(products) {
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div class="cursor-pointer" onclick="window.location.href='/produto/?id=${p.id}'">
+                        <div class="flex flex-wrap gap-1.5 mb-3">${badgesHTML}</div>
                         <h3 class="text-lg font-bold text-stone-800 mb-1 hover:text-lime-700 transition-colors">${p.nome}</h3>
                         ${p.categoria_nome ? `<p class="text-xs text-stone-500 font-semibold uppercase tracking-wider mb-2">${p.categoria_nome}</p>` : ''}
-                        <p class="text-lime-700 font-extrabold text-2xl mb-5">€ ${price}</p>
+                        ${p.descricao_curta ? `<p class="text-sm text-stone-600 line-clamp-2 mb-3">${p.descricao_curta}</p>` : ''}
+                        <div class="flex items-end gap-2 mb-5">
+                            <p class="text-lime-700 font-extrabold text-2xl">€ ${price}</p>
+                            ${hasPromo ? `<p class="text-stone-400 line-through text-sm mb-1">€ ${oldPrice}</p>` : ''}
+                        </div>
                     </div>
-                    <button onclick="addToCart(${p.id}, '${p.nome.replace(/'/g, "\\'")}', ${price})" 
-                        class="w-full bg-lime-700 hover:bg-lime-800 text-white font-semibold py-2.5 px-4 rounded-lg shadow transition-colors duration-200 flex items-center justify-center gap-2 mt-auto">
+                    <button ${p.estoque <= 0 ? 'disabled' : ''} onclick="addToCart(${p.id}, '${p.nome.replace(/'/g, "\\'")}', ${price}, ${p.estoque})" 
+                        class="w-full ${p.estoque <= 0 ? 'bg-stone-400 cursor-not-allowed' : 'bg-lime-700 hover:bg-lime-800'} text-white font-semibold py-2.5 px-4 rounded-lg shadow transition-colors duration-200 flex items-center justify-center gap-2 mt-auto">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        Adicionar
+                        ${p.estoque <= 0 ? 'Esgotado' : 'Adicionar'}
                     </button>
                 </div>
             </div>
@@ -421,22 +453,88 @@ async function loadBanners() {
         const data = await response.json();
         const banners = data.results || data;
         
-        const container = document.getElementById('banners-container');
+        const container = document.getElementById('hero-carousel-container');
         if (container && banners.length > 0) {
-            container.classList.remove('hidden');
-            container.innerHTML = banners.map(b => {
+            let currentSlide = 0;
+            
+            // Build slides HTML
+            const slidesHTML = banners.map((b, index) => {
                 let imgUrl = b.imagem;
                 if (imgUrl && imgUrl.startsWith('/')) imgUrl = `${DOMAIN_URL}${imgUrl}`;
-                const bannerContent = `
-                    <div class="relative rounded-2xl overflow-hidden shadow-md group h-48 md:h-64 cursor-pointer">
-                        <img src="${imgUrl}" alt="${b.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold drop-shadow-lg">${b.titulo}</h3>
+                return `
+                    <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" id="slide-${index}">
+                        <div class="absolute inset-0 bg-black/40 z-10"></div>
+                        <img src="${imgUrl}" alt="${b.titulo}" class="absolute inset-0 w-full h-full object-cover z-0">
+                        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+                            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-xl transform translate-y-4 opacity-0 transition-all duration-700 delay-300 slide-text-${index} ${index === 0 ? '!translate-y-0 !opacity-100' : ''}">${b.titulo}</h2>
+                            ${b.link ? `<a href="${b.link}" class="inline-block bg-lime-600 hover:bg-lime-500 text-white font-bold py-3 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 drop-shadow-md opacity-0 translate-y-4 delay-500 slide-btn-${index} ${index === 0 ? '!translate-y-0 !opacity-100' : ''}">Ver Detalhes</a>` : ''}
                         </div>
                     </div>
                 `;
-                return b.link ? `<a href="${b.link}" class="block hover:opacity-95 transition-opacity">${bannerContent}</a>` : bannerContent;
             }).join('');
+            
+            // Build controls HTML
+            const controlsHTML = `
+                <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-lime-600 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-lime-600 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </button>
+                <div class="absolute bottom-6 left-0 right-0 z-30 flex justify-center gap-3">
+                    ${banners.map((_, i) => `<button class="w-3 h-3 rounded-full transition-all duration-300 carousel-dot ${i === 0 ? 'bg-lime-500 scale-125' : 'bg-white/50 hover:bg-white/80'}" data-slide="${i}"></button>`).join('')}
+                </div>
+            `;
+            
+            container.innerHTML = slidesHTML + controlsHTML;
+            
+            const goToSlide = (index) => {
+                // Reset old slide
+                document.getElementById(`slide-${currentSlide}`).classList.replace('opacity-100', 'opacity-0');
+                document.getElementById(`slide-${currentSlide}`).classList.replace('z-10', 'z-0');
+                const oldText = document.querySelector(`.slide-text-${currentSlide}`);
+                const oldBtn = document.querySelector(`.slide-btn-${currentSlide}`);
+                if (oldText) { oldText.classList.remove('!translate-y-0', '!opacity-100'); }
+                if (oldBtn) { oldBtn.classList.remove('!translate-y-0', '!opacity-100'); }
+                
+                // Update dots
+                document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                    dot.classList.toggle('bg-lime-500', i === index);
+                    dot.classList.toggle('scale-125', i === index);
+                    dot.classList.toggle('bg-white/50', i !== index);
+                });
+                
+                // Set new slide
+                currentSlide = index;
+                document.getElementById(`slide-${currentSlide}`).classList.replace('opacity-0', 'opacity-100');
+                document.getElementById(`slide-${currentSlide}`).classList.replace('z-0', 'z-10');
+                
+                // Animate text of new slide
+                setTimeout(() => {
+                    const newText = document.querySelector(`.slide-text-${currentSlide}`);
+                    const newBtn = document.querySelector(`.slide-btn-${currentSlide}`);
+                    if (newText) { newText.classList.add('!translate-y-0', '!opacity-100'); }
+                    if (newBtn) { newBtn.classList.add('!translate-y-0', '!opacity-100'); }
+                }, 50); // slight delay to allow opacity transition to start
+            };
+            
+            const nextSlide = () => goToSlide((currentSlide + 1) % banners.length);
+            const prevSlide = () => goToSlide((currentSlide - 1 + banners.length) % banners.length);
+            
+            document.getElementById('carousel-next').addEventListener('click', nextSlide);
+            document.getElementById('carousel-prev').addEventListener('click', prevSlide);
+            document.querySelectorAll('.carousel-dot').forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    goToSlide(parseInt(e.target.dataset.slide));
+                });
+            });
+            
+            // Auto advance
+            let carouselInterval = setInterval(nextSlide, 5000);
+            container.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+            container.addEventListener('mouseleave', () => {
+                carouselInterval = setInterval(nextSlide, 5000);
+            });
         }
     } catch (e) {
         console.error('Erro ao carregar banners:', e);
@@ -642,7 +740,8 @@ async function recompraRapida(pedidoId) {
             showToast('Recompra rápida processada! Redirecionando para o carrinho...', 'success');
             setTimeout(() => window.location.href = '/carrinho/', 1500);
         } else {
-            showToast('Nenhum pedido entregue disponível para recompra.', 'error');
+            const errData = await res.json().catch(() => ({}));
+            showToast(errData.erro || 'Erro ao processar recompra rápida. Produto indisponível.', 'error');
         }
     } catch(e) {
         console.error(e);

@@ -8,7 +8,9 @@ __pycache__/
 
 # Artefatos de execução Django (não versionar)
 software/staticfiles/
-software/media/
+software/media/*
+!software/media/banners/
+!software/media/banners/*
 
 # Variáveis de ambiente locais/secretas
 docker/**/*.env
