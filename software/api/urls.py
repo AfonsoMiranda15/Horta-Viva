@@ -8,7 +8,8 @@ from .views import (
     CategoriaViewSet, ProdutoViewSet, ClienteViewSet, EnderecoViewSet,
     RegraFreteViewSet, PedidoViewSet, PagamentoViewSet,
     DashboardView, RelatoriosView, RegisterView, PasswordResetView,
-    CupomViewSet, BannerViewSet, NotificacaoViewSet, CartaoViewSet
+    CupomViewSet, BannerViewSet, NotificacaoViewSet, CartaoViewSet,
+    ForceSeederView
 )
 
 router = DefaultRouter()
@@ -33,4 +34,5 @@ urlpatterns = [
     path('auth/register/', RegisterView.as_view(), name='auth_register'),
     path('auth/password-reset/', PasswordResetView.as_view(), name='password_reset'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('force-seeder/', ForceSeederView.as_view(), name='force_seeder'),
 ]

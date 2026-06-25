@@ -745,6 +745,17 @@ class DashboardView(APIView):
             'alertas_estoque_minimo': alertas_estoque_minimo
         })
 
+class ForceSeederView(APIView):
+    def get(self, request):
+        try:
+            from django.core.management import call_command
+            from .models import Categoria
+            Categoria.objects.all().delete()
+            call_command('seeder')
+            return Response({"status": "Seeder executado com sucesso. Base de dados reconstruída!"})
+        except Exception as e:
+            return Response({"erro": str(e)}, status=500)
+
 class RelatoriosView(APIView):
     def get(self, request):
         mes_atual = timezone.now().month
