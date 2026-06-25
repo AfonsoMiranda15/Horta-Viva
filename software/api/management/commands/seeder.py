@@ -88,13 +88,13 @@ class Command(BaseCommand):
 
         abacaxi = next((p for p in produtos_objs if p.nome == "Abacaxi"), None)
         if abacaxi:
-            VariacaoProduto.objects.create(produto=abacaxi, atributo=atr_tamanho, termo=termo_grande, preco=Decimal("8.50"), estoque=Decimal("10"))
-            VariacaoProduto.objects.create(produto=abacaxi, atributo=atr_tamanho, termo=termo_medio, preco=Decimal("6.00"), estoque=Decimal("10"))
+            VariacaoProduto.objects.create(produto=abacaxi, termo=termo_grande, preco=Decimal("8.50"), estoque=Decimal("10"))
+            VariacaoProduto.objects.create(produto=abacaxi, termo=termo_medio, preco=Decimal("6.00"), estoque=Decimal("10"))
             
         banana = next((p for p in produtos_objs if p.nome == "Banana Prata"), None)
         if banana:
-            VariacaoProduto.objects.create(produto=banana, atributo=atr_maduracao, termo=termo_madura, preco=Decimal("6.00"), estoque=Decimal("3"))
-            VariacaoProduto.objects.create(produto=banana, atributo=atr_maduracao, termo=termo_verde, preco=Decimal("6.00"), estoque=Decimal("2"))
+            VariacaoProduto.objects.create(produto=banana, termo=termo_madura, preco=Decimal("6.00"), estoque=Decimal("3"))
+            VariacaoProduto.objects.create(produto=banana, termo=termo_verde, preco=Decimal("6.00"), estoque=Decimal("2"))
 
         self.stdout.write("Criando Clientes e Endereços...")
         clientes_data = [
