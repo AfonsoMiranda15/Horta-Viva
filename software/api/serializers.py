@@ -116,9 +116,19 @@ class CupomSerializer(serializers.ModelSerializer):
         return obj.is_valido()
 
 class BannerSerializer(serializers.ModelSerializer):
+    imagem = serializers.SerializerMethodField()
+
     class Meta:
         model = Banner
         fields = '__all__'
+
+    def get_imagem(self, obj):
+        if not obj.imagem:
+            return None
+        nome_imagem = str(obj.imagem)
+        if nome_imagem.startswith('/static/'):
+            return nome_imagem
+        return obj.imagem.url
 
 class NotificacaoSerializer(serializers.ModelSerializer):
     class Meta:

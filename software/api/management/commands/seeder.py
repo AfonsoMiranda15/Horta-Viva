@@ -4,7 +4,7 @@ from decimal import Decimal
 from django.utils import timezone
 from api.models import (
     Categoria, Produto, Cliente, Endereco, RegraFrete, Pedido, ItemPedido, Pagamento, Banner,
-    Atributo, TermoAtributo, VariacaoProduto
+    Atributo, TermoAtributo, VariacaoProduto, Configuracao, Cupom, Notificacao
 )
 
 class Command(BaseCommand):
@@ -30,6 +30,8 @@ class Command(BaseCommand):
         Categoria.objects.all().delete()
         RegraFrete.objects.all().delete()
         Banner.objects.all().delete()
+        Cupom.objects.all().delete()
+        Notificacao.objects.all().delete()
 
         self.stdout.write("Criando conta de Admin...")
         if not User.objects.filter(username='admin').exists():
@@ -40,6 +42,16 @@ class Command(BaseCommand):
         cat_legumes = Categoria.objects.create(nome="Legumes")
         cat_verduras = Categoria.objects.create(nome="Verduras")
         cat_temperos = Categoria.objects.create(nome="Temperos")
+
+        self.stdout.write("Criando Configurações e Frete...")
+        if not Configuracao.objects.exists():
+            Configuracao.objects.create(nome_loja="Horta Viva")
+        
+        RegraFrete.objects.create(cidade="Lisboa", estado="PT", valor_frete=Decimal('5.00'), frete_gratis_acima_de=Decimal('50.00'), pedido_minimo=Decimal('10.00'), prazo_dias=1)
+        RegraFrete.objects.create(cidade="Porto", estado="PT", valor_frete=Decimal('6.50'), frete_gratis_acima_de=Decimal('60.00'), pedido_minimo=Decimal('15.00'), prazo_dias=2)
+
+        self.stdout.write("Criando Cupons...")
+        cupom = Cupom.objects.create(codigo="BEMVINDO10", desconto_percentual=Decimal('10.00'), limite_usos=100, ativo=True)
 
         self.stdout.write("Criando Produtos...")
         produtos_data = [
@@ -132,14 +144,21 @@ class Command(BaseCommand):
             # Atualizar totais
             total_prod = (Decimal('2') * p1.preco) + (Decimal('1') * p2.preco)
             pedido.total_produtos = total_prod
-            pedido.total_pedido = total_prod + pedido.custo_frete
+            if i == 0:
+                pedido.cupom = cupom
+                pedido.total_produtos *= Decimal('0.9') # Aplica cupom
+            pedido.total_pedido = pedido.total_produtos + pedido.custo_frete
             pedido.save()
 
             Pagamento.objects.create(pedido=pedido, metodo='cartao', status='aprovado' if pedido.status != 'aguardando' else 'pendente')
 
+        self.stdout.write("Criando Notificações...")
+        for c in clientes_objs:
+            Notificacao.objects.create(usuario=c.user, titulo="Bem-vindo à Horta Viva!", mensagem="Obrigado por se registar na nossa plataforma.")
+
         self.stdout.write("Criando Banners...")
-        Banner.objects.create(titulo="A Época do Morango Chegou!", imagem="banners/morango.png", link="/promocoes/", ordem=1, ativo=True)
-        Banner.objects.create(titulo="Frescura Direta do Campo", imagem="banners/alface.png", link="/categorias/?tipo=verdura", ordem=2, ativo=True)
-        Banner.objects.create(titulo="Seleção 100% Orgânica", imagem="banners/organico.png", link="/categorias/?tipo=legume", ordem=3, ativo=True)
+        Banner.objects.create(titulo="A Época do Morango Chegou!", imagem="/static/web/images/banners/morango.png", link="/promocoes/", ordem=1, ativo=True)
+        Banner.objects.create(titulo="Frescura Direta do Campo", imagem="/static/web/images/banners/alface.png", link="/categorias/?tipo=verdura", ordem=2, ativo=True)
+        Banner.objects.create(titulo="Seleção 100% Orgânica", imagem="/static/web/images/banners/organico.png", link="/categorias/?tipo=legume", ordem=3, ativo=True)
 
         self.stdout.write(self.style.SUCCESS("Seeder executado com sucesso! Dados inseridos."))
