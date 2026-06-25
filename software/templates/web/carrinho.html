@@ -46,7 +46,7 @@
                     
                     <div class="flex justify-between text-stone-600">
                         <span>Subtotal de Produtos</span>
-                        <span id="cart-subtotal" class="font-semibold text-stone-800">€ 0.00</span>
+                        <span id="cart-subtotal" class="font-semibold text-stone-800">R$ 0.00</span>
                     </div>
 
                     <div class="border-t border-stone-100 pt-4">
@@ -69,7 +69,7 @@
 
                     <div class="flex justify-between text-lg font-extrabold text-stone-800 border-t border-stone-200 pt-4 mt-4">
                         <span>Total a Pagar</span>
-                        <span id="cart-total" class="text-lime-700 text-2xl">€ 0.00</span>
+                        <span id="cart-total" class="text-lime-700 text-2xl">R$ 0.00</span>
                     </div>
 
                     <a href="{% url 'checkout' %}" class="w-full block text-center bg-lime-700 hover:bg-lime-800 text-white font-bold py-4 rounded-lg shadow-md transition-colors duration-200">
@@ -125,8 +125,8 @@
             const tbody = document.getElementById('cart-items');
             if (cart.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="4" class="py-8 text-center text-stone-500 font-medium">O seu carrinho está vazio.</td></tr>';
-                document.getElementById('cart-subtotal').innerText = '€ 0.00';
-                document.getElementById('cart-total').innerText = '€ 0.00';
+                document.getElementById('cart-subtotal').innerText = 'R$ 0.00';
+                document.getElementById('cart-total').innerText = 'R$ 0.00';
                 subtotalCache = 0;
                 return;
             }
@@ -145,7 +145,7 @@
                                 <button onclick="changeQty('${item.name.replace(/'/g, "\\'")}', 1)" class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center font-bold text-stone-700 hover:bg-stone-300">+</button>
                             </div>
                         </td>
-                        <td class="py-4 text-right font-bold text-lime-700">€ ${itemTotal.toFixed(2)}</td>
+                        <td class="py-4 text-right font-bold text-lime-700">R$ ${itemTotal.toFixed(2)}</td>
                         <td class="py-4 text-right">
                             <button onclick="removeFromCart('${item.name.replace(/'/g, "\\'")}')" class="text-red-500 hover:text-red-700 transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -157,7 +157,7 @@
                 `;
             }).join('');
 
-            document.getElementById('cart-subtotal').innerText = `€ ${subtotalCache.toFixed(2)}`;
+            document.getElementById('cart-subtotal').innerText = `R$ ${subtotalCache.toFixed(2)}`;
             updateTotal();
         }
 
@@ -209,7 +209,7 @@
 
                 resEl.classList.remove('hidden', 'text-red-600');
                 resEl.classList.add('text-lime-700');
-                resEl.innerHTML = freightCost === 0 ? 'Frete Grátis!' : `Frete: € ${freightCost.toFixed(2)} (${data.prazo_dias} dias úteis)`;
+                resEl.innerHTML = freightCost === 0 ? 'Frete Grátis!' : `Frete: R$ ${freightCost.toFixed(2)} (${data.prazo_dias} dias úteis)`;
                 
                 updateTotal();
             } catch (error) {
@@ -267,14 +267,14 @@
                     discountCost = subtotalCache * (parseFloat(activeCoupon.desconto_percentual) / 100);
                 }
                 const resEl = document.getElementById('cupom-result');
-                resEl.innerHTML = `Cupão ${activeCoupon.codigo} aplicado! (-€ ${discountCost.toFixed(2)})`;
+                resEl.innerHTML = `Cupão ${activeCoupon.codigo} aplicado! (-R$ ${discountCost.toFixed(2)})`;
             } else {
                 discountCost = 0;
             }
 
             let total = subtotalCache + freightCost - discountCost;
             if (total < 0) total = 0;
-            document.getElementById('cart-total').innerText = `€ ${total.toFixed(2)}`;
+            document.getElementById('cart-total').innerText = `R$ ${total.toFixed(2)}`;
             localStorage.setItem('hortaviva_total', total);
             localStorage.setItem('hortaviva_discount', discountCost);
         }

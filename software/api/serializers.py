@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import (
-    Categoria, Produto, ImagemProduto, Atributo, TermoAtributo, 
+    Categoria, Produto, ImagemProduto, Atributo, TermoAtributo, VariacaoProduto,
     Cliente, Endereco, Cartao, RegraFrete, Pedido, ItemPedido, Pagamento,
     Cupom, Banner, Notificacao, MovimentacaoEstoque, Configuracao
 )
@@ -25,10 +25,19 @@ class TermoAtributoSerializer(serializers.ModelSerializer):
         model = TermoAtributo
         fields = '__all__'
 
+class VariacaoProdutoSerializer(serializers.ModelSerializer):
+    termo_nome = serializers.CharField(source='termo.valor', read_only=True)
+    atributo_nome = serializers.CharField(source='termo.atributo.nome', read_only=True)
+
+    class Meta:
+        model = VariacaoProduto
+        fields = ['id', 'termo', 'termo_nome', 'atributo_nome', 'preco', 'estoque']
+
 class ProdutoSerializer(serializers.ModelSerializer):
     galeria = ImagemProdutoSerializer(many=True, read_only=True)
     categoria_nome = serializers.CharField(source='categoria.nome', read_only=True)
     variacoes_detalhes = TermoAtributoSerializer(source='variacoes', many=True, read_only=True)
+    precos_variacao = VariacaoProdutoSerializer(many=True, read_only=True)
     imagem_principal = serializers.SerializerMethodField()
 
     class Meta:

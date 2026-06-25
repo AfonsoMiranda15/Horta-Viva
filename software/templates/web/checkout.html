@@ -158,21 +158,21 @@
                     <div class="border-t border-stone-100 pt-4 space-y-2 text-stone-600">
                         <div class="flex justify-between">
                             <span>Subtotal</span>
-                            <span id="check-subtotal" class="font-semibold text-stone-800">€ 0.00</span>
+                            <span id="check-subtotal" class="font-semibold text-stone-800">R$ 0.00</span>
                         </div>
                         <div class="flex justify-between" id="discount-container" style="display: none;">
                             <span>Desconto Cupão</span>
-                            <span id="check-discount" class="font-semibold text-lime-700">-€ 0.00</span>
+                            <span id="check-discount" class="font-semibold text-lime-700">-R$ 0.00</span>
                         </div>
                         <div class="flex justify-between">
                             <span>Frete Estimado</span>
-                            <span id="frete-estimado-val" class="font-semibold text-stone-800">€ 2.50</span>
+                            <span id="frete-estimado-val" class="font-semibold text-stone-800">R$ 2.50</span>
                         </div>
                     </div>
 
                     <div class="flex justify-between text-xl font-extrabold text-stone-800 border-t border-stone-200 pt-4 mt-4 mb-6">
                         <span>Total</span>
-                        <span id="check-total" class="text-lime-700">€ 0.00</span>
+                        <span id="check-total" class="text-lime-700">R$ 0.00</span>
                     </div>
 
                     <!-- Configurações de Encomenda -->
@@ -225,19 +225,19 @@
                 return `
                 <div class="flex justify-between items-center text-sm">
                     <span class="font-medium text-stone-700 truncate w-48">${i.quantity}x ${i.name}</span>
-                    <span class="font-bold text-lime-700">€ ${tot.toFixed(2)}</span>
+                    <span class="font-bold text-lime-700">R$ ${tot.toFixed(2)}</span>
                 </div>`;
             }).join('');
 
-            document.getElementById('check-subtotal').innerText = `€ ${sub.toFixed(2)}`;
-            document.getElementById('frete-estimado-val').innerText = `€ ${freightCost.toFixed(2)}`;
+            document.getElementById('check-subtotal').innerText = `R$ ${sub.toFixed(2)}`;
+            document.getElementById('frete-estimado-val').innerText = `R$ ${freightCost.toFixed(2)}`;
             if (discountCost > 0) {
                 document.getElementById('discount-container').style.display = 'flex';
-                document.getElementById('check-discount').innerText = `-€ ${discountCost.toFixed(2)}`;
+                document.getElementById('check-discount').innerText = `-R$ ${discountCost.toFixed(2)}`;
             }
             let totalToPay = sub + freightCost - discountCost;
             if (totalToPay < 0) totalToPay = 0;
-            document.getElementById('check-total').innerText = `€ ${totalToPay.toFixed(2)}`;
+            document.getElementById('check-total').innerText = `R$ ${totalToPay.toFixed(2)}`;
 
             // Pré-preenchimento do Cliente
             try {
@@ -369,7 +369,8 @@
                     produto: i.id,
                     nome_produto: i.name,
                     quantidade: i.quantity,
-                    preco_unitario: i.price
+                    preco_unitario: i.price,
+                    variationId: i.variationId || null
                 };
             });
 

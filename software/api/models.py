@@ -102,6 +102,19 @@ class ImagemProduto(models.Model):
     def __str__(self):
         return f"Imagem {self.ordem} de {self.produto.nome}"
 
+class VariacaoProduto(models.Model):
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE, related_name='precos_variacao')
+    termo = models.ForeignKey(TermoAtributo, on_delete=models.CASCADE)
+    preco = models.DecimalField(max_digits=10, decimal_places=2)
+    estoque = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+    class Meta:
+        unique_together = ('produto', 'termo')
+        verbose_name_plural = "Variações de Preço"
+        
+    def __str__(self):
+        return f"{self.produto.nome} - {self.termo.valor}"
+
 class Cliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True, related_name='cliente')
     nome = models.CharField(max_length=255)
@@ -155,7 +168,7 @@ class RegraFrete(models.Model):
     prazo_dias = models.PositiveIntegerField(default=1)
 
     def __str__(self):
-        return f"{self.cidade}/{self.estado} - € {self.valor_frete}"
+        return f"{self.cidade}/{self.estado} - R$ {self.valor_frete}"
 
 class Pedido(models.Model):
     STATUS_CHOICES = [

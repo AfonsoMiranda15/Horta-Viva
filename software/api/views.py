@@ -283,10 +283,22 @@ class PedidoViewSet(viewsets.ModelViewSet):
                 produto = Produto.objects.get(id=item['produto'])
                 
                 qtd_solicitada = int(item.get('quantidade', 1))
-                if qtd_solicitada > produto.estoque:
-                    return Response({'erro': f"A quantidade solicitada para '{produto.nome}' excede o stock disponível ({int(produto.estoque)} unidades)."}, status=status.HTTP_400_BAD_REQUEST)
-                    
-                preco = produto.preco_promocional if produto.preco_promocional and produto.preco_promocional > 0 else produto.preco
+                variation_id = item.get('variationId')
+                
+                if variation_id:
+                    try:
+                        from .models import VariacaoProduto
+                        var_obj = VariacaoProduto.objects.get(id=variation_id, produto=produto)
+                        preco = var_obj.preco
+                        # Opcional: verificar var_obj.estoque se controlarmos estoque por variação rigorosamente
+                    except Exception:
+                        return Response({'erro': f"A variação escolhida para '{produto.nome}' é inválida."}, status=status.HTTP_400_BAD_REQUEST)
+                else:
+                    if qtd_solicitada > produto.estoque:
+                        return Response({'erro': f"A quantidade solicitada para '{produto.nome}' excede o stock disponível ({int(produto.estoque)} unidades)."}, status=status.HTTP_400_BAD_REQUEST)
+                    preco = produto.preco_promocional if produto.preco_promocional and produto.preco_promocional > 0 else produto.preco
+                
+                # Trust frontend price only if it matches, but here we enforce DB price
                 item['preco_unitario'] = preco
                 total_produtos_calc += preco * Decimal(str(qtd_solicitada))
             except Produto.DoesNotExist:

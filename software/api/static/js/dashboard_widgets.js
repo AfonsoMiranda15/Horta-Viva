@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <span class="info-box-icon"><i class="fas fa-money-bill-wave"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Faturamento</span>
-                                    <span class="info-box-number">€ ${data.faturamento_total_dia}</span>
+                                    <span class="info-box-number">R$ ${data.faturamento_total_dia}</span>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <span class="info-box-icon"><i class="fas fa-chart-line"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Ticket Médio</span>
-                                    <span class="info-box-number">€ ${data.ticket_medio}</span>
+                                    <span class="info-box-number">R$ ${data.ticket_medio}</span>
                                 </div>
                             </div>
                         </div>

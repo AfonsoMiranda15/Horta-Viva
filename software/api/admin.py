@@ -1,12 +1,16 @@
 from django.contrib import admin
 from .models import (
-    Categoria, Atributo, TermoAtributo, Produto, ImagemProduto,
+    Categoria, Atributo, TermoAtributo, Produto, ImagemProduto, VariacaoProduto,
     Cliente, Endereco, RegraFrete, Pedido, ItemPedido, Pagamento,
     Cupom, Banner, Notificacao, MovimentacaoEstoque, Configuracao, RelatorioProxy
 )
 
 class ImagemProdutoInline(admin.TabularInline):
     model = ImagemProduto
+    extra = 1
+
+class VariacaoProdutoInline(admin.TabularInline):
+    model = VariacaoProduto
     extra = 1
 
 @admin.register(Categoria)
@@ -31,7 +35,7 @@ class ProdutoAdmin(admin.ModelAdmin):
     list_filter = ('produto_ativo', 'produto_organico', 'produto_sazonal', 'categoria')
     search_fields = ('nome', 'sku')
     prepopulated_fields = {'slug': ('nome',)}
-    inlines = [ImagemProdutoInline]
+    inlines = [ImagemProdutoInline, VariacaoProdutoInline]
     fieldsets = (
         ('Informação Principal', {
             'fields': ('nome', 'slug', 'sku', 'categoria', 'descricao_curta', 'descricao_completa', 'imagem_principal')
@@ -43,6 +47,27 @@ class ProdutoAdmin(admin.ModelAdmin):
             'fields': ('produto_ativo', 'produto_em_destaque', 'produto_sazonal', 'produto_organico', 'produto_variavel')
         }),
     )
+
+    def delete_queryset(self, request, queryset):
+        from django.db.models.deletion import ProtectedError
+        from django.contrib import messages
+        
+        apagados = 0
+        desativados = 0
+        
+        for p in queryset:
+            try:
+                p.delete()
+                apagados += 1
+            except ProtectedError:
+                p.produto_ativo = False
+                p.save()
+                desativados += 1
+                
+        if desativados > 0:
+            messages.warning(request, f"{desativados} produtos não puderam ser apagados pois já têm pedidos associados. Eles foram ocultados/desativados com sucesso.")
+        if apagados > 0:
+            messages.success(request, f"{apagados} produtos foram eliminados com sucesso.")
 
 class EnderecoInline(admin.StackedInline):
     model = Endereco

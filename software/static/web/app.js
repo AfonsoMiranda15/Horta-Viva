@@ -229,14 +229,14 @@ function updateCartCount() {
     }
 }
 
-function addToCart(productId, productName, price, maxStock) {
+function addToCart(productId, productName, price, maxStock, variationId = null) {
     if (!isAuthenticated()) {
         showToast('Precisa de iniciar sessão para adicionar produtos ao carrinho.', 'error');
         setTimeout(() => window.location.href = '/minha-conta/', 2000);
         return;
     }
     
-    const existing = cart.find(item => item.name === productName);
+    const existing = cart.find(item => item.name === productName && item.variationId === variationId);
     const currentQty = existing ? existing.quantity : 0;
     
     if (maxStock !== undefined && currentQty >= maxStock) {
@@ -248,7 +248,7 @@ function addToCart(productId, productName, price, maxStock) {
         existing.quantity += 1;
         existing.maxStock = maxStock !== undefined ? maxStock : existing.maxStock;
     } else {
-        cart.push({ id: productId, name: productName, price: price, quantity: 1, maxStock: maxStock });
+        cart.push({ id: productId, name: productName, price: price, quantity: 1, maxStock: maxStock, variationId: variationId });
     }
     localStorage.setItem('hortaviva_cart', JSON.stringify(cart));
     updateCartCount();
@@ -377,8 +377,8 @@ function renderProducts(products) {
                         ${p.categoria_nome ? `<p class="text-xs text-stone-500 font-semibold uppercase tracking-wider mb-2">${p.categoria_nome}</p>` : ''}
                         ${p.descricao_curta ? `<p class="text-sm text-stone-600 line-clamp-2 mb-3">${p.descricao_curta}</p>` : ''}
                         <div class="flex items-end gap-2 mb-5">
-                            <p class="text-lime-700 font-extrabold text-2xl">€ ${price}</p>
-                            ${hasPromo ? `<p class="text-stone-400 line-through text-sm mb-1">€ ${oldPrice}</p>` : ''}
+                            <p class="text-lime-700 font-extrabold text-2xl">R$ ${price}</p>
+                            ${hasPromo ? `<p class="text-stone-400 line-through text-sm mb-1">R$ ${oldPrice}</p>` : ''}
                         </div>
                     </div>
                     <button ${p.estoque <= 0 ? 'disabled' : ''} onclick="addToCart(${p.id}, '${p.nome.replace(/'/g, "\\'")}', ${price}, ${p.estoque})" 
@@ -617,7 +617,7 @@ function handleSearch(event) {
                     <img src="${imgUrl}" class="w-10 h-10 rounded-lg object-cover" alt="${p.nome}">
                     <div class="flex-1 text-left">
                         <div class="text-sm font-bold text-stone-800 line-clamp-1">${p.nome}</div>
-                        <div class="text-xs text-lime-700 font-bold">€ ${price}</div>
+                        <div class="text-xs text-lime-700 font-bold">R$ ${price}</div>
                     </div>
                 </a>
             `;

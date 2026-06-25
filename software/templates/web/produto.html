@@ -40,10 +40,12 @@
                 const basePrice = parseFloat(p.preco || 0);
                 const promoPrice = parseFloat(p.preco_promocional || 0);
                 const hasPromo = promoPrice > 0 && promoPrice < basePrice;
-                const price = (hasPromo ? promoPrice : basePrice).toFixed(2);
-                const oldPrice = basePrice.toFixed(2);
+                let price = (hasPromo ? promoPrice : basePrice).toFixed(2);
+                let oldPrice = basePrice.toFixed(2);
                 let imgUrl = p.imagem_principal || p.imagem || 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=800';
-                if (imgUrl.startsWith('/')) imgUrl = `http://localhost:8520${imgUrl}`;
+                if (imgUrl.startsWith('/')) imgUrl = `${window.location.origin}${imgUrl}`;
+
+                window.currentProductData = p; // Para ser acedido por funções globais
 
                 container.innerHTML = `
                     <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-stone-100 flex flex-col md:flex-row">
@@ -73,8 +75,8 @@
                             </div>
                             
                             <div class="flex items-end gap-3 mb-6">
-                                <p class="text-3xl text-lime-700 font-black">€ ${price} <span class="text-sm text-stone-500 font-normal">/ ${p.unidade || 'unid'}</span></p>
-                                ${hasPromo ? `<p class="text-xl text-stone-400 line-through mb-1">€ ${oldPrice}</p>` : ''}
+                                <p class="text-3xl text-lime-700 font-black" id="display-price">R$ ${price} <span class="text-sm text-stone-500 font-normal" id="display-unit">/ ${p.unidade || 'unid'}</span></p>
+                                ${hasPromo ? `<p class="text-xl text-stone-400 line-through mb-1" id="display-old-price">R$ ${oldPrice}</p>` : ''}
                             </div>
                             
                             ${p.descricao_curta ? `<p class="text-stone-500 text-lg mb-6 leading-relaxed">${p.descricao_curta}</p>` : ''}
@@ -83,11 +85,12 @@
                                 ${p.descricao_completa || (!p.descricao_curta ? 'Nenhuma descrição fornecida.' : '')}
                             </div>
 
-                            ${p.variacoes_detalhes && p.variacoes_detalhes.length > 0 ? `
+                            ${p.precos_variacao && p.precos_variacao.length > 0 ? `
                             <div class="mb-6">
                                 <label class="block text-sm font-semibold text-stone-700 mb-2">Opções Disponíveis</label>
-                                <select id="product-variation" class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-lime-600 focus:border-transparent outline-none">
-                                    ${p.variacoes_detalhes.map(v => `<option value="${v.termo}">${v.termo}</option>`).join('')}
+                                <select id="product-variation" onchange="updateVariationPrice()" class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:ring-2 focus:ring-lime-600 focus:border-transparent outline-none">
+                                    <option value="" data-price="${price}" data-stock="${p.estoque}">Selecione uma opção (Opcional)</option>
+                                    ${p.precos_variacao.map(v => `<option value="${v.termo_nome}" data-id="${v.id}" data-price="${v.preco}" data-stock="${v.estoque}">${v.termo_nome}</option>`).join('')}
                                 </select>
                             </div>
                             ` : ''}
@@ -123,11 +126,38 @@
             }
         });
 
-        function addCurrentToCart(id, name, price, stock) {
+        function updateVariationPrice() {
+            const select = document.getElementById('product-variation');
+            if (!select) return;
+            const option = select.options[select.selectedIndex];
+            const newPrice = parseFloat(option.getAttribute('data-price')).toFixed(2);
+            document.getElementById('display-price').innerHTML = `R$ ${newPrice} <span class="text-sm text-stone-500 font-normal" id="display-unit">/ ${window.currentProductData.unidade || 'unid'}</span>`;
+            
+            // Ocultar preço antigo se houver variação, pois a variação não tem preco promocional separado neste modelo simples
+            const oldPriceEl = document.getElementById('display-old-price');
+            if (oldPriceEl) {
+                oldPriceEl.style.display = select.value === "" ? 'block' : 'none';
+            }
+        }
+
+        function addCurrentToCart(id, name, originalPrice, originalStock) {
             let varSel = document.getElementById('product-variation');
             let varName = varSel ? varSel.value : '';
-            let finalName = varName ? `${name} (${varName})` : name;
-            addToCart(id, finalName, price, stock);
+            
+            let finalName = name;
+            let finalPrice = originalPrice;
+            let finalStock = originalStock;
+            let variationId = null;
+
+            if (varSel && varSel.selectedIndex > 0) {
+                const option = varSel.options[varSel.selectedIndex];
+                finalName = `${name} (${varName})`;
+                finalPrice = parseFloat(option.getAttribute('data-price'));
+                finalStock = parseFloat(option.getAttribute('data-stock'));
+                variationId = parseInt(option.getAttribute('data-id'));
+            }
+
+            addToCart(id, finalName, finalPrice, finalStock, variationId);
         }
     </script>
 </body>
