@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from decimal import Decimal
 from django.utils import timezone
 from api.models import (
-    Categoria, Produto, Cliente, Endereco, RegraFrete, Pedido, ItemPedido, Pagamento, Banner
+    Categoria, Produto, Cliente, Endereco, RegraFrete, Pedido, ItemPedido, Pagamento, Banner,
+    Atributo, TermoAtributo, VariacaoProduto
 )
 
 class Command(BaseCommand):
@@ -22,6 +23,9 @@ class Command(BaseCommand):
         Endereco.objects.all().delete()
         Cliente.objects.all().delete()
         User.objects.exclude(is_superuser=True).delete()
+        VariacaoProduto.objects.all().delete()
+        TermoAtributo.objects.all().delete()
+        Atributo.objects.all().delete()
         Produto.objects.all().delete()
         Categoria.objects.all().delete()
         RegraFrete.objects.all().delete()
@@ -40,7 +44,8 @@ class Command(BaseCommand):
         self.stdout.write("Criando Produtos...")
         produtos_data = [
             {"nome": "Maçã Gala", "sku": "FRT-MAC-01", "cat": cat_frutas, "preco": "2.50", "est": 50, "min": 10, "imagem": "/static/web/images/Frutas/maca-fruta-hortaviva.jpg"},
-            {"nome": "Banana Prata", "sku": "FRT-BAN-01", "cat": cat_frutas, "preco": "1.80", "est": 5, "min": 10, "org": True, "imagem": "/static/web/images/Frutas/banana-prata-fruta-hortaviva.jpg"},
+            {"nome": "Banana Prata", "sku": "FRT-BAN-01", "cat": cat_frutas, "preco": "1.80", "est": 5, "min": 10, "org": True, "imagem": "/static/web/images/Frutas/banana-prata-fruta-hortaviva.jpg", "variavel": True},
+            {"nome": "Abacaxi", "sku": "FRT-ABA-01", "cat": cat_frutas, "preco": "6.00", "est": 20, "min": 5, "imagem": "/static/web/images/Frutas/abacaxi-fruta-hortaviva.jpg", "variavel": True},
             {"nome": "Laranja Pera", "sku": "FRT-LAR-01", "cat": cat_frutas, "preco": "3.00", "est": 100, "min": 20, "imagem": "/static/web/images/Frutas/laranja-pera-fruta-hortaviva.jpg"},
             {"nome": "Morango", "sku": "FRT-MOR-01", "cat": cat_frutas, "preco": "5.50", "est": 8, "min": 15, "saz": True, "imagem": "/static/web/images/Frutas/morango-fruta-hortaviva.jpg"},
             {"nome": "Cenoura", "sku": "LEG-CEN-01", "cat": cat_legumes, "preco": "1.20", "est": 80, "min": 10, "imagem": "/static/web/images/Legumes/cenoura-legumes-hortaviva.jpg"},
@@ -67,9 +72,29 @@ class Command(BaseCommand):
                 estoque_minimo=Decimal(str(p["min"])),
                 produto_organico=p.get("org", False),
                 produto_sazonal=p.get("saz", False),
+                produto_variavel=p.get("variavel", False),
                 imagem_principal=p.get("imagem", "")
             )
             produtos_objs.append(obj)
+
+        self.stdout.write("Criando Atributos e Variações...")
+        atr_tamanho = Atributo.objects.create(nome="Tamanho")
+        atr_maduracao = Atributo.objects.create(nome="Maturação")
+        
+        termo_grande = TermoAtributo.objects.create(atributo=atr_tamanho, valor="Grande")
+        termo_medio = TermoAtributo.objects.create(atributo=atr_tamanho, valor="Médio")
+        termo_madura = TermoAtributo.objects.create(atributo=atr_maduracao, valor="Madura")
+        termo_verde = TermoAtributo.objects.create(atributo=atr_maduracao, valor="Verde")
+
+        abacaxi = next((p for p in produtos_objs if p.nome == "Abacaxi"), None)
+        if abacaxi:
+            VariacaoProduto.objects.create(produto=abacaxi, atributo=atr_tamanho, termo=termo_grande, preco=Decimal("8.50"), estoque=Decimal("10"))
+            VariacaoProduto.objects.create(produto=abacaxi, atributo=atr_tamanho, termo=termo_medio, preco=Decimal("6.00"), estoque=Decimal("10"))
+            
+        banana = next((p for p in produtos_objs if p.nome == "Banana Prata"), None)
+        if banana:
+            VariacaoProduto.objects.create(produto=banana, atributo=atr_maduracao, termo=termo_madura, preco=Decimal("6.00"), estoque=Decimal("3"))
+            VariacaoProduto.objects.create(produto=banana, atributo=atr_maduracao, termo=termo_verde, preco=Decimal("6.00"), estoque=Decimal("2"))
 
         self.stdout.write("Criando Clientes e Endereços...")
         clientes_data = [
