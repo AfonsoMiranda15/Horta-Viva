@@ -13,6 +13,15 @@ class VariacaoProdutoInline(admin.TabularInline):
     model = VariacaoProduto
     extra = 1
 
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "termo":
+            if request.resolver_match and 'object_id' in request.resolver_match.kwargs:
+                produto_id = request.resolver_match.kwargs['object_id']
+                kwargs["queryset"] = TermoAtributo.objects.filter(produtos__id=produto_id)
+            else:
+                kwargs["queryset"] = TermoAtributo.objects.none()
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
     list_display = ('nome', 'categoria_pai', 'slug')
