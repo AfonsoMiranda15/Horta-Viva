@@ -4,16 +4,20 @@ from decimal import Decimal
 from django.utils import timezone
 from api.models import (
     Categoria, Produto, Cliente, Endereco, RegraFrete, Pedido, ItemPedido, Pagamento, Banner,
-    Atributo, TermoAtributo, VariacaoProduto, Configuracao, Cupom, Notificacao
+    Atributo, VariacaoProduto, Configuracao, Cupom, Notificacao
 )
 
 class Command(BaseCommand):
     help = 'Popula a base de dados com massa de testes (Seeder)'
 
+    def add_arguments(self, parser):
+        parser.add_argument('--force', action='store_true', help='Força o seeding ignorando se a DB já tem dados')
+
     def handle(self, *args, **kwargs):
-        # Verifica se já existem dados para evitar apagar a DB de Produção
-        if Categoria.objects.exists():
-            self.stdout.write(self.style.SUCCESS("A base de dados já possui dados. O Seeder foi ignorado."))
+        force = kwargs['force']
+
+        if not force and Categoria.objects.exists():
+            self.stdout.write(self.style.SUCCESS("A base de dados já possui dados. O Seeder foi ignorado. Use --force para forçar."))
             return
 
         self.stdout.write("Limpando base de dados...")
@@ -24,7 +28,6 @@ class Command(BaseCommand):
         Cliente.objects.all().delete()
         User.objects.exclude(is_superuser=True).delete()
         VariacaoProduto.objects.all().delete()
-        TermoAtributo.objects.all().delete()
         Atributo.objects.all().delete()
         Produto.objects.all().delete()
         Categoria.objects.all().delete()
@@ -92,21 +95,16 @@ class Command(BaseCommand):
         self.stdout.write("Criando Atributos e Variações...")
         atr_tamanho = Atributo.objects.create(nome="Tamanho")
         atr_maduracao = Atributo.objects.create(nome="Maturação")
-        
-        termo_grande = TermoAtributo.objects.create(atributo=atr_tamanho, valor="Grande")
-        termo_medio = TermoAtributo.objects.create(atributo=atr_tamanho, valor="Médio")
-        termo_madura = TermoAtributo.objects.create(atributo=atr_maduracao, valor="Madura")
-        termo_verde = TermoAtributo.objects.create(atributo=atr_maduracao, valor="Verde")
 
-        abacaxi = next((p for p in produtos_objs if p.nome == "Abacaxi"), None)
-        if abacaxi:
-            VariacaoProduto.objects.create(produto=abacaxi, termo=termo_grande, preco=Decimal("8.50"), estoque=Decimal("10"))
-            VariacaoProduto.objects.create(produto=abacaxi, termo=termo_medio, preco=Decimal("6.00"), estoque=Decimal("10"))
-            
-        banana = next((p for p in produtos_objs if p.nome == "Banana Prata"), None)
-        if banana:
-            VariacaoProduto.objects.create(produto=banana, termo=termo_madura, preco=Decimal("6.00"), estoque=Decimal("3"))
-            VariacaoProduto.objects.create(produto=banana, termo=termo_verde, preco=Decimal("6.00"), estoque=Decimal("2"))
+        produto_banana = next((p for p in produtos_objs if p.nome == "Banana Prata"), None)
+        produto_tomate = next((p for p in produtos_objs if p.nome == "Tomate Carmem"), None)
+
+        VariacaoProduto.objects.create(produto=produto_banana, atributo=atr_tamanho, valor="Grande", preco=Decimal('3.50'), estoque=Decimal('20.00'))
+        VariacaoProduto.objects.create(produto=produto_banana, atributo=atr_tamanho, valor="Médio", preco=Decimal('2.99'), estoque=Decimal('50.00'))
+        VariacaoProduto.objects.create(produto=produto_tomate, atributo=atr_maduracao, valor="Madura", preco=Decimal('4.50'), estoque=Decimal('10.00'))
+        VariacaoProduto.objects.create(produto=produto_tomate, atributo=atr_maduracao, valor="Verde", preco=Decimal('3.90'), estoque=Decimal('15.00'))
+
+        self.stdout.write(self.style.SUCCESS("Produtos com Variações e Preços gerados com sucesso!"))
 
         self.stdout.write("Criando Clientes e Endereços...")
         clientes_data = [

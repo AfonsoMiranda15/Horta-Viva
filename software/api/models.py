@@ -29,19 +29,6 @@ class Atributo(models.Model):
     def __str__(self):
         return self.nome
 
-class TermoAtributo(models.Model):
-    atributo = models.ForeignKey(Atributo, on_delete=models.CASCADE, related_name='termos')
-    valor = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, blank=True)
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.valor)
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return f"{self.atributo.nome}: {self.valor}"
-
 class Produto(models.Model):
     UNIDADE_CHOICES = [
         ('gr', 'Grama'),
@@ -61,7 +48,6 @@ class Produto(models.Model):
     sku = models.CharField(max_length=100, unique=True)
     codigo_interno = models.CharField(max_length=100, blank=True, null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, related_name='produtos')
-    variacoes = models.ManyToManyField(TermoAtributo, blank=True, related_name='produtos', help_text="Selecione as variações deste produto (ex: Tamanho Médio, Cor Vermelha)")
     descricao_curta = models.TextField(blank=True)
     descricao_completa = models.TextField(blank=True)
     imagem_principal = models.ImageField(upload_to='produtos/', blank=True, null=True)
@@ -104,16 +90,17 @@ class ImagemProduto(models.Model):
 
 class VariacaoProduto(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE, related_name='precos_variacao')
-    termo = models.ForeignKey(TermoAtributo, on_delete=models.CASCADE)
+    atributo = models.ForeignKey(Atributo, on_delete=models.CASCADE)
+    valor = models.CharField(max_length=255, help_text="Ex: Grande, Médio, Branca, etc.")
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     estoque = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     class Meta:
-        unique_together = ('produto', 'termo')
+        unique_together = ('produto', 'atributo', 'valor')
         verbose_name_plural = "Variações de Preço"
         
     def __str__(self):
-        return f"{self.produto.nome} - {self.termo.valor}"
+        return f"{self.produto.nome} - {self.valor}"
 
 class Cliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True, related_name='cliente')
